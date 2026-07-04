@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nada Bar Noodle House &mdash; Grants Pass, OR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F5EFDC;
+    --navy: #1E4258;
+    --coral: #E8734A;
+    --pink: #E85D8A;
+    --green: #6FA971;
+    --purple: #9B6FBF;
+    --teal: #2A9D8F;
+    --yellow: #F0C954;
+    --white: #FFFDF6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    background-image:
+      radial-gradient(circle, rgba(30,66,88,0.15) 1.5px, transparent 1.5px),
+      radial-gradient(circle, rgba(30,66,88,0.1) 1px, transparent 1px);
+    background-size: 180px 180px, 120px 120px;
+    background-position: 0 0, 60px 90px;
+    color: var(--navy);
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+  }
+  h1, h2, h3, .display {
+    font-family: 'Baloo 2', sans-serif;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.15;
+  }
+  .marker { font-family: 'Permanent Marker', cursive; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  header { padding: 20px 0; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+  .logo { font-family: 'Baloo 2', sans-serif; font-weight: 800; font-size: 1.3rem; color: var(--navy); }
+  nav { display: flex; gap: 26px; font-weight: 600; font-size: 0.9rem; }
+  nav a:hover { color: var(--coral); }
+  .btn-call {
+    background: var(--navy); color: var(--white); padding: 10px 20px; border-radius: 999px;
+    font-weight: 700; font-size: 0.9rem;
+  }
+
+  /* HERO */
+  .hero { padding: 40px 0 50px; position: relative; overflow: hidden; }
+  .hero-wave { position: absolute; bottom: -10px; left: 0; width: 100%; z-index: 0; opacity: 0.85; }
+  .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 40px; align-items: center; }
+  .hero h1 { font-size: 2.6rem; margin-bottom: 16px; }
+  .hero h1 .pop { color: var(--coral); }
+  .hero p.lede { font-size: 1.08rem; color: #3d5566; max-width: 46ch; margin-bottom: 26px; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; }
+  .btn-primary {
+    background: var(--coral); color: var(--white); padding: 15px 28px; border-radius: 999px;
+    font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 1rem;
+  }
+  .btn-primary:hover { background: #d4643a; }
+  .btn-secondary { font-weight: 700; border-bottom: 3px solid var(--navy); padding-bottom: 2px; }
+
+  /* BADGE LOGO ILLUSTRATION */
+  .badge-scene {
+    display: flex; justify-content: center; position: relative; padding: 20px;
+  }
+  .badge-scene::before {
+    content: "";
+    position: absolute; inset: -20px;
+    background: radial-gradient(circle at 50% 40%, #cfe4ea 0%, #f5efdc 65%, transparent 70%);
+    border-radius: 50%; z-index: 0;
+  }
+  .badge-svg { width: 320px; position: relative; z-index: 1; }
+
+  /* TRUST STRIP */
+  .trust-strip { background: var(--navy); padding: 20px 0; }
+  .trust-strip .wrap { display: flex; justify-content: center; gap: 46px; flex-wrap: wrap; }
+  .trust-item { text-align: center; color: var(--cream); }
+  .trust-item strong { display: block; font-family: 'Baloo 2', sans-serif; font-size: 1.15rem; color: var(--yellow); }
+  .trust-item span { font-size: 0.85rem; opacity: 0.9; }
+
+  .wave-divider { width: 100%; display: block; margin: 0; }
+  .sparkle { display: inline-block; margin: 0 8px; color: #1E4258; opacity: 0.6; }
+
+  section.block { padding: 64px 0; }
+  .section-head { margin-bottom: 36px; text-align: center; }
+  .section-head h2 { font-size: 1.9rem; }
+  .section-head p { color: #3d5566; margin-top: 8px; }
+
+  /* MENU - rainbow header style like real menu */
+  .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .menu-card {
+    background: var(--white); border-radius: 16px; padding: 22px 24px;
+    border-left: 6px solid var(--coral);
+  }
+  .menu-card:nth-child(1) { border-color: var(--coral); }
+  .menu-card:nth-child(2) { border-color: var(--pink); }
+  .menu-card:nth-child(3) { border-color: var(--green); }
+  .menu-card:nth-child(4) { border-color: var(--purple); }
+  .menu-card:nth-child(5) { border-color: var(--teal); }
+  .menu-card:nth-child(6) { border-color: var(--yellow); }
+  .menu-card h3 { font-size: 1.3rem; margin-bottom: 6px; }
+  .menu-card:nth-child(1) h3 { color: var(--coral); }
+  .menu-card:nth-child(2) h3 { color: var(--pink); }
+  .menu-card:nth-child(3) h3 { color: var(--green); }
+  .menu-card:nth-child(4) h3 { color: var(--purple); }
+  .menu-card:nth-child(5) h3 { color: var(--teal); }
+  .menu-card:nth-child(6) h3 { color: #C9A227; }
+  .menu-card p { font-size: 0.92rem; color: #3d5566; }
+  .menu-card { cursor: pointer; }
+  .menu-card .dish-list { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+  .menu-card.open .dish-list { max-height: 200px; margin-top: 10px; }
+  .menu-card .dish-list ul { list-style: none; padding: 0; }
+  .menu-card .dish-list li { font-size: 0.85rem; padding: 4px 0; border-top: 1px dashed rgba(30,66,88,0.2); color: #3d5566; }
+  .menu-card .tap-hint { font-size: 0.75rem; color: #8ba0ac; margin-top: 8px; font-style: italic; }
+
+  /* ABOUT */
+  /* PHOTO PLACEHOLDERS */
+  .photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .photo-slot {
+    aspect-ratio: 4/3; border-radius: 16px; border: 3px dashed #1E4258;
+    background: repeating-linear-gradient(45deg, rgba(30,66,88,0.05), rgba(30,66,88,0.05) 10px, transparent 10px, transparent 20px);
+    display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px;
+    color: #6b8494; text-align: center; padding: 16px;
+  }
+  .photo-slot .icon { font-size: 1.8rem; opacity: 0.5; }
+  .photo-slot span { font-size: 0.85rem; font-weight: 600; }
+
+  .about-block {
+    background: var(--white); border-radius: 22px; padding: 50px 44px; border: 3px solid var(--navy);
+  }
+  .about-block h2 { font-size: 1.9rem; margin-bottom: 18px; }
+  .about-block p { color: #3d5566; font-size: 1.03rem; max-width: 68ch; margin-bottom: 14px; }
+
+  /* REVIEWS */
+  .review-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .review-card {
+    background: var(--white); border-radius: 16px; padding: 24px 20px;
+  }
+  .review-card .quote-mark { font-family: 'Baloo 2', sans-serif; font-size: 2.4rem; color: var(--coral); line-height: 1; }
+  .review-card p { font-size: 0.95rem; margin: 6px 0 12px; }
+  .review-card .who { font-family: 'Baloo 2', sans-serif; font-size: 0.75rem; color: var(--teal); }
+
+  /* CONTACT */
+  .contact-box {
+    background: var(--navy); border-radius: 22px; padding: 56px 44px; text-align: center; color: var(--cream);
+  }
+  .contact-box h2 { color: var(--yellow); font-size: 2rem; margin-bottom: 12px; }
+  .contact-box p { font-size: 1.03rem; margin-bottom: 22px; opacity: 0.95; }
+
+  footer { text-align: center; padding: 30px 0; font-family: 'Baloo 2', sans-serif; font-size: 0.85rem; color: #6b8494; }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .menu-grid, .review-strip { grid-template-columns: 1fr; }
+    nav { display: none; }
+    .hero h1 { font-size: 2rem; }
+    .badge-svg { width: 240px; }
+  }
+</style>
+</head>
+<body>
+<div style="background:#F0C954; color:#1E4258; text-align:center; padding:8px 16px; font-family:'Poppins',sans-serif; font-size:0.8rem; font-weight:600;">
+  This is a demo site built from publicly available info &mdash; menu, colors, and content shown are a starting point and fully customizable.
+</div>
+
+
+<header>
+  <div class="wrap">
+    <div class="logo">Nada Bar</div>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#about">Our Vibe</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <a href="tel:5412262642" class="btn-call">(541) 226-2642</a>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="hero-wave" viewBox="0 0 1200 220" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0 160 C 100 100, 180 220, 260 140 C 320 80, 380 200, 460 130 C 540 70, 600 190, 690 120
+             C 770 60, 830 180, 920 110 C 1000 60, 1060 170, 1200 100 L1200 220 L0 220 Z"
+      fill="#1E4258" opacity="0.10"/>
+    <path d="M0 180 C 90 130, 160 200, 230 150 C 300 100, 360 210, 450 150 C 520 100, 580 200, 670 145
+             C 750 95, 810 195, 900 140 C 980 95, 1040 190, 1200 135 L1200 220 L0 220 Z"
+      fill="#2A9D8F" opacity="0.14"/>
+    <g stroke="#1E4258" stroke-width="2.5" fill="none" opacity="0.3">
+      <path d="M60 145 q14 -18 28 -6 q10 -14 24 2"/>
+      <path d="M340 135 q14 -18 28 -6 q10 -14 24 2"/>
+      <path d="M620 125 q14 -18 28 -6 q10 -14 24 2"/>
+      <path d="M900 118 q14 -18 28 -6 q10 -14 24 2"/>
+    </g>
+  </svg>
+  <div class="wrap hero-grid">
+    <div>
+      <h1>Noodles &amp; <span class="pop">Handmade Goods.</span></h1>
+      <p class="lede">Housemade ramen, street noods, rice bowls, and craft sodas &amp; mocktails, in the heart of downtown Grants Pass. Seasonal toppings, constant evolution, always better.</p>
+      <div class="hero-ctas">
+        <a href="#menu" class="btn-primary">SEE THE MENU</a>
+        <a href="#about" class="btn-secondary">Our Story →</a>
+      </div>
+    </div>
+    <div class="badge-scene">
+      <svg class="badge-svg" viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+        <path d="M20 40 Q20 15 45 15 L255 15 Q280 15 280 40 L280 260 Q280 300 150 320 Q20 300 20 260 Z"
+          fill="#F5EFDC" stroke="#1E4258" stroke-width="6"/>
+        <text x="150" y="70" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="30" fill="#1E4258">NADA BAR</text>
+        <text x="150" y="95" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="700" font-size="14" fill="#1E4258" letter-spacing="2">NOODLE HOUSE</text>
+        <path d="M55 30 Q65 45 55 60 Q45 45 55 30" fill="#E8734A" opacity="0.7"/>
+        <path d="M245 30 Q255 45 245 60 Q235 45 245 30" fill="#E85D8A" opacity="0.7"/>
+        <circle cx="80" cy="120" r="3" fill="#1E4258"/>
+        <circle cx="220" cy="130" r="3" fill="#1E4258"/>
+        <circle cx="95" cy="105" r="2" fill="#1E4258"/>
+        <circle cx="205" cy="108" r="2" fill="#1E4258"/>
+        <!-- retro Japanese cloud/kumo swirls -->
+        <g opacity="0.35" stroke="#1E4258" stroke-width="2.5" fill="none">
+          <path d="M60 150 q10 -14 22 -6 q8 -10 20 0 q10 -8 20 2 q8 -8 18 0"/>
+          <path d="M180 145 q10 -14 22 -6 q8 -10 20 0 q10 -8 18 4"/>
+          <path d="M55 175 q14 8 24 0 q10 8 22 -2"/>
+          <path d="M195 178 q14 8 24 0 q8 6 16 -2"/>
+        </g>
+        <line x1="130" y1="100" x2="120" y2="190" stroke="#1E4258" stroke-width="7" stroke-linecap="round"/>
+        <line x1="150" y1="100" x2="140" y2="190" stroke="#1E4258" stroke-width="7" stroke-linecap="round"/>
+        <path d="M85 195 Q150 175 215 195 Q225 250 150 260 Q75 250 85 195 Z" fill="#FFFDF6" stroke="#1E4258" stroke-width="6"/>
+        <path d="M100 200 Q150 188 200 200" stroke="#E8734A" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <path d="M105 210 Q150 197 195 210" stroke="#F0C954" stroke-width="5" fill="none" stroke-linecap="round"/>
+        <circle cx="150" cy="215" r="10" fill="#E85D8A"/>
+        <ellipse cx="150" cy="255" rx="70" ry="10" fill="none" stroke="#1E4258" stroke-width="6"/>
+        <path d="M50 290 A100 40 0 0 0 250 290" fill="none" stroke="#1E4258" stroke-width="3" stroke-dasharray="2 6"/>
+        <text x="150" y="300" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="700" font-size="11" fill="#1E4258" letter-spacing="2">NOODLES &amp; HANDMADE GOODS</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-item"><strong>Housemade</strong><span>everything, always</span></div>
+    <div class="trust-item"><strong>Gluten-Free / Vegan</strong><span>upon request</span></div>
+    <div class="trust-item"><strong>Constant Evolution</strong><span>always better</span></div>
+  </div>
+</div>
+
+<svg class="wave-divider" viewBox="0 0 1200 30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path d="M0 15 Q50 0 100 15 Q150 30 200 15 Q250 0 300 15 Q350 30 400 15 Q450 0 500 15 Q550 30 600 15 Q650 0 700 15 Q750 30 800 15 Q850 0 900 15 Q950 30 1000 15 Q1050 0 1100 15 Q1150 30 1200 15"
+    fill="none" stroke="#1E4258" stroke-width="2" opacity="0.25"/>
+</svg>
+
+<section class="block" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="sparkle">✦</span>What's Cookin'<span class="sparkle">✦</span></h2>
+      <p>Choose your protein, choose your vibe. Seasonal toppings, always evolving.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card" onclick="this.classList.toggle('open')">
+        <h3>Ramen</h3>
+        <p>Shoyu, Green Goddess, Miso, Firecracker &mdash; classic bowls with a house-made edge.</p>
+        <div class="dish-list"><ul>
+          <li>Shoyu</li><li>Green Goddess</li><li>Miso</li><li>Firecracker 🌶</li>
+        </ul></div>
+        <div class="tap-hint">tap to see bowls</div>
+      </div>
+      <div class="menu-card" onclick="this.classList.toggle('open')">
+        <h3>Side Hustles</h3>
+        <p>House-made dumplings, peanut chicken satay, onigiri &mdash; the extras worth ordering.</p>
+        <div class="dish-list"><ul>
+          <li>House-Made Dumplings — $1 ea</li><li>Peanut Chicken Satay x2 — $13</li><li>Onigiri — $6</li><li>Cup of Noodles &amp; Broth — $7</li>
+        </ul></div>
+        <div class="tap-hint">tap to see extras</div>
+      </div>
+      <div class="menu-card" onclick="this.classList.toggle('open')">
+        <h3>Street Noods</h3>
+        <p>Ramen Carbonara, Tokyo Pesto, Spicy Peanut Noodles &mdash; the fusion bowls people talk about.</p>
+        <div class="dish-list"><ul>
+          <li>Ramen Carbonara — Red Sauce</li><li>Tokyo Pesto — Green Sauce</li><li>Spicy Peanut Noodles 🌶</li>
+        </ul></div>
+        <div class="tap-hint">tap to see noods</div>
+      </div>
+      <div class="menu-card" onclick="this.classList.toggle('open')">
+        <h3>The Kitchen Sink</h3>
+        <p>Everything, all at once, for the table that can't decide.</p>
+        <div class="dish-list"><ul>
+          <li>Ramen + Street Noods + Sides, combined</li><li>Feeds the whole table</li>
+        </ul></div>
+        <div class="tap-hint">tap for details</div>
+      </div>
+      <div class="menu-card" onclick="this.classList.toggle('open')">
+        <h3>Rice Bowls</h3>
+        <p>Korean BBQ, Bang Bang, Chicken Curry &mdash; comfort food, done our way.</p>
+        <div class="dish-list"><ul>
+          <li>Korean BBQ (Teriyaki)</li><li>Bang Bang 🌶</li><li>Crispy Garlic Rice</li><li>Chicken Curry</li><li>Miso Spicy 🌶</li><li>Veggie</li>
+        </ul></div>
+        <div class="tap-hint">tap to see bowls</div>
+      </div>
+      <div class="menu-card" onclick="this.classList.toggle('open')">
+        <h3>Craft Sodas &amp; Mocktails</h3>
+        <p>Fresh baked desserts and bold, beautiful drinks &mdash; zero alcohol, zero compromise.</p>
+        <div class="dish-list"><ul>
+          <li>Craft Sodas, rotating flavors</li><li>Mocktails, made fresh</li><li>Fresh Baked Desserts</li>
+        </ul></div>
+        <div class="tap-hint">tap to see drinks</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave-divider" viewBox="0 0 1200 30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path d="M0 15 Q50 30 100 15 Q150 0 200 15 Q250 30 300 15 Q350 0 400 15 Q450 30 500 15 Q550 0 600 15 Q650 30 700 15 Q750 0 800 15 Q850 30 900 15 Q950 0 1000 15 Q1050 30 1100 15 Q1150 0 1200 15"
+    fill="none" stroke="#1E4258" stroke-width="2" opacity="0.25"/>
+</svg>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="sparkle">✦</span>The Vibe In Photos</h2>
+      <p>Real photos of the food, the space, and the crowd go here.</p>
+    </div>
+    <div class="photo-grid">
+      <div class="photo-slot"><span class="icon">📷</span><span>Your ramen bowl photo here</span></div>
+      <div class="photo-slot"><span class="icon">📷</span><span>Storefront or interior shot</span></div>
+      <div class="photo-slot"><span class="icon">📷</span><span>Behind-the-scenes / crowd shot</span></div>
+    </div>
+  </div>
+</section>
+
+<svg class="wave-divider" viewBox="0 0 1200 30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path d="M0 15 Q50 30 100 15 Q150 0 200 15 Q250 30 300 15 Q350 0 400 15 Q450 30 500 15 Q550 0 600 15 Q650 30 700 15 Q750 0 800 15 Q850 30 900 15 Q950 0 1000 15 Q1050 30 1100 15 Q1150 0 1200 15"
+    fill="none" stroke="#1E4258" stroke-width="2" opacity="0.25"/>
+</svg>
+
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="about-block">
+      <h2><span class="sparkle">✦</span>Flavor, Creativity, Community.</h2>
+      <p>Nada Bar Noodle House brings together authentic ramen and fun, modern fusion noodles made with care and bold flavor. Our kitchen serves hand-rolled dumplings, handcrafted desserts, and house-made soda &mdash; all rooted in fresh, local ingredients.</p>
+      <p>Most dishes can be made gluten-free or vegan upon request. Seasonal toppings. Constant evolution. Always better. Pull up, try something new, and taste the glow-up.</p>
+    </div>
+  </div>
+</section>
+
+<svg class="wave-divider" viewBox="0 0 1200 30" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <path d="M0 15 Q50 0 100 15 Q150 30 200 15 Q250 0 300 15 Q350 30 400 15 Q450 0 500 15 Q550 30 600 15 Q650 0 700 15 Q750 30 800 15 Q850 0 900 15 Q950 30 1000 15 Q1050 0 1100 15 Q1150 30 1200 15"
+    fill="none" stroke="#1E4258" stroke-width="2" opacity="0.25"/>
+</svg>
+
+<section class="block" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <h2><span class="sparkle">✦</span>Grants Pass Is Obsessed<span class="sparkle">✦</span></h2>
+    </div>
+    <div class="review-strip">
+      <div class="review-card">
+        <div class="quote-mark">"</div>
+        <p>Amazing ramen with flavorful broth, smoked pork, and delicious noodles &mdash; a definite fan and repeat customer after the first visit.</p>
+        <div class="who">— DOORDASH REVIEWER</div>
+      </div>
+      <div class="review-card">
+        <div class="quote-mark">"</div>
+        <p>A small, cozy space with dumplings grilled fresh right in front of you, plus spicy peanut noodles that hit every time.</p>
+        <div class="who">— LOCAL REGULAR</div>
+      </div>
+      <div class="review-card">
+        <div class="quote-mark">"</div>
+        <p>Even backed up on a busy night, the kitchen stayed steady and the ramen never disappointed.</p>
+        <div class="who">— WEEKEND VISITOR</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Make Tonight A Noodle Night.</h2>
+      <p>Hot broth, fresh noodles, good music, and a room full of people who came hungry and left happy. 113 SW H St, Downtown Grants Pass &middot; Open daily except Sunday</p>
+      <a href="tel:5412262642" class="btn-primary">CALL (541) 226-2642</a>
+    </div>
+  </div>
+</section>
+
+<footer>Nada Bar Noodle House &middot; Grants Pass, OR</footer>
+
+</body>
+</html>

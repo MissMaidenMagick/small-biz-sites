@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heavenly Sweets Bakery &mdash; Grants Pass, OR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Pacifico&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --pink: #E64FA0;
+    --blue: #4FA8C4;
+    --cream: #FFFBF3;
+    --mauve: #A9808F;
+    --ink: #3A2E30;
+    --paper: #FDF8F1;
+    --card: #FFFFFF;
+    --line: #EFE4E8;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Quicksand', sans-serif;
+    line-height: 1.65;
+  }
+  h1, h2, h3 { font-family: 'Baloo 2', sans-serif; font-weight: 700; color: var(--ink); }
+  .script { font-family: 'Pacifico', cursive; color: var(--blue); }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+  .disclaimer { background: #F6DDE3; color: var(--ink); text-align: center; padding: 8px 16px; font-size: 0.8rem; font-weight: 600; }
+
+  header { padding: 24px 0; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+  .logo { font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 1.2rem; }
+  nav { display: flex; gap: 28px; font-weight: 600; font-size: 0.9rem; }
+  nav a:hover { color: var(--pink); }
+  .btn-call {
+    background: var(--pink); color: var(--cream); padding: 10px 20px; border-radius: 999px;
+    font-weight: 700; font-size: 0.9rem;
+  }
+
+  /* HERO — centered/stacked, deliberately different from the side-by-side pattern */
+  .hero { padding: 50px 0 0; text-align: center; }
+  .badge-seal { display: flex; justify-content: center; margin-bottom: 10px; }
+  .badge-svg { width: 180px; }
+  .eyebrow { font-size: 0.9rem; font-weight: 700; letter-spacing: 0.04em; color: var(--mauve); display: block; margin-bottom: 12px; text-transform: uppercase; }
+  .hero h1 { font-size: 2.6rem; margin: 0 auto 18px; max-width: 16ch; }
+  .hero p.lede { font-size: 1.05rem; color: #5c4a4f; max-width: 50ch; margin: 0 auto 30px; }
+  .hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; justify-content: center; margin-bottom: 46px; }
+  .btn-primary {
+    background: var(--pink); color: var(--cream); padding: 15px 30px; border-radius: 999px;
+    font-family: 'Baloo 2', sans-serif; font-weight: 700; font-size: 0.95rem;
+  }
+  .btn-primary:hover { background: #d13c8e; }
+  .btn-secondary { font-weight: 700; border-bottom: 3px solid var(--ink); padding-bottom: 2px; }
+
+  /* MENU TICKER — the structural signature swap for this hero */
+  .menu-ticker {
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    padding: 18px 0; overflow: hidden; white-space: nowrap; position: relative;
+  }
+  .menu-ticker-track {
+    display: inline-flex; gap: 40px; animation: ticker 28s linear infinite;
+    font-family: 'Baloo 2', sans-serif; font-size: 1.1rem; color: var(--mauve);
+  }
+  .menu-ticker-track span::after { content: "•"; margin-left: 40px; color: var(--blue); }
+  @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* TRUST STRIP */
+  .trust-strip { background: var(--ink); padding: 20px 0; border-top: 4px solid var(--blue); border-bottom: 4px solid var(--blue); }
+  .trust-strip .wrap { display: flex; justify-content: center; gap: 46px; flex-wrap: wrap; }
+  .trust-item { text-align: center; color: var(--cream); }
+  .trust-item strong { display: block; font-family: 'Baloo 2', sans-serif; font-size: 1.15rem; color: #F5B4D6; }
+  .trust-item span { font-size: 0.85rem; opacity: 0.85; }
+
+  .accent-line { height: 3px; width: 50px; background: var(--blue); border-radius: 2px; margin: 0 auto 16px; }
+
+  section.block { padding: 66px 0; }
+  .section-head { margin-bottom: 40px; text-align: center; }
+  .section-head h2 { font-size: 2rem; }
+  .section-head p { color: #5c4a4f; margin-top: 8px; }
+
+  /* MENU */
+  .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .menu-card { background: var(--card); border-radius: 14px; border: 1px solid var(--line); border-top: 4px solid var(--blue); padding: 22px 24px; box-shadow: 0 10px 26px rgba(58,46,48,0.05); }
+  .menu-card h3 { font-size: 1.2rem; margin-bottom: 6px; color: var(--pink); }
+  .menu-card p { font-size: 0.92rem; color: #5c4a4f; }
+
+  /* ABOUT */
+  .about-block { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--blue); border-radius: 18px; padding: 50px 44px; box-shadow: 0 12px 30px rgba(58,46,48,0.05); }
+  .about-block h2 { font-size: 1.9rem; margin-bottom: 18px; }
+  .about-block p { color: #5c4a4f; font-size: 1.03rem; max-width: 68ch; margin-bottom: 14px; }
+
+  /* REVIEWS */
+  .review-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .review-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px 20px; box-shadow: 0 8px 20px rgba(58,46,48,0.04); }
+  .review-card .quote-mark { font-family: 'Baloo 2', sans-serif; font-size: 2.2rem; color: var(--blue); line-height: 1; }
+  .review-card p { font-size: 0.95rem; margin: 6px 0 12px; }
+  .review-card .who { font-family: 'Baloo 2', sans-serif; font-size: 0.72rem; color: var(--mauve); }
+
+  /* CONTACT */
+  .contact-box { background: var(--pink); border-radius: 18px; padding: 56px 44px; text-align: center; color: var(--cream); }
+  .contact-box h2 { color: var(--cream); font-size: 2rem; margin-bottom: 12px; }
+  .contact-box p { font-size: 1.03rem; margin-bottom: 22px; opacity: 0.95; }
+  .contact-box .btn-primary { background: var(--ink); }
+
+  footer { text-align: center; padding: 30px 0; font-family: 'Baloo 2', sans-serif; font-size: 0.8rem; color: var(--mauve); }
+
+  @media (max-width: 900px) {
+    .menu-grid, .review-strip { grid-template-columns: 1fr; }
+    nav { display: none; }
+    .hero h1 { font-size: 2rem; }
+    .badge-svg { width: 150px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer">This is a demo site built from publicly available info &mdash; content, pricing, and design shown are a starting point and fully customizable.</div>
+
+<header>
+  <div class="wrap">
+    <div class="logo">Heavenly Sweets Bakery</div>
+    <nav>
+      <a href="#menu">Menu</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+    </nav>
+    <a href="tel:5419559485" class="btn-call">(541) 955-9485</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="badge-seal">
+      <svg class="badge-svg" viewBox="0 0 300 260" xmlns="http://www.w3.org/2000/svg">
+        <path d="M40 20 Q60 5 90 20 Q120 5 150 20 Q180 5 210 20 Q240 5 260 20
+                 L260 190 Q240 205 210 190 Q180 205 150 190 Q120 205 90 190 Q60 205 40 190 Z"
+          fill="var(--cream)" stroke="var(--mauve)" stroke-width="4"/>
+        <path d="M50 28 Q70 16 90 28 Q120 16 150 28 Q180 16 210 28 Q230 16 250 28"
+          fill="none" stroke="var(--mauve)" stroke-width="1.5" stroke-dasharray="3 5" opacity="0.6"/>
+        <path d="M50 182 Q70 194 90 182 Q120 194 150 182 Q180 194 210 182 Q230 194 250 182"
+          fill="none" stroke="var(--mauve)" stroke-width="1.5" stroke-dasharray="3 5" opacity="0.6"/>
+        <path d="M35 55 Q150 30 265 55 L265 90 Q150 65 35 90 Z" fill="var(--pink)"/>
+        <path d="M35 55 L20 62 L35 72 Z" fill="var(--pink)"/>
+        <path d="M265 55 L280 62 L265 72 Z" fill="var(--pink)"/>
+        <text x="150" y="80" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="30" fill="var(--cream)">HEAVENLY</text>
+        <text x="150" y="122" text-anchor="middle" font-family="Pacifico, cursive" font-size="30" fill="var(--blue)">Sweets</text>
+        <text x="150" y="165" text-anchor="middle" font-family="Baloo 2, sans-serif" font-weight="800" font-size="34" fill="var(--pink)">BAKERY</text>
+      </svg>
+    </div>
+    <span class="eyebrow">Grants Pass, OR &middot; Baked Fresh Daily</span>
+    <h1>Morning buns, danishes, and a reason to get up early.</h1>
+    <p class="lede">Fresh pastries, biscuits &amp; gravy, and a full coffee bar &mdash; open early, gone by early afternoon, worth setting an alarm for.</p>
+    <div class="hero-ctas">
+      <a href="#menu" class="btn-primary">SEE WHAT WE BAKE</a>
+      <a href="#about" class="btn-secondary">Our Story →</a>
+    </div>
+  </div>
+  <div class="menu-ticker">
+    <div class="menu-ticker-track">
+      <span>Blueberry Danish</span><span>Morning Buns</span><span>Chocolate Croissants</span><span>Stuffed Bagels</span><span>Biscuits &amp; Gravy</span><span>Maple Scones</span><span>Bear Claws</span>
+      <span>Blueberry Danish</span><span>Morning Buns</span><span>Chocolate Croissants</span><span>Stuffed Bagels</span><span>Biscuits &amp; Gravy</span><span>Maple Scones</span><span>Bear Claws</span>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-item"><strong>Baked Fresh</strong><span>every single day</span></div>
+    <div class="trust-item"><strong>7am &ndash; 1pm</strong><span>early bird gets the danish</span></div>
+    <div class="trust-item"><strong>Vegan Options</strong><span>cakes &amp; cupcakes available</span></div>
+  </div>
+</div>
+
+<section class="block" id="menu">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="accent-line"></div>
+      <h2>What We're Known For</h2>
+      <p>A little of everything, all baked in-house, every morning.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-card">
+        <h3>Morning Buns &amp; Danishes</h3>
+        <p>Blueberry danish, raspberry pull-a-part, and morning buns people specifically drive into town for.</p>
+      </div>
+      <div class="menu-card">
+        <h3>Croissants &amp; Scones</h3>
+        <p>Chocolate croissants drizzled in chocolate, blueberry scones, maple walnut scones, and bear claws.</p>
+      </div>
+      <div class="menu-card">
+        <h3>Savory &amp; Breakfast</h3>
+        <p>Biscuits and gravy, stuffed bagels, jalape&ntilde;o cheese bagels, and breakfast sandwiches.</p>
+      </div>
+      <div class="menu-card">
+        <h3>Coffee Bar</h3>
+        <p>A full espresso bar, cinnamon vanilla lattes, and the incredibly good coffee this place is known for.</p>
+      </div>
+      <div class="menu-card">
+        <h3>Cakes &amp; Cupcakes</h3>
+        <p>Custom flavors on request, including vegan cakes and cupcakes that taste just as good as the originals.</p>
+      </div>
+      <div class="menu-card">
+        <h3>Day-Old Deals</h3>
+        <p>Discounted day-old pastries, because day-old here still means genuinely good.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="about-block">
+      <h2>Small Bakery, Big Mornings.</h2>
+      <p>Heavenly Sweets Bakery bakes everything fresh, every day, from scratch. Pastries, biscuits and gravy, and a full coffee bar, all made in-house in a cozy spot in downtown Grants Pass.</p>
+      <p>We sell out most days by early afternoon, so if there's something specific you're craving, getting here early is always the move. Custom flavors and specialty orders are always welcome, just ask.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="accent-line"></div>
+      <h2>Worth The Early Alarm</h2>
+    </div>
+    <div class="review-strip">
+      <div class="review-card">
+        <div class="quote-mark">"</div>
+        <p>The name says it all &mdash; pastries, muffins, donuts, scones, and cookies that satisfy every sweet tooth across the board.</p>
+        <div class="who">— TRIPADVISOR REVIEWER</div>
+      </div>
+      <div class="review-card">
+        <div class="quote-mark">"</div>
+        <p>Stuffed bagels are delicious, macaroons too, with friendly service and treats worth the walk from the farmers market.</p>
+        <div class="who">— LOCAL VISITOR</div>
+      </div>
+      <div class="review-card">
+        <div class="quote-mark">"</div>
+        <p>Competitively priced pastries, some of the best around, plus a biscuits and gravy breakfast worth the limited hours.</p>
+        <div class="who">— REPEAT CUSTOMER</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Get Here Before We Sell Out.</h2>
+      <p>200 NW 4th St, Grants Pass, OR &middot; Open 7am&ndash;1pm, Monday&ndash;Friday</p>
+      <a href="tel:5419559485" class="btn-primary">CALL (541) 955-9485</a>
+    </div>
+  </div>
+</section>
+
+<footer>Heavenly Sweets Bakery &middot; Grants Pass, OR</footer>
+
+</body>
+</html>

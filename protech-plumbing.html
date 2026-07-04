@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Protech Plumbing — Grants Pass, OR</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700;800&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A4A;
+    --slate: #3D5A73;
+    --lightblue: #9FC1D9;
+    --copper: #BD7B4F;
+    --paper: #F6F4EF;
+    --charcoal: #21252B;
+    --white: #FFFFFF;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--paper);
+    color: var(--charcoal);
+    font-family: 'Source Sans 3', sans-serif;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, .display {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--navy);
+  }
+
+  .mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--navy);
+    color: var(--white);
+    padding: 18px 0;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+  header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 0.03em;
+    color: var(--white);
+  }
+  .logo-mark {
+    width: 38px; height: 38px;
+    border-radius: 50%;
+    border: 2px solid var(--copper);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--copper);
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.85rem;
+  }
+  nav {
+    display: flex;
+    gap: 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  nav a:hover { color: var(--lightblue); }
+  .call-btn {
+    background: var(--copper);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 0.95rem;
+    white-space: nowrap;
+  }
+  .call-btn:hover { background: #a8663d; }
+
+  /* HERO */
+  .hero {
+    padding: 80px 0 60px;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .hero .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--copper);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .hero h1 {
+    font-size: 3rem;
+    line-height: 1.05;
+    margin-bottom: 20px;
+  }
+  .hero p.lede {
+    font-size: 1.15rem;
+    color: var(--slate);
+    max-width: 46ch;
+    margin-bottom: 28px;
+  }
+  .hero-ctas {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--copper);
+    color: var(--white);
+    padding: 16px 28px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+  .btn-primary:hover { background: #a8663d; }
+  .rating-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    color: var(--navy);
+  }
+  .stars { color: var(--copper); letter-spacing: 2px; }
+
+  .pipe-graphic {
+    width: 100%;
+    height: auto;
+  }
+
+  /* PIPE DIVIDER */
+  .pipe-divider {
+    width: 100%;
+    display: block;
+    padding: 6px 0;
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--navy);
+    color: var(--white);
+    padding: 22px 0;
+  }
+  .trust-bar .wrap {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+  }
+  .trust-item {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+  }
+  .trust-item strong {
+    display: block;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 1.6rem;
+    color: var(--lightblue);
+    text-transform: none;
+  }
+
+  /* SECTIONS */
+  section.block {
+    padding: 64px 0;
+  }
+  .section-head {
+    margin-bottom: 40px;
+  }
+  .section-head .eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--copper);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+  }
+  .section-head h2 {
+    font-size: 2.1rem;
+    margin-top: 6px;
+  }
+
+  /* SERVICES */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--lightblue);
+    border-top: 4px solid var(--copper);
+    padding: 26px 22px;
+    border-radius: 4px;
+  }
+  .service-card .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--slate);
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 10px;
+  }
+  .service-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+  }
+  .service-card p {
+    font-size: 0.95rem;
+    color: var(--charcoal);
+  }
+
+  /* ABOUT */
+  .about {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .about p {
+    color: var(--charcoal);
+    margin-bottom: 16px;
+    font-size: 1.05rem;
+  }
+  .about-stat {
+    background: var(--navy);
+    color: var(--white);
+    padding: 28px;
+    border-radius: 4px;
+    border-left: 5px solid var(--copper);
+  }
+  .about-stat .big {
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-size: 2.6rem;
+    color: var(--lightblue);
+    line-height: 1;
+  }
+  .about-stat .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    margin-top: 8px;
+    color: var(--paper);
+  }
+
+  /* TESTIMONIALS — service ticket style */
+  .tickets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .ticket {
+    background: var(--white);
+    border: 1px dashed var(--slate);
+    border-radius: 2px;
+    padding: 24px 22px 20px;
+    position: relative;
+  }
+  .ticket::before, .ticket::after {
+    content: "";
+    position: absolute;
+    width: 16px; height: 16px;
+    background: var(--paper);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .ticket::before { left: -8px; }
+  .ticket::after { right: -8px; }
+  .ticket .stamp {
+    display: inline-block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--copper);
+    border: 1.5px solid var(--copper);
+    padding: 3px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.06em;
+    transform: rotate(-3deg);
+    margin-bottom: 14px;
+  }
+  .ticket p.quote {
+    font-size: 0.98rem;
+    color: var(--charcoal);
+    margin-bottom: 14px;
+  }
+  .ticket .who {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--slate);
+    border-top: 1px dashed var(--lightblue);
+    padding-top: 10px;
+  }
+
+  /* SERVICE AREA */
+  .area-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .chip {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    background: var(--white);
+    border: 1px solid var(--lightblue);
+    color: var(--navy);
+    padding: 8px 14px;
+    border-radius: 20px;
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 48px;
+  }
+  .contact-info h3 {
+    color: var(--white);
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+  }
+  .contact-info .line {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    margin-bottom: 12px;
+    color: var(--lightblue);
+  }
+  .contact-info .line span {
+    color: var(--paper);
+    font-family: 'Source Sans 3', sans-serif;
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 2px;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  form input, form textarea {
+    padding: 14px 16px;
+    border-radius: 4px;
+    border: none;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 0.95rem;
+  }
+  form textarea { resize: vertical; min-height: 100px; }
+  form button {
+    background: var(--copper);
+    color: var(--white);
+    border: none;
+    padding: 14px;
+    border-radius: 4px;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  form button:hover { background: #a8663d; }
+
+  footer {
+    background: var(--charcoal);
+    color: var(--paper);
+    text-align: center;
+    padding: 24px 0;
+    font-size: 0.85rem;
+  }
+
+  @media (max-width: 860px) {
+    .hero, .about, .contact-grid { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: repeat(2, 1fr); }
+    .tickets { grid-template-columns: 1fr; }
+    nav { display: none; }
+    .hero h1 { font-size: 2.2rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">
+      <div class="logo-mark">PP</div>
+      Protech Plumbing
+    </div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:5414768589" class="call-btn">(541) 476-8589</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap" style="display:contents;">
+    <div>
+      <span class="eyebrow">GRANTS PASS, OR · LICENSED & INSURED</span>
+      <h1>The Plumber Grants Pass Calls First</h1>
+      <p class="lede">Honest, dependable plumbing from a small local crew that shows up, fixes it right, and doesn't disappear after the job's done.</p>
+      <div class="hero-ctas">
+        <a href="tel:5414768589" class="btn-primary">CALL (541) 476-8589</a>
+        <div class="rating-chip">
+          <span class="stars">★★★★★</span>
+          <span>5.0 — 10 reviews</span>
+        </div>
+      </div>
+    </div>
+    <div>
+      <svg class="pipe-graphic" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="400" height="300" fill="none"/>
+        <path d="M40 260 L40 160 L140 160 L140 60 L260 60 L260 130 L360 130" stroke="#9FC1D9" stroke-width="10" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="40" cy="160" r="9" fill="#BD7B4F"/>
+        <circle cx="140" cy="160" r="9" fill="#BD7B4F"/>
+        <circle cx="140" cy="60" r="9" fill="#BD7B4F"/>
+        <circle cx="260" cy="60" r="9" fill="#BD7B4F"/>
+        <circle cx="260" cy="130" r="9" fill="#BD7B4F"/>
+        <circle cx="40" cy="260" r="7" fill="#1B2A4A"/>
+        <circle cx="360" cy="130" r="7" fill="#1B2A4A"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="wrap">
+    <div class="trust-item"><strong>5.0★</strong>Google Rating</div>
+    <div class="trust-item"><strong>24/7</strong>Emergency Calls</div>
+    <div class="trust-item"><strong>Family</strong>Owned & Operated</div>
+    <div class="trust-item"><strong>Same-Day</strong>Response, Most Jobs</div>
+  </div>
+</div>
+
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">WHAT WE DO</span>
+      <h2>Plumbing, Handled Right</h2>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <span class="tag">01 — GENERAL</span>
+        <h3>General Plumbing</h3>
+        <p>Fixture installs, faucet and toilet repair, everyday plumbing done cleanly and correctly.</p>
+      </div>
+      <div class="service-card">
+        <span class="tag">02 — URGENT</span>
+        <h3>Leak Repair</h3>
+        <p>Fast diagnosis and same-day fixes for leaks before they turn into real damage.</p>
+      </div>
+      <div class="service-card">
+        <span class="tag">03 — BIG JOBS</span>
+        <h3>Re-Piping</h3>
+        <p>Full home re-piping for older properties — done with care, minimal disruption.</p>
+      </div>
+      <div class="service-card">
+        <span class="tag">04 — 24/7</span>
+        <h3>Emergency Calls</h3>
+        <p>Middle-of-the-night burst pipe? We answer, and we show up.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<svg class="pipe-divider" viewBox="0 0 1100 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <line x1="0" y1="12" x2="1100" y2="12" stroke="#9FC1D9" stroke-width="3" stroke-dasharray="1 14" stroke-linecap="round"/>
+</svg>
+
+<section class="block" id="about">
+  <div class="wrap about">
+    <div>
+      <span class="eyebrow" style="font-family:'JetBrains Mono',monospace;color:var(--copper);font-weight:700;font-size:0.85rem;letter-spacing:0.08em;">OUR STORY</span>
+      <h2 style="margin: 8px 0 20px;">Small Crew. No Shortcuts.</h2>
+      <p>Protech Plumbing is a small, family-run outfit — no call centers, no subcontractors you've never met. When you call, you're talking to the person who'll actually be at your door.</p>
+      <p>Customers describe a crew that stays calm under pressure, explains what's actually wrong before fixing it, and does the job with the kind of care you'd want in your own home — because it's the same care we bring to ours.</p>
+    </div>
+    <div class="about-stat">
+      <div class="big">100%</div>
+      <div class="label">5-STAR REVIEWS</div>
+    </div>
+  </div>
+</section>
+
+<svg class="pipe-divider" viewBox="0 0 1100 24" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+  <line x1="0" y1="12" x2="1100" y2="12" stroke="#9FC1D9" stroke-width="3" stroke-dasharray="1 14" stroke-linecap="round"/>
+</svg>
+
+<section class="block" id="reviews">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">FROM THE NEIGHBORHOOD</span>
+      <h2>What Grants Pass Says</h2>
+    </div>
+    <div class="tickets">
+      <div class="ticket">
+        <span class="stamp">VERIFIED CUSTOMER</span>
+        <p class="quote">Woke up to a stressful leak — Dan came out quickly, found the source right away, and had it fixed the same day.</p>
+        <div class="who">— Grants Pass homeowner</div>
+      </div>
+      <div class="ticket">
+        <span class="stamp">VERIFIED CUSTOMER</span>
+        <p class="quote">Dan and his crew re-plumbed our entire 1960s home and redid the drainage lines underneath — honest, hardworking, and a group you can trust.</p>
+        <div class="who">— Long-time customer</div>
+      </div>
+      <div class="ticket">
+        <span class="stamp">VERIFIED CUSTOMER</span>
+        <p class="quote">A man of his word. He's busy because he's worth being patient for — every project has been handled with total integrity.</p>
+        <div class="who">— Repeat client</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">SERVICE AREA</span>
+      <h2>Grants Pass & Surrounding</h2>
+    </div>
+    <div class="area-chips">
+      <span class="chip">Grants Pass</span>
+      <span class="chip">Merlin</span>
+      <span class="chip">Williams</span>
+      <span class="chip">Selma</span>
+      <span class="chip">Wilderville</span>
+      <span class="chip">Murphy</span>
+    </div>
+  </div>
+</section>
+
+<section class="block contact-section" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-info">
+      <h3>Get In Touch</h3>
+      <div class="line"><span>CALL</span>(541) 476-8589</div>
+      <div class="line"><span>EMAIL</span>hello.smallbizsites@gmail.com</div>
+      <div class="line"><span>SERVICE AREA</span>Grants Pass, OR & surrounding</div>
+    </div>
+    <form onsubmit="event.preventDefault(); alert('Thanks — we\'ll be in touch shortly.');">
+      <input type="text" placeholder="Your Name" required>
+      <input type="tel" placeholder="Phone Number" required>
+      <textarea placeholder="What's going on?" required></textarea>
+      <button type="submit">Send Request</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  Protech Plumbing · Grants Pass, OR · Licensed & Insured
+</footer>
+
+</body>
+</html>

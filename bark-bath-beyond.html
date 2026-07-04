@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bark, Bath &amp; Beyond &mdash; Dog Grooming Salon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #2B2530;
+    --paper: #FBFAF7;
+    --card: #FFFFFF;
+    --blush: #F6DDE3;
+    --mint: #DCEEE1;
+    --sky: #DCE7F2;
+    --lavender: #E6DEF2;
+    --butter: #F5EAC7;
+    --line: #EAE6E0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Manrope', sans-serif;
+    line-height: 1.65;
+  }
+  h1, h2, h3 { font-family: 'Playfair Display', serif; font-weight: 600; color: var(--ink); letter-spacing: -0.01em; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 28px; }
+
+  .disclaimer { background: var(--butter); color: var(--ink); text-align: center; padding: 8px 16px; font-size: 0.8rem; font-weight: 600; }
+
+  header { padding: 26px 0; }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+  .logo { font-family: 'Playfair Display', serif; font-weight: 600; font-size: 1.3rem; }
+  nav { display: flex; gap: 30px; font-weight: 500; font-size: 0.92rem; }
+  nav a:hover { opacity: 0.6; }
+  .btn-outline {
+    border: 1px solid var(--ink); padding: 10px 22px; border-radius: 999px;
+    font-weight: 500; font-size: 0.88rem;
+  }
+  .btn-outline:hover { background: var(--ink); color: var(--paper); }
+
+  /* HERO — single signature: soft bubble cluster, quiet everywhere else */
+  .hero { padding: 50px 0 80px; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+  .eyebrow { font-family: 'Manrope', sans-serif; font-style: italic; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #9a8fa5; display: block; margin-bottom: 14px; }
+  .accent-line { height: 3px; width: 60px; border-radius: 2px; background: linear-gradient(90deg, var(--blush), var(--sky), var(--lavender)); margin-bottom: 18px; }
+  .hero h1 { font-size: 2.8rem; margin-bottom: 20px; }
+  .hero p.lede { font-size: 1.08rem; color: #55495f; max-width: 46ch; margin-bottom: 30px; }
+  .hero-ctas { display: flex; gap: 18px; align-items: center; flex-wrap: wrap; }
+  .btn-primary {
+    background: var(--ink); color: var(--paper); padding: 15px 30px; border-radius: 999px;
+    font-weight: 600; font-size: 0.95rem;
+  }
+  .btn-primary:hover { background: #453c4d; }
+  .btn-secondary { padding: 15px 4px; font-weight: 600; font-size: 0.95rem; border-bottom: 1px solid var(--ink); }
+
+  .wreath-scene { display: flex; justify-content: center; align-items: center; height: 340px; }
+
+  /* TRUST STRIP */
+  .trust-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 28px 0; }
+  .trust-strip .wrap { display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
+  .trust-item { text-align: center; }
+  .trust-item strong { display: block; font-family: 'Playfair Display', serif; font-size: 1.4rem; }
+  .trust-item span { font-size: 0.85rem; color: #7a7085; }
+
+  section.block { padding: 84px 0; }
+  .section-head { margin-bottom: 44px; max-width: 60ch; }
+  .section-head h2 { font-size: 2rem; }
+  .section-head p { color: #55495f; margin-top: 12px; font-size: 1.02rem; }
+
+  /* PRICING TABLE — clean, no dashed craft borders */
+  .paw-icon { width: 18px; height: 18px; display: inline-block; vertical-align: middle; margin: 0 8px; opacity: 0.55; }
+  .rainbow-top { position: relative; overflow: hidden; }
+  .rainbow-top::before {
+    content: ""; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+    background: linear-gradient(90deg, var(--blush), var(--sky), var(--lavender), var(--mint), var(--butter));
+  }
+  .price-table-wrap { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 34px; overflow-x: auto; box-shadow: 0 12px 30px rgba(43,37,48,0.06); }
+  table.price-table { width: 100%; border-collapse: collapse; min-width: 640px; }
+  table.price-table th {
+    font-family: 'Playfair Display', serif; font-weight: 600; font-size: 0.85rem;
+    padding: 10px 8px; text-align: center; border-bottom: 2px solid var(--ink);
+  }
+  table.price-table th:first-child { text-align: left; }
+  table.price-table td { padding: 12px 8px; text-align: center; font-size: 0.92rem; border-bottom: 1px solid var(--line); }
+  table.price-table td:first-child { text-align: left; }
+  table.price-table .svc-name { font-weight: 600; }
+  table.price-table .svc-desc { font-size: 0.8rem; color: #7a7085; font-weight: 400; display: block; margin-top: 2px; }
+  .price-note { font-size: 0.82rem; color: #7a7085; margin-top: 18px; }
+  .addon-strip { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
+  .addon-chip { background: var(--paper); border: 1px solid var(--line); border-radius: 999px; padding: 8px 16px; font-size: 0.85rem; font-weight: 500; }
+
+  /* BEFORE/AFTER — quiet placeholders, no craft-dash */
+  .ba-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .ba-pair { display: flex; gap: 8px; }
+  .ba-slot {
+    flex: 1; aspect-ratio: 3/4; border-radius: 12px; border: 1px solid var(--line);
+    background: var(--card); box-shadow: 0 8px 20px rgba(43,37,48,0.05);
+    display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 6px;
+    color: #a89dae; text-align: center; padding: 10px; font-size: 0.78rem; font-weight: 500;
+  }
+  .ba-label { text-align: center; font-family: 'Playfair Display', serif; font-size: 0.95rem; margin-top: 10px; }
+
+  /* ABOUT */
+  .about-block { background: var(--lavender); border-radius: 12px; padding: 54px 46px; box-shadow: 0 14px 34px rgba(43,37,48,0.06); }
+  .about-block h2 { font-size: 2rem; margin-bottom: 20px; }
+  .about-block p { color: #453d52; font-size: 1.05rem; max-width: 68ch; margin-bottom: 14px; }
+
+  /* CONTACT */
+  .contact-box { background: var(--blush); border-radius: 12px; padding: 60px 46px; text-align: center; box-shadow: 0 14px 34px rgba(43,37,48,0.06); }
+  .contact-box h2 { font-size: 2.1rem; margin-bottom: 14px; }
+  .contact-box p { font-size: 1.03rem; margin-bottom: 24px; color: #5a3d47; }
+
+  footer { text-align: center; padding: 34px 0; font-size: 0.85rem; color: #a89dae; }
+
+  @media (max-width: 900px) {
+    .hero-grid { grid-template-columns: 1fr; }
+    .wreath-scene { height: 240px; }
+    .ba-grid { grid-template-columns: 1fr; }
+    nav { display: none; }
+    .hero h1 { font-size: 2.1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="disclaimer" style="background:#B8E8DD;">This is a demo site built from publicly available info &mdash; content, pricing, and design shown are a starting point and fully customizable.</div>
+
+<header>
+  <div class="wrap">
+    <div class="logo">Bark, Bath &amp; Beyond</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a href="tel:5414761718" class="btn-outline">(541) 476-1718</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Dog Grooming Salon</span>
+      <h1>Grooming your dog will actually love coming back for.</h1>
+      <p class="lede">Full grooms, spa upgrades, and gentle care for every size, from tiny toy breeds to giants. Booked in advance, worth the wait.</p>
+      <div class="hero-ctas">
+        <a href="#services" class="btn-primary">SEE THE SERVICE MENU</a>
+        <a href="#contact" class="btn-secondary">Book a Groom →</a>
+      </div>
+    </div>
+    <div class="wreath-scene">
+      <svg viewBox="0 0 360 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:100%;">
+        <defs>
+          <g id="bloom">
+            <ellipse cx="0" cy="-11" rx="7" ry="10" />
+            <ellipse cx="0" cy="11" rx="7" ry="10" />
+            <ellipse cx="-11" cy="0" rx="10" ry="7" />
+            <ellipse cx="11" cy="0" rx="10" ry="7" />
+            <circle cx="0" cy="0" r="5" fill="#F0DFA0" stroke="none"/>
+          </g>
+          <path id="leaf" d="M0 0 Q8 -10 0 -22 Q-8 -10 0 0 Z"/>
+        </defs>
+
+        <!-- wreath ring made of alternating blooms + leaves -->
+        <g stroke="none">
+          <g fill="#F6DDE3" transform="translate(180,40)"><use href="#bloom"/></g>
+          <g fill="#DCE7F2" transform="translate(255,60)"><use href="#bloom"/></g>
+          <g fill="#E6DEF2" transform="translate(310,115)"><use href="#bloom"/></g>
+          <g fill="#F6DDE3" transform="translate(320,195)"><use href="#bloom"/></g>
+          <g fill="#DCE7F2" transform="translate(295,265)"><use href="#bloom"/></g>
+          <g fill="#E6DEF2" transform="translate(235,315)"><use href="#bloom"/></g>
+          <g fill="#F6DDE3" transform="translate(125,315)"><use href="#bloom"/></g>
+          <g fill="#DCE7F2" transform="translate(65,265)"><use href="#bloom"/></g>
+          <g fill="#E6DEF2" transform="translate(40,195)"><use href="#bloom"/></g>
+          <g fill="#F6DDE3" transform="translate(50,115)"><use href="#bloom"/></g>
+          <g fill="#DCE7F2" transform="translate(105,60)"><use href="#bloom"/></g>
+
+          <g fill="#B7CFA6" transform="translate(215,48) rotate(35)"><use href="#leaf"/></g>
+          <g fill="#B7CFA6" transform="translate(280,90) rotate(70)"><use href="#leaf"/></g>
+          <g fill="#B7CFA6" transform="translate(318,155) rotate(100)"><use href="#leaf"/></g>
+          <g fill="#B7CFA6" transform="translate(315,230) rotate(130)"><use href="#leaf"/></g>
+          <g fill="#B7CFA6" transform="translate(268,290) rotate(160)"><use href="#leaf"/></g>
+          <g fill="#B7CFA6" transform="translate(180,325) rotate(180)"><use href="#leaf"/></g>
+          <g fill="#B7CFA6" transform="translate(92,290) rotate(200)"><use href="#leaf"/></g>
+          <g fill="#B7CFA6" transform="translate(45,230) rotate(230)"><use href="#leaf"/></g>
+          <g fill="#B7CFA6" transform="translate(42,155) rotate(260)"><use href="#leaf"/></g>
+          <g fill="#B7CFA6" transform="translate(80,90) rotate(290)"><use href="#leaf"/></g>
+          <g fill="#B7CFA6" transform="translate(145,48) rotate(320)"><use href="#leaf"/></g>
+        </g>
+
+        <!-- center paw, done simply and elegantly -->
+        <g fill="#2B2530" transform="translate(180,190)">
+          <ellipse cx="0" cy="26" rx="34" ry="26"/>
+          <ellipse cx="-38" cy="-24" rx="15" ry="19"/>
+          <ellipse cx="-13" cy="-46" rx="15" ry="19"/>
+          <ellipse cx="14" cy="-46" rx="15" ry="19"/>
+          <ellipse cx="39" cy="-24" rx="15" ry="19"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<div class="trust-strip">
+  <div class="wrap">
+    <div class="trust-item"><strong>All Sizes</strong><span>X-small to giant breeds</span></div>
+    <div class="trust-item"><strong>Booked in Advance</strong><span>quality over rush</span></div>
+    <div class="trust-item"><strong>Loved by Locals</strong><span>your dog's new favorite spot</span></div>
+  </div>
+</div>
+
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="accent-line"></div>
+      <h2><svg class="paw-icon" viewBox="0 0 100 100"><g fill="currentColor"><ellipse cx="50" cy="65" rx="22" ry="18"/><ellipse cx="25" cy="35" rx="9" ry="12"/><ellipse cx="48" cy="22" rx="9" ry="12"/><ellipse cx="72" cy="35" rx="9" ry="12"/></g></svg>Service Menu<svg class="paw-icon" viewBox="0 0 100 100"><g fill="currentColor"><ellipse cx="50" cy="65" rx="22" ry="18"/><ellipse cx="25" cy="35" rx="9" ry="12"/><ellipse cx="48" cy="22" rx="9" ry="12"/><ellipse cx="72" cy="35" rx="9" ry="12"/></g></svg></h2>
+      <p>Pricing by weight class &mdash; every groom starts with a full bath &amp; brush.</p>
+    </div>
+    <div class="price-table-wrap rainbow-top">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th>Service</th>
+            <th>X-Small<br>0-15 lbs</th>
+            <th>Small<br>16-30 lbs</th>
+            <th>Medium<br>31-50 lbs</th>
+            <th>Large<br>51-80 lbs</th>
+            <th>X-Large<br>81-120 lbs</th>
+            <th>Giant<br>&gt;120 lbs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="svc-name">Bath &amp; Brush*<span class="svc-desc">Premium shampoo &amp; conditioner, blow dry, brush out, nails &amp; ears</span></td>
+            <td>$35</td><td>$45</td><td>$55</td><td>$65</td><td>$85</td><td>$125</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Face, Feet &amp; Fanny<span class="svc-desc">Bath &amp; Brush plus a tidy up to face, feet, and sanitary area</span></td>
+            <td>$45</td><td>$55</td><td>$65</td><td>$75</td><td>$95</td><td>$135</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Outline Trim<span class="svc-desc">Light tidy-up of feet, leg feathering, chest &amp; stomach, no full haircut</span></td>
+            <td>$55</td><td>$65</td><td>$75</td><td>$85</td><td>$105</td><td>$145</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Full Groom<span class="svc-desc">Bath &amp; Brush with a full finished cut</span></td>
+            <td>$65</td><td>$75</td><td>$85</td><td>$95</td><td>$115</td><td>$155</td>
+          </tr>
+          <tr>
+            <td class="svc-name">Poodle / Doodle Full Groom<span class="svc-desc">Hand-scissoring, detailed face &amp; leg work, shaping for curly or high-density coats</span></td>
+            <td>$75</td><td>$85</td><td>$95</td><td>$105</td><td>$125</td><td>$165</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="price-note">*All services + $10 for double-coated dogs. Therapy baths booked in advance, in 6-week blocks. Pricing may vary based on coat condition, behavior, and time required.</p>
+      <div class="addon-strip">
+        <span class="addon-chip">Nail Trim: &lt;25 lbs $12 / &gt;25 lbs $15</span>
+        <span class="addon-chip">Anal Glands: $5</span>
+        <span class="addon-chip">Flea Bath: +$15</span>
+        <span class="addon-chip">De-Shed Bath: +$20</span>
+        <span class="addon-chip">Fruit of the Groomer: +$10</span>
+        <span class="addon-chip">Mineral Red 2-Step: +$10</span>
+        <span class="addon-chip">Mineral Red 3-Step: +$15</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="accent-line"></div>
+      <h2>Before &amp; After</h2>
+      <p>Real transformation photos go here &mdash; nothing sells a groom like the glow-up.</p>
+    </div>
+    <div class="ba-grid">
+      <div>
+        <div class="ba-pair">
+          <div class="ba-slot rainbow-top">Before</div>
+          <div class="ba-slot rainbow-top">After</div>
+        </div>
+        <div class="ba-label">Full Groom</div>
+      </div>
+      <div>
+        <div class="ba-pair">
+          <div class="ba-slot rainbow-top">Before</div>
+          <div class="ba-slot rainbow-top">After</div>
+        </div>
+        <div class="ba-label">Poodle / Doodle Groom</div>
+      </div>
+      <div>
+        <div class="ba-pair">
+          <div class="ba-slot rainbow-top">Before</div>
+          <div class="ba-slot rainbow-top">After</div>
+        </div>
+        <div class="ba-label">Face, Feet &amp; Fanny</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="about-block rainbow-top">
+      <div class="accent-line"></div>
+      <h2><svg class="paw-icon" viewBox="0 0 100 100"><g fill="currentColor"><ellipse cx="50" cy="65" rx="22" ry="18"/><ellipse cx="25" cy="35" rx="9" ry="12"/><ellipse cx="48" cy="22" rx="9" ry="12"/><ellipse cx="72" cy="35" rx="9" ry="12"/></g></svg>Our Promise<svg class="paw-icon" viewBox="0 0 100 100"><g fill="currentColor"><ellipse cx="50" cy="65" rx="22" ry="18"/><ellipse cx="25" cy="35" rx="9" ry="12"/><ellipse cx="48" cy="22" rx="9" ry="12"/><ellipse cx="72" cy="35" rx="9" ry="12"/></g></svg></h2>
+      <p>We take great care of every dog that comes through our doors, from quick bath-and-brush visits to full hand-scissored grooms for curly and high-density coats. Every service starts with a full bath and brush, so your dog leaves clean, comfortable, and looking their best.</p>
+      <p>We're proud to be part of so many families' routines, and we're always working on ways to serve you even better.</p>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="contact">
+  <div class="wrap">
+    <div class="contact-box rainbow-top">
+      <h2>Book Your Dog's Next Groom</h2>
+      <p>Call or text to check availability and get on the schedule.</p>
+      <a href="tel:5414761718" class="btn-primary">CALL (541) 476-1718</a>
+    </div>
+  </div>
+</section>
+
+<footer>Bark, Bath &amp; Beyond &middot; Grants Pass, OR</footer>
+
+</body>
+</html>
