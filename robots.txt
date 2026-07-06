@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sitescovered.com/sitemap.xml
