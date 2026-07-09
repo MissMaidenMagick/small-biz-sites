@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact &amp; Location | Art Rebel Tattoo</title>
+<meta name="description" content="Visit Art Rebel Tattoo at 215 NE Hillcrest Dr, Grants Pass, Oregon. Walk-ins welcome; artists keep their own schedules. Reach the shop directly or contact an artist to book.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230a0a0a'/%3E%3Ctext x='50' y='69' font-size='58' text-anchor='middle'%3E%F0%9F%98%88%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Alex+Brush&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">
+      <span class="logo-emoji" aria-hidden="true">😈</span>
+      <span><span class="script-word">Art Rebel</span><small class="wordmark-sub">Tattoo</small></span>
+    </a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="artists.html">Artists</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="artists.html">Get Tattooed</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="eyebrow">Find Us</span>
+    <h1>Visit the Shop</h1>
+    <p>Walk-ins are welcome, but since every artist keeps their own schedule, booking ahead through their page is the surest way to get in the chair.</p>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>Shop Info</h3>
+        <ul class="contact-list">
+          <li><span class="label">Address</span><span>215 NE Hillcrest Dr<br>Grants Pass, OR 97526</span></li>
+          <li><span class="label">Email</span><span><a href="mailto:artrebeltattoo@gmail.com">artrebeltattoo@gmail.com</a></span></li>
+          <li><span class="label">Instagram</span><span><a href="https://www.instagram.com/artrebeltattoo/" target="_blank" rel="noopener">@artrebeltattoo</a></span></li>
+          <li><span class="label">Facebook</span><span><a href="https://www.facebook.com/artrebeltattoo/" target="_blank" rel="noopener">Art Rebel Tattoo</a></span></li>
+        </ul>
+        <h3 class="mt-40" style="margin-top:40px;">Shop Hours</h3>
+        <table class="hours-table">
+          <tr><td>Monday</td><td>By Appointment</td></tr>
+          <tr><td>Tuesday &ndash; Saturday</td><td>11am &ndash; 7pm</td></tr>
+          <tr><td>Sunday</td><td>Closed</td></tr>
+        </table>
+        <p class="form-note">Individual artists may keep different hours &mdash; check their page for specifics, or ask when you reach out.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; height:100%;">
+        <div class="img-placeholder" style="flex:1; min-height:0; border-radius:2px; box-shadow: var(--shadow);">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="40" height="32" rx="3"/><circle cx="16" cy="18" r="3.5"/><path d="M6 34 L18 24 L26 30 L34 20 L42 30"/></svg>
+          <span>Shop Front Photo Here</span>
+        </div>
+        <a class="btn btn-outline btn-block mt-40" href="https://www.google.com/maps/search/?api=1&query=215+NE+Hillcrest+Dr+Grants+Pass+OR+97526" target="_blank" rel="noopener">Get Directions</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--ink-2);">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Not Sure Where to Start?</span>
+      <h2>Send Us a General Inquiry</h2>
+      <p>Tell us what you're thinking and we'll help match you with the right artist &mdash; or if you already know who you want, book straight from their page instead.</p>
+    </div>
+    <div style="max-width:720px; margin:0 auto;">
+      <div class="form-success" id="contactSuccess">Thanks &mdash; your email app should be opening now with your message pre-filled. If it doesn't, email us directly at <a href="mailto:artrebeltattoo@gmail.com">artrebeltattoo@gmail.com</a>.</div>
+      <form class="booking-panel booking-form" data-artist="General Inquiry" data-to="artrebeltattoo@gmail.com">
+        <div class="form-row">
+          <div class="field">
+            <label for="c-name">Name</label>
+            <input type="text" id="c-name" name="name" required>
+          </div>
+          <div class="field">
+            <label for="c-email">Email</label>
+            <input type="email" id="c-email" name="email" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="c-phone">Phone (optional)</label>
+          <input type="tel" id="c-phone" name="phone">
+        </div>
+        <div class="field">
+          <label for="c-idea">What are you looking to get done?</label>
+          <textarea id="c-idea" name="idea" required placeholder="Style, subject matter, rough size, placement — whatever you've got."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Send Inquiry</button>
+        <p class="form-note">This opens your email app with the message pre-filled and addressed to the shop.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="cta-band">
+  <div class="container">
+    <span class="eyebrow">Already Know Your Style?</span>
+    <h2>Book Directly With Your Artist</h2>
+    <p>Skip the middle step and go straight to the person you want tattooing you.</p>
+    <div class="cta-actions">
+      <a class="btn btn-dark" href="artists.html">See the Roster</a>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">
+          <span class="logo-emoji" aria-hidden="true">😈</span>
+          <span><span class="script-word">Art Rebel</span><small class="wordmark-sub">Tattoo</small></span>
+        </div>
+        <p style="color:rgba(245,242,234,0.5); font-size:0.9rem;">Independent Artists. Independent Art. A collective tattoo studio in Grants Pass, Oregon.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="artists.html">Artists</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li>215 NE Hillcrest Dr</li>
+          <li>Grants Pass, OR 97526</li>
+          <li><a href="mailto:artrebeltattoo@gmail.com">artrebeltattoo@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <ul>
+          <li><a href="https://www.instagram.com/artrebeltattoo/" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://www.facebook.com/artrebeltattoo/" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span data-year></span> Art Rebel Tattoo. All rights reserved.</span>
+      <span>Grants Pass, Oregon</span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
