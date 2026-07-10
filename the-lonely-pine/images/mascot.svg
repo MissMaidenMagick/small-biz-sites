@@ -1,0 +1,42 @@
+<svg viewBox="0 0 320 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cartoon egg mascot wearing sunglasses, waving">
+  <ellipse cx="160" cy="340" rx="90" ry="16" fill="#16281c" opacity="0.12"/>
+
+  <!-- back arm (waving) -->
+  <path d="M228 210 C 268 190, 288 150, 276 118" stroke="#241d15" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <circle cx="276" cy="112" r="16" fill="#faf3e4" stroke="#241d15" stroke-width="8"/>
+
+  <!-- front arm -->
+  <path d="M96 232 C 66 246, 50 268, 56 292" stroke="#241d15" stroke-width="10" fill="none" stroke-linecap="round"/>
+  <circle cx="56" cy="298" r="16" fill="#faf3e4" stroke="#241d15" stroke-width="8"/>
+
+  <!-- legs / shoes -->
+  <path d="M132 300 L 122 336" stroke="#241d15" stroke-width="10" stroke-linecap="round"/>
+  <path d="M186 300 L 196 336" stroke="#241d15" stroke-width="10" stroke-linecap="round"/>
+  <ellipse cx="112" cy="342" rx="26" ry="14" fill="#eaa93d" stroke="#241d15" stroke-width="7"/>
+  <ellipse cx="206" cy="342" rx="26" ry="14" fill="#eaa93d" stroke="#241d15" stroke-width="7"/>
+
+  <!-- egg body -->
+  <path d="M160 34 C 226 34, 254 146, 254 214 C 254 282, 212 316, 160 316 C 108 316, 66 282, 66 214 C 66 146, 94 34, 160 34 Z"
+        fill="#fffaf0" stroke="#241d15" stroke-width="9"/>
+
+  <!-- blush -->
+  <ellipse cx="112" cy="216" rx="14" ry="9" fill="#de5b3e" opacity="0.55"/>
+  <ellipse cx="208" cy="216" rx="14" ry="9" fill="#de5b3e" opacity="0.55"/>
+
+  <!-- sunglasses -->
+  <rect x="98" y="168" width="58" height="34" rx="12" fill="#241d15"/>
+  <rect x="164" y="168" width="58" height="34" rx="12" fill="#241d15"/>
+  <path d="M156 182 h8" stroke="#241d15" stroke-width="6"/>
+  <path d="M98 176 l-16 -6" stroke="#241d15" stroke-width="6" stroke-linecap="round"/>
+  <path d="M222 176 l16 -6" stroke="#241d15" stroke-width="6" stroke-linecap="round"/>
+  <rect x="106" y="176" width="16" height="10" rx="3" fill="#faf3e4" opacity="0.5"/>
+  <rect x="172" y="176" width="16" height="10" rx="3" fill="#faf3e4" opacity="0.5"/>
+
+  <!-- smile -->
+  <path d="M126 232 C 142 248, 178 248, 194 232" stroke="#241d15" stroke-width="8" fill="none" stroke-linecap="round"/>
+
+  <!-- steam swirls -->
+  <path d="M132 8 C 122 22, 142 26, 132 40" stroke="#3d6249" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M160 2 C 150 16, 170 20, 160 34" stroke="#3d6249" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M188 8 C 178 22, 198 26, 188 40" stroke="#3d6249" stroke-width="6" fill="none" stroke-linecap="round"/>
+</svg>

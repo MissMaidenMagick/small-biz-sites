@@ -1,0 +1,6 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wifi icon">
+  <path d="M8 24c14-14 34-14 48 0" stroke="#241d15" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M17 34c9-9 21-9 30 0" stroke="#241d15" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M26 44c4-4 8-4 12 0" stroke="#241d15" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <circle cx="32" cy="52" r="3.5" fill="#241d15"/>
+</svg>

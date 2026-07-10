@@ -1,0 +1,5 @@
+<svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Pine tree logo mark">
+  <circle cx="32" cy="32" r="30" fill="#23422f" stroke="#241d15" stroke-width="3"/>
+  <path d="M32 10 L44 30 H38 L48 44 H16 L26 30 H20 Z" fill="#faf3e4"/>
+  <rect x="29" y="44" width="6" height="10" fill="#faf3e4"/>
+</svg>
