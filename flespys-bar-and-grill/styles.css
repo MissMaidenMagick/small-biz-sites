@@ -12,6 +12,7 @@
   --purple: #b989ff;
   --wood: #7a4a2c;
   --green-dark: #324a34;
+  --notice-height: 38px;
 }
 
 * {
@@ -46,10 +47,43 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
+.concept-banner {
+  position: fixed;
+  z-index: 70;
+  inset: 0 0 auto;
+  min-height: var(--notice-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 7px 4vw;
+  background: var(--amber);
+  color: var(--black);
+  border-bottom: 1px solid rgba(8, 8, 8, 0.82);
+  box-shadow: 0 0 18px rgba(255, 193, 74, 0.34);
+  font-size: 0.66rem;
+  font-weight: 850;
+  letter-spacing: 0.035em;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.concept-banner strong {
+  flex: 0 0 auto;
+  padding: 4px 8px;
+  background: var(--black);
+  color: var(--amber);
+  box-shadow: 0 0 10px rgba(8, 8, 8, 0.24);
+  font-size: 0.54rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
 .site-header {
   position: fixed;
   z-index: 50;
-  inset: 0 0 auto;
+  inset: var(--notice-height) 0 auto;
   height: 88px;
   display: grid;
   grid-template-columns: minmax(190px, 1fr) auto minmax(190px, 1fr);
@@ -139,7 +173,7 @@ nav a:focus-visible::after {
   overflow: hidden;
   display: flex;
   align-items: center;
-  padding: 140px 7vw 95px;
+  padding: 178px 7vw 95px;
 }
 
 .hero-image,
@@ -174,7 +208,7 @@ nav a:focus-visible::after {
 .hero-content {
   position: relative;
   z-index: 2;
-  width: min(780px, 68vw);
+  width: min(940px, 76vw);
 }
 
 .eyebrow {
@@ -230,16 +264,19 @@ nav a:focus-visible::after {
 .hero h1 {
   margin: 0;
   color: #fff7fb;
-  font-size: clamp(2rem, 4.8vw, 5.1rem);
-  font-weight: 500;
-  font-style: italic;
-  letter-spacing: -0.035em;
-  line-height: 1;
+  font-family: "Monoton", "Arial Black", sans-serif;
+  font-size: clamp(2rem, 4.35vw, 4.65rem);
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  line-height: 1.08;
+  text-transform: uppercase;
+  white-space: nowrap;
   text-shadow:
     0 0 2px white,
-    0 0 9px var(--pink),
-    0 0 24px rgba(255, 79, 163, 0.82),
-    0 0 52px rgba(185, 137, 255, 0.46);
+    0 0 8px var(--pink),
+    0 0 20px rgba(255, 79, 163, 0.92),
+    0 0 38px rgba(185, 137, 255, 0.68),
+    0 0 62px rgba(73, 200, 255, 0.28);
 }
 
 .hero-copy {
@@ -301,7 +338,7 @@ nav a:focus-visible::after {
 .hero-status {
   position: absolute;
   z-index: 2;
-  top: 116px;
+  top: calc(var(--notice-height) + 116px);
   right: 5vw;
   display: flex;
   align-items: center;
@@ -1266,7 +1303,7 @@ blockquote footer {
   }
 
   .hero-status {
-    top: 100px;
+    top: calc(var(--notice-height) + 100px);
   }
 
   .section-heading,
@@ -1350,8 +1387,24 @@ blockquote footer {
 }
 
 @media (max-width: 640px) {
+  :root {
+    --notice-height: 54px;
+  }
+
   body {
     padding-bottom: 62px;
+  }
+
+  .concept-banner {
+    gap: 7px;
+    padding: 7px 14px;
+    font-size: 0.58rem;
+    letter-spacing: 0.015em;
+  }
+
+  .concept-banner strong {
+    padding: 3px 6px;
+    font-size: 0.48rem;
   }
 
   .site-header {
@@ -1369,7 +1422,7 @@ blockquote footer {
   .hero {
     min-height: 860px;
     align-items: flex-end;
-    padding: 155px 20px 95px;
+    padding: 205px 20px 95px;
   }
 
   .hero-image {
@@ -1391,7 +1444,8 @@ blockquote footer {
   }
 
   .hero h1 {
-    font-size: clamp(2.4rem, 13vw, 4.2rem);
+    font-size: clamp(1.55rem, 7.2vw, 2rem);
+    letter-spacing: 0;
   }
 
   .hero-actions {
@@ -1401,7 +1455,7 @@ blockquote footer {
   .hero-status {
     left: 20px;
     right: auto;
-    top: 98px;
+    top: calc(var(--notice-height) + 98px);
   }
 
   .scroll-cue {
