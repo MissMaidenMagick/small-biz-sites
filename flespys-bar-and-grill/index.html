@@ -63,7 +63,7 @@
             <span class="hero-rule"></span>
             <span class="hero-sub">Bar &amp; Grill · Est. 2019</span>
           </div>
-          <h1>Cozy. Classy.<br>Fun.</h1>
+          <h1>The place<br>to be.</h1>
           <p class="hero-copy">Fish tacos at noon. Karaoke by eight. Nine taps, a full kitchen until midnight, and a covered patio ready in every season.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#happening">Plan your night</a>
@@ -104,7 +104,7 @@
             <p class="event-kicker">11 AM to midnight</p>
             <h3>Taco Days</h3>
             <p>Ground beef or pulled chicken, built one at a time. Crunchy corn tacos are $1.50. Soft flour tacos are $2.50. The hot sauce wall handles the rest.</p>
-            <a href="#taco-menu">See taco details <span aria-hidden="true">↓</span></a>
+            <a href="#food" data-menu-link="menu-tacos">See taco details <span aria-hidden="true">↓</span></a>
           </article>
           <article class="event-card accent-blue">
             <span class="event-number">MON · WED · THU · FRI</span>
@@ -113,7 +113,7 @@
             <p>Four nights every week with Epic Entertainment. Pick the song, get your name on the list, and let the room do the backup vocals.</p>
             <a href="https://www.facebook.com/flespysbarandgrill" target="_blank" rel="noreferrer">Open Flespy’s Facebook <span aria-hidden="true">↗</span></a>
           </article>
-          <article class="event-card accent-cream">
+          <article class="event-card accent-amber">
             <span class="event-number">AS ANNOUNCED</span>
             <p class="event-kicker">Weekend spotlights</p>
             <h3>DJs + Live Music</h3>
@@ -158,8 +158,17 @@
           </div>
         </div>
 
+        <div class="menu-switcher" role="tablist" aria-label="Choose a menu section">
+          <button class="menu-tab is-active" id="tab-burgers" type="button" role="tab" aria-selected="true" aria-controls="menu-burgers" data-menu-tab="menu-burgers">Burgers + Sandwiches</button>
+          <button class="menu-tab" id="tab-baskets" type="button" role="tab" aria-selected="false" aria-controls="menu-baskets" data-menu-tab="menu-baskets">Baskets + Bowls</button>
+          <button class="menu-tab" id="tab-tacos" type="button" role="tab" aria-selected="false" aria-controls="menu-tacos" data-menu-tab="menu-tacos">Tacos + Salads</button>
+          <button class="menu-tab" id="tab-apps" type="button" role="tab" aria-selected="false" aria-controls="menu-apps" data-menu-tab="menu-apps">Appetizers</button>
+          <button class="menu-tab" id="tab-wings" type="button" role="tab" aria-selected="false" aria-controls="menu-wings" data-menu-tab="menu-wings">Chicken Wings</button>
+          <button class="menu-tab" id="tab-sweets" type="button" role="tab" aria-selected="false" aria-controls="menu-sweets" data-menu-tab="menu-sweets">Something Sweet</button>
+        </div>
+
         <div class="menu-grid">
-          <section class="menu-category">
+          <section class="menu-category" id="menu-burgers" role="tabpanel" aria-labelledby="tab-burgers" data-menu-panel>
             <div class="menu-category-heading">
               <span>01</span>
               <h3>Burgers + Sandwiches</h3>
@@ -190,7 +199,7 @@
             </article>
           </section>
 
-          <section class="menu-category">
+          <section class="menu-category" id="menu-baskets" role="tabpanel" aria-labelledby="tab-baskets" data-menu-panel hidden>
             <div class="menu-category-heading">
               <span>02</span>
               <h3>Baskets + Bowls</h3>
@@ -221,7 +230,7 @@
             </article>
           </section>
 
-          <section class="menu-category" id="taco-menu">
+          <section class="menu-category" id="menu-tacos" role="tabpanel" aria-labelledby="tab-tacos" data-menu-panel hidden>
             <div class="menu-category-heading">
               <span>03</span>
               <h3>Tacos + Salads</h3>
@@ -244,7 +253,7 @@
             </article>
           </section>
 
-          <section class="menu-category">
+          <section class="menu-category" id="menu-apps" role="tabpanel" aria-labelledby="tab-apps" data-menu-panel hidden>
             <div class="menu-category-heading">
               <span>04</span>
               <h3>Appetizers</h3>
@@ -261,7 +270,7 @@
             <article class="menu-item"><div><h4>French Fries</h4><strong>$7</strong></div><p>House seasoning with ketchup or ranch. Loaded for $4.</p></article>
           </section>
 
-          <section class="menu-category menu-category-wide">
+          <section class="menu-category menu-category-wide" id="menu-wings" role="tabpanel" aria-labelledby="tab-wings" data-menu-panel hidden>
             <div class="menu-category-heading">
               <span>05</span>
               <h3>Chicken Wings</h3>
@@ -288,7 +297,7 @@
             </div>
           </section>
 
-          <section class="menu-category menu-category-wide dessert-card">
+          <section class="menu-category menu-category-wide dessert-card" id="menu-sweets" role="tabpanel" aria-labelledby="tab-sweets" data-menu-panel hidden>
             <div class="menu-category-heading">
               <span>06</span>
               <h3>Something Sweet</h3>
@@ -379,5 +388,31 @@
         <a href="https://www.google.com/maps/dir/?api=1&amp;destination=670+Fruitdale+Dr,+Grants+Pass,+OR+97527" target="_blank" rel="noreferrer">Directions</a>
       </div>
     </main>
+    <script>
+      const menuTabs = document.querySelectorAll("[data-menu-tab]");
+      const menuPanels = document.querySelectorAll("[data-menu-panel]");
+
+      const activateMenu = (panelId) => {
+        menuTabs.forEach((item) => {
+          const selected = item.dataset.menuTab === panelId;
+          item.classList.toggle("is-active", selected);
+          item.setAttribute("aria-selected", String(selected));
+        });
+
+        menuPanels.forEach((panel) => {
+          panel.hidden = panel.id !== panelId;
+        });
+      };
+
+      menuTabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+          activateMenu(tab.dataset.menuTab);
+        });
+      });
+
+      document.querySelectorAll("[data-menu-link]").forEach((link) => {
+        link.addEventListener("click", () => activateMenu(link.dataset.menuLink));
+      });
+    </script>
   </body>
 </html>
