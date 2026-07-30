@@ -6,8 +6,12 @@
   --blue: #49c8ff;
   --blue-deep: #087bb6;
   --red: #ee4b42;
+  --pink: #ff4fa3;
+  --green: #58ef88;
+  --amber: #ffc14a;
+  --purple: #b989ff;
   --wood: #7a4a2c;
-  --green: #324a34;
+  --green-dark: #324a34;
 }
 
 * {
@@ -53,6 +57,9 @@ a {
   padding: 0 4vw;
   background: rgba(6, 6, 6, 0.88);
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow:
+    0 1px 0 rgba(73, 200, 255, 0.45),
+    0 5px 20px rgba(255, 79, 163, 0.08);
   backdrop-filter: blur(16px);
 }
 
@@ -222,15 +229,17 @@ nav a:focus-visible::after {
 
 .hero h1 {
   margin: 0;
-  color: var(--blue);
+  color: #fff7fb;
   font-size: clamp(2rem, 4.8vw, 5.1rem);
   font-weight: 500;
   font-style: italic;
   letter-spacing: -0.035em;
   line-height: 1;
   text-shadow:
-    0 0 8px rgba(73, 200, 255, 0.9),
-    0 0 30px rgba(73, 200, 255, 0.45);
+    0 0 2px white,
+    0 0 9px var(--pink),
+    0 0 24px rgba(255, 79, 163, 0.82),
+    0 0 52px rgba(185, 137, 255, 0.46);
 }
 
 .hero-copy {
@@ -307,8 +316,8 @@ nav a:focus-visible::after {
   width: 9px;
   height: 9px;
   border-radius: 50%;
-  background: var(--blue);
-  box-shadow: 0 0 14px var(--blue);
+  background: var(--green);
+  box-shadow: 0 0 7px var(--green), 0 0 18px rgba(88, 239, 136, 0.68);
 }
 
 .hero-status div {
@@ -352,9 +361,12 @@ nav a:focus-visible::after {
 .marquee {
   overflow: hidden;
   padding: 18px 0;
-  background: var(--cream);
-  color: var(--black);
-  border-block: 5px solid var(--black);
+  background: var(--black);
+  color: var(--cream);
+  border-block: 1px solid rgba(255, 255, 255, 0.24);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 193, 74, 0.62),
+    inset 0 -1px 0 rgba(255, 79, 163, 0.48);
 }
 
 .marquee-track {
@@ -371,7 +383,8 @@ nav a:focus-visible::after {
 }
 
 .marquee-track i {
-  color: var(--red);
+  color: var(--amber);
+  text-shadow: 0 0 10px var(--amber);
   font-size: 0.7rem;
 }
 
@@ -451,6 +464,19 @@ nav a:focus-visible::after {
 .accent-red { color: var(--red); }
 .accent-blue { color: var(--blue); }
 .accent-cream { color: var(--cream); }
+.accent-amber { color: var(--amber); }
+
+.accent-red {
+  background: radial-gradient(circle at 92% 8%, rgba(255, 79, 163, 0.13), transparent 34%);
+}
+
+.accent-blue {
+  background: radial-gradient(circle at 92% 8%, rgba(73, 200, 255, 0.13), transparent 34%);
+}
+
+.accent-amber {
+  background: radial-gradient(circle at 92% 8%, rgba(255, 193, 74, 0.13), transparent 34%);
+}
 
 .event-card:hover {
   background: rgba(255, 255, 255, 0.035);
@@ -497,6 +523,7 @@ nav a:focus-visible::after {
   text-transform: uppercase;
   border-bottom: 1px solid currentColor;
   padding-bottom: 6px;
+  text-shadow: 0 0 10px currentColor;
 }
 
 .schedule-note {
@@ -515,10 +542,13 @@ nav a:focus-visible::after {
   margin: 84px auto 0;
   padding: clamp(34px, 5vw, 72px);
   background:
-    linear-gradient(135deg, rgba(73, 200, 255, 0.09), transparent 44%),
+    radial-gradient(circle at 8% 12%, rgba(185, 137, 255, 0.12), transparent 28%),
+    linear-gradient(135deg, rgba(73, 200, 255, 0.08), transparent 44%),
     #111;
-  border: 1px solid rgba(73, 200, 255, 0.28);
-  box-shadow: 0 0 45px rgba(73, 200, 255, 0.07);
+  border: 1px solid rgba(185, 137, 255, 0.34);
+  box-shadow:
+    0 0 30px rgba(185, 137, 255, 0.08),
+    inset 0 0 26px rgba(73, 200, 255, 0.04);
 }
 
 .live-updates-copy h3 {
@@ -556,21 +586,24 @@ nav a:focus-visible::after {
 
 .food-section {
   position: relative;
-  background: var(--paper);
-  color: var(--ink);
+  background:
+    radial-gradient(circle at 14% 18%, rgba(185, 137, 255, 0.08), transparent 25%),
+    radial-gradient(circle at 88% 72%, rgba(88, 239, 136, 0.06), transparent 26%),
+    #0b0b0b;
+  color: var(--cream);
   padding: 0 6vw 110px;
 }
 
 .checker-band {
-  height: 48px;
+  height: 18px;
   margin: 0 -6vw 96px;
-  background-color: var(--cream);
+  background-color: #fff;
   background-image:
     linear-gradient(45deg, #111 25%, transparent 25%, transparent 75%, #111 75%),
     linear-gradient(45deg, #111 25%, transparent 25%, transparent 75%, #111 75%);
-  background-position: 0 0, 24px 24px;
-  background-size: 48px 48px;
-  border-bottom: 5px solid var(--black);
+  background-position: 0 0, 9px 9px;
+  background-size: 18px 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .menu-intro {
@@ -593,7 +626,7 @@ nav a:focus-visible::after {
 
 .menu-intro-copy p {
   margin: 0 0 20px;
-  color: rgba(17, 16, 15, 0.72);
+  color: rgba(242, 234, 219, 0.72);
   font-size: 1.03rem;
   line-height: 1.7;
 }
@@ -601,8 +634,8 @@ nav a:focus-visible::after {
 .menu-intro-copy span {
   display: block;
   padding-top: 18px;
-  border-top: 1px solid rgba(17, 16, 15, 0.28);
-  color: rgba(17, 16, 15, 0.52);
+  border-top: 1px solid rgba(242, 234, 219, 0.24);
+  color: rgba(242, 234, 219, 0.48);
   font-size: 0.66rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -610,32 +643,99 @@ nav a:focus-visible::after {
   text-transform: uppercase;
 }
 
-.menu-grid {
+.menu-switcher {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(6, 1fr);
+  max-width: 1380px;
+  margin: 0 auto 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-tab {
+  --tab-neon: var(--blue);
+  min-height: 74px;
+  padding: 14px 12px;
+  color: rgba(242, 234, 219, 0.68);
+  background: #0d0d0d;
+  border: 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  font: inherit;
+  font-size: 0.61rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 160ms ease, background 160ms ease, box-shadow 160ms ease;
+}
+
+.menu-tab:nth-child(2) { --tab-neon: var(--pink); }
+.menu-tab:nth-child(3) { --tab-neon: var(--amber); }
+.menu-tab:nth-child(4) { --tab-neon: var(--green); }
+.menu-tab:nth-child(5) { --tab-neon: var(--purple); }
+.menu-tab:nth-child(6) { --tab-neon: var(--red); }
+
+.menu-tab:hover,
+.menu-tab:focus-visible,
+.menu-tab.is-active {
+  position: relative;
+  z-index: 1;
+  color: var(--tab-neon);
+  background: rgba(255, 255, 255, 0.025);
+  box-shadow:
+    inset 0 -3px 0 var(--tab-neon),
+    inset 0 0 24px color-mix(in srgb, var(--tab-neon) 9%, transparent),
+    0 0 16px color-mix(in srgb, var(--tab-neon) 24%, transparent);
+  text-shadow: 0 0 10px var(--tab-neon);
+}
+
+.menu-grid {
+  display: block;
   max-width: 1380px;
   margin: 0 auto;
 }
 
-.menu-category {
-  padding: clamp(26px, 3vw, 42px);
-  background: #f6efdf;
-  border: 1px solid rgba(17, 16, 15, 0.28);
-  box-shadow: 9px 9px 0 var(--black);
+.menu-grid [hidden] {
+  display: none !important;
 }
 
+.menu-category {
+  --menu-neon: var(--blue);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: clamp(26px, 4vw, 58px);
+  padding: clamp(26px, 3vw, 42px);
+  color: var(--cream);
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--menu-neon) 7%, transparent), transparent 34%),
+    #111;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow:
+    9px 9px 0 #000,
+    0 0 22px color-mix(in srgb, var(--menu-neon) 15%, transparent);
+}
+
+#menu-baskets { --menu-neon: var(--pink); }
+#menu-tacos { --menu-neon: var(--amber); }
+#menu-apps { --menu-neon: var(--green); }
+#menu-wings { --menu-neon: var(--purple); }
+#menu-sweets { --menu-neon: var(--red); }
+
 .menu-category-wide {
-  grid-column: 1 / -1;
+  grid-column: auto;
 }
 
 .menu-category-heading {
   display: grid;
+  grid-column: 1 / -1;
   grid-template-columns: auto 1fr;
   gap: 18px;
   align-items: start;
   padding-bottom: 25px;
-  border-bottom: 4px solid var(--black);
+  border-bottom: 3px solid var(--menu-neon);
+  box-shadow: 0 5px 16px color-mix(in srgb, var(--menu-neon) 12%, transparent);
 }
 
 .menu-category-heading span {
@@ -643,8 +743,9 @@ nav a:focus-visible::after {
   width: 34px;
   height: 34px;
   place-items: center;
-  color: var(--paper);
-  background: var(--black);
+  color: var(--black);
+  background: var(--menu-neon);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--menu-neon) 58%, transparent);
   font-size: 0.61rem;
   font-weight: 950;
   letter-spacing: 0.08em;
@@ -661,7 +762,7 @@ nav a:focus-visible::after {
 
 .menu-item {
   padding: 23px 0;
-  border-bottom: 1px dashed rgba(17, 16, 15, 0.35);
+  border-bottom: 1px dashed rgba(242, 234, 219, 0.24);
 }
 
 .menu-item:last-child {
@@ -685,16 +786,17 @@ nav a:focus-visible::after {
 }
 
 .menu-item strong {
-  color: var(--red);
+  color: var(--menu-neon);
   font-size: 0.88rem;
   letter-spacing: 0.04em;
   white-space: nowrap;
+  text-shadow: 0 0 9px color-mix(in srgb, var(--menu-neon) 68%, transparent);
 }
 
 .menu-item p {
   max-width: 650px;
   margin: 8px 0 0;
-  color: rgba(17, 16, 15, 0.64);
+  color: rgba(242, 234, 219, 0.62);
   font-size: 0.83rem;
   line-height: 1.58;
 }
@@ -703,8 +805,9 @@ nav a:focus-visible::after {
   margin: 18px 0 0;
   padding: 20px;
   color: var(--paper);
-  background: var(--black);
-  border: 0;
+  background: rgba(0, 0, 0, 0.58);
+  border: 1px solid color-mix(in srgb, var(--menu-neon) 58%, transparent);
+  box-shadow: inset 0 0 20px color-mix(in srgb, var(--menu-neon) 6%, transparent);
 }
 
 .menu-feature p {
@@ -713,6 +816,7 @@ nav a:focus-visible::after {
 
 .wings-layout {
   display: grid;
+  grid-column: 1 / -1;
   grid-template-columns: 0.7fr 0.7fr 1.6fr;
   gap: 18px;
   align-items: stretch;
@@ -727,14 +831,14 @@ nav a:focus-visible::after {
   grid-template-columns: 1fr 1fr;
   gap: 0;
   margin-top: 24px;
-  border-top: 1px solid rgba(17, 16, 15, 0.28);
-  border-left: 1px solid rgba(17, 16, 15, 0.28);
+  border-top: 1px solid rgba(242, 234, 219, 0.24);
+  border-left: 1px solid rgba(242, 234, 219, 0.24);
 }
 
 .sauce-list span {
   padding: 13px 15px;
-  border-right: 1px solid rgba(17, 16, 15, 0.28);
-  border-bottom: 1px solid rgba(17, 16, 15, 0.28);
+  border-right: 1px solid rgba(242, 234, 219, 0.24);
+  border-bottom: 1px solid rgba(242, 234, 219, 0.24);
   font-size: 0.67rem;
   font-weight: 900;
   letter-spacing: 0.06em;
@@ -746,22 +850,28 @@ nav a:focus-visible::after {
   overflow: hidden;
   color: var(--cream);
   background:
-    linear-gradient(120deg, rgba(73, 200, 255, 0.1), transparent 45%),
+    linear-gradient(120deg, rgba(238, 75, 66, 0.12), transparent 45%),
     var(--black);
-  box-shadow: 9px 9px 0 var(--blue);
+  box-shadow:
+    9px 9px 0 #000,
+    0 0 22px rgba(238, 75, 66, 0.16);
 }
 
 .dessert-card .menu-category-heading {
-  border-color: var(--cream);
+  border-color: var(--red);
 }
 
 .dessert-card .menu-category-heading span {
   color: var(--black);
-  background: var(--blue);
+  background: var(--red);
 }
 
 .dessert-card .menu-item p {
   color: rgba(242, 234, 219, 0.65);
+}
+
+.dessert-card > .menu-item {
+  grid-column: 1 / -1;
 }
 
 .food-layout {
@@ -923,6 +1033,30 @@ nav a:focus-visible::after {
   text-transform: uppercase;
 }
 
+.scene-details span:nth-child(1) {
+  color: var(--amber);
+  border-color: rgba(255, 193, 74, 0.55);
+  box-shadow: inset 0 0 12px rgba(255, 193, 74, 0.06);
+}
+
+.scene-details span:nth-child(2) {
+  color: var(--pink);
+  border-color: rgba(255, 79, 163, 0.5);
+  box-shadow: inset 0 0 12px rgba(255, 79, 163, 0.06);
+}
+
+.scene-details span:nth-child(3) {
+  color: var(--green);
+  border-color: rgba(88, 239, 136, 0.5);
+  box-shadow: inset 0 0 12px rgba(88, 239, 136, 0.06);
+}
+
+.scene-details span:nth-child(4) {
+  color: var(--blue);
+  border-color: rgba(73, 200, 255, 0.5);
+  box-shadow: inset 0 0 12px rgba(73, 200, 255, 0.06);
+}
+
 .quote-section {
   position: relative;
   min-height: 430px;
@@ -930,30 +1064,37 @@ nav a:focus-visible::after {
   place-items: center;
   overflow: hidden;
   padding: 70px 6vw;
-  color: var(--black);
-  background: var(--blue);
+  color: var(--cream);
+  background:
+    radial-gradient(circle at 22% 35%, rgba(255, 79, 163, 0.15), transparent 28%),
+    radial-gradient(circle at 78% 70%, rgba(73, 200, 255, 0.12), transparent 28%),
+    #090909;
   text-align: center;
+  border-block: 1px solid rgba(255, 255, 255, 0.22);
 }
 
 .quote-section::before {
   content: "";
   position: absolute;
-  inset: 0;
+  inset: 0 0 auto;
+  height: 14px;
+  background-color: #fff;
   background-image:
-    linear-gradient(45deg, rgba(0,0,0,.08) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.08) 75%),
-    linear-gradient(45deg, rgba(0,0,0,.08) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.08) 75%);
-  background-position: 0 0, 18px 18px;
-  background-size: 36px 36px;
+    linear-gradient(45deg, #111 25%, transparent 25%, transparent 75%, #111 75%),
+    linear-gradient(45deg, #111 25%, transparent 25%, transparent 75%, #111 75%);
+  background-position: 0 0, 7px 7px;
+  background-size: 14px 14px;
 }
 
 .quote-neon {
   position: absolute;
   top: -90px;
   left: 4vw;
-  color: rgba(255,255,255,.18);
+  color: rgba(255, 79, 163, 0.15);
   font-family: Georgia, serif;
   font-size: 26rem;
   line-height: 1;
+  text-shadow: 0 0 28px rgba(255, 79, 163, 0.26);
 }
 
 blockquote {
@@ -968,13 +1109,19 @@ blockquote p {
   font-size: clamp(2.8rem, 7vw, 7rem);
   letter-spacing: -0.06em;
   line-height: 0.95;
+  text-shadow:
+    0 0 3px white,
+    0 0 16px rgba(73, 200, 255, 0.62),
+    0 0 34px rgba(185, 137, 255, 0.3);
 }
 
 blockquote footer {
+  color: var(--pink);
   font-size: .64rem;
   font-weight: 950;
   letter-spacing: .17em;
   text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(255, 79, 163, 0.72);
 }
 
 .visit-section {
@@ -1150,6 +1297,10 @@ blockquote footer {
     justify-self: start;
   }
 
+  .menu-switcher {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .menu-grid {
     grid-template-columns: 1fr;
   }
@@ -1301,8 +1452,22 @@ blockquote footer {
   }
 
   .menu-category {
+    grid-template-columns: 1fr;
     padding: 25px 20px;
-    box-shadow: 6px 6px 0 var(--black);
+    box-shadow:
+      6px 6px 0 #000,
+      0 0 18px color-mix(in srgb, var(--menu-neon) 14%, transparent);
+  }
+
+  .menu-switcher {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 14px;
+  }
+
+  .menu-tab {
+    min-height: 64px;
+    padding: 11px 8px;
+    font-size: 0.56rem;
   }
 
   .menu-category-heading {
@@ -1329,9 +1494,9 @@ blockquote footer {
 
   .checker-band {
     margin: 0 -20px 66px;
-    height: 35px;
-    background-size: 36px 36px;
-    background-position: 0 0, 18px 18px;
+    height: 14px;
+    background-size: 14px 14px;
+    background-position: 0 0, 7px 7px;
   }
 
   .favorites-grid {
