@@ -680,11 +680,11 @@ footer {
   .storySection { grid-template-columns: 1fr; }
   .storyImageWrap { min-height: 0; padding: 22px 0 18px; }
   .storyStamp {
-    right: 10px;
-    top: 4px;
+    right: 8px;
+    top: 0;
     bottom: auto;
-    width: 84px;
-    font-size: 11px;
+    width: 70px;
+    font-size: 9px;
     border-width: 1px;
     outline-width: 1px;
     transform: rotate(-6deg);
