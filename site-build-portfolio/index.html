@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="googlebot" content="noindex, nofollow, noarchive, nosnippet">
+  <meta name="theme-color" content="#f6dde3">
+  <title>Website Portfolio | Sites Covered</title>
+  <meta name="description" content="A private collection of custom website demos built by Sites Covered.">
+  <link rel="canonical" href="https://sitescovered.com/site-build-portfolio/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,600;1,500&amp;family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #2b2530;
+      --paper: #fbfaf7;
+      --card: #ffffff;
+      --blush: #f6dde3;
+      --peach: #f7e3d0;
+      --butter: #f5eac7;
+      --mint: #dceee1;
+      --sky: #dce7f2;
+      --lavender: #e6def2;
+      --line: #eae6e0;
+      --muted: #66596e;
+      --shadow: 0 22px 55px rgba(43, 37, 48, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Manrope", sans-serif;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .rainbow-topbar {
+      height: 7px;
+      background: linear-gradient(90deg, var(--blush), var(--peach), var(--butter), var(--mint), var(--sky), var(--lavender));
+    }
+    .wrap { width: min(1180px, calc(100% - 44px)); margin: 0 auto; }
+    header { padding: 24px 0; border-bottom: 1px solid var(--line); background: rgba(251, 250, 247, 0.94); }
+    header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .brand { font-family: "Bodoni Moda", serif; font-size: 1.55rem; font-weight: 600; letter-spacing: -0.01em; }
+    .private-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .private-pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #7fae9c; }
+    .hero { padding: 88px 0 76px; position: relative; overflow: hidden; }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 460px;
+      height: 460px;
+      right: -130px;
+      top: -190px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(230, 222, 242, 0.8), rgba(230, 222, 242, 0));
+      pointer-events: none;
+    }
+    .eyebrow { display: block; margin-bottom: 14px; color: #7a6a85; font: italic 500 1.25rem "Cormorant Garamond", serif; }
+    h1, h2, h3 { margin: 0; font-family: "Bodoni Moda", serif; line-height: 1.08; }
+    h1 { max-width: 900px; font-size: clamp(3.15rem, 7vw, 6.8rem); letter-spacing: -0.055em; }
+    .hero-copy { max-width: 720px; margin: 26px 0 0; color: var(--muted); font-size: clamp(1rem, 2vw, 1.16rem); }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+    .hero-meta span { padding: 8px 12px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255, 255, 255, 0.65); font-size: 0.84rem; font-weight: 600; }
+    .rainbow-rule { width: 96px; height: 6px; margin-bottom: 18px; border-radius: 999px; background: linear-gradient(90deg, var(--blush), var(--peach), var(--butter), var(--mint), var(--sky), var(--lavender)); }
+    .gallery { padding: 74px 0 100px; border-top: 1px solid var(--line); background: #fff; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 38px; }
+    .section-head h2 { font-size: clamp(2.35rem, 5vw, 4rem); letter-spacing: -0.035em; }
+    .section-head p { max-width: 420px; margin: 0; color: var(--muted); }
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+    .card { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 3px; background: var(--card); transition: transform 0.25s ease, box-shadow 0.25s ease; }
+    .card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+    .card-top { height: 5px; background: var(--accent, var(--blush)); }
+    .preview { height: 245px; position: relative; overflow: hidden; background: linear-gradient(135deg, var(--accent, var(--blush)), var(--paper)); border-bottom: 1px solid var(--line); }
+    .preview img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: top center; transition: transform 0.45s ease; }
+    .preview::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 72%, rgba(43, 37, 48, 0.08)); pointer-events: none; }
+    .card:hover .preview img { transform: scale(1.025); }
+    .card-body { padding: 24px 24px 26px; }
+    .category { display: block; margin-bottom: 7px; color: #7a6a85; font: italic 500 1.03rem "Cormorant Garamond", serif; }
+    .card h3 { font-size: 1.44rem; letter-spacing: -0.02em; }
+    .card p { min-height: 4.6em; margin: 10px 0 18px; color: var(--muted); font-size: 0.9rem; line-height: 1.55; }
+    .view { display: inline-flex; align-items: center; gap: 8px; padding-bottom: 3px; border-bottom: 1px solid var(--ink); font-size: 0.82rem; font-weight: 700; }
+    .view span { transition: transform 0.2s ease; }
+    .card:hover .view span { transform: translateX(3px); }
+    .cta { padding: 96px 0; background: linear-gradient(125deg, var(--blush), var(--lavender)); text-align: center; }
+    .cta h2 { font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -0.045em; }
+    .cta p { max-width: 620px; margin: 20px auto 30px; color: #514659; }
+    .button { display: inline-flex; align-items: center; justify-content: center; padding: 15px 28px; border: 1px solid var(--ink); border-radius: 2px; background: var(--ink); color: var(--paper); font-size: 0.9rem; font-weight: 700; }
+    .button:hover { background: #453c4d; }
+    footer { padding: 35px 0; text-align: center; color: #8a7d90; font: italic 500 1rem "Cormorant Garamond", serif; }
+
+    @media (max-width: 940px) {
+      .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .section-head { align-items: start; flex-direction: column; }
+    }
+    @media (max-width: 640px) {
+      .wrap { width: min(100% - 28px, 1180px); }
+      header { padding: 18px 0; }
+      .brand { font-size: 1.35rem; }
+      .private-pill { font-size: 0.64rem; padding: 7px 10px; }
+      .hero { padding: 64px 0 55px; }
+      h1 { font-size: clamp(2.85rem, 15vw, 4.45rem); }
+      .gallery { padding: 58px 0 72px; }
+      .grid { grid-template-columns: 1fr; }
+      .preview { height: 265px; }
+      .card p { min-height: 0; }
+      .cta { padding: 72px 0; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+  <div class="rainbow-topbar"></div>
+  <header>
+    <div class="wrap">
+      <a class="brand" href="https://sitescovered.com/">Sites Covered</a>
+      <span class="private-pill">Private client preview</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">No templates. No copy and paste websites.</span>
+        <h1>Built around the business.<br>Every single time.</h1>
+        <p class="hero-copy">Every site starts with the business itself: its personality, customers, goals, and the way it deserves to show up online. The result is a custom website made to feel unmistakably like the people behind it.</p>
+        <div class="hero-meta">
+          <span>Custom built from scratch</span>
+          <span>Designed to fit the business</span>
+          <span>Mobile optimized</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery" aria-labelledby="portfolio-heading">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <div class="rainbow-rule"></div>
+            <h2 id="portfolio-heading">The Site Build Portfolio</h2>
+          </div>
+          <p>Click any project to open the complete live demo and experience the site the way a customer would.</p>
+        </div>
+
+        <div class="grid">
+          <a class="card" style="--accent:#f3aa35" href="https://sitescovered.com/the-meltdown/" target="_blank" rel="noopener">
+            <div class="card-top"></div><div class="preview"><img src="images/the-meltdown.png" alt="The Meltdown website cover" loading="lazy"></div>
+            <div class="card-body"><span class="category">Food Truck</span><h3>The Meltdown</h3><p>Bold, high-energy food truck branding with a full menu, schedule, live location, and founder campaign.</p><span class="view">View full demo <span>→</span></span></div>
+          </a>
+          <a class="card" style="--accent:#f1b7c7" href="https://sitescovered.com/peerless-beauty-lounge/" target="_blank" rel="noopener">
+            <div class="card-top"></div><div class="preview"><img src="images/peerless-beauty-lounge.png" alt="Peerless Beauty Lounge website cover" loading="lazy"></div>
+            <div class="card-body"><span class="category">Hair Salon</span><h3>Peerless Beauty Lounge</h3><p>A polished beauty experience with services, staff, reviews, galleries, and clear booking paths.</p><span class="view">View full demo <span>→</span></span></div>
+          </a>
+          <a class="card" style="--accent:#d84c3f" href="https://sitescovered.com/art-rebel-sample/" target="_blank" rel="noopener">
+            <div class="card-top"></div><div class="preview"><img src="images/art-rebel-tattoo.png" alt="Art Rebel Tattoo website cover" loading="lazy"></div>
+            <div class="card-body"><span class="category">Tattoo Collective</span><h3>Art Rebel Tattoo</h3><p>An artist-first studio site with independent profiles, distinct personalities, portfolios, and booking routes.</p><span class="view">View full demo <span>→</span></span></div>
+          </a>
+          <a class="card" style="--accent:#16665f" href="https://sitescovered.com/house-of-glory/" target="_blank" rel="noopener">
+            <div class="card-top"></div><div class="preview"><img src="images/house-of-glory.png" alt="House of Glory website cover" loading="lazy"></div>
+            <div class="card-body"><span class="category">Gelato and Café</span><h3>House of Glory</h3><p>A lush, editorial café site inspired by Miami glamour, Latin flavor, and handcrafted hospitality.</p><span class="view">View full demo <span>→</span></span></div>
+          </a>
+          <a class="card" style="--accent:#d1a14d" href="https://sitescovered.com/diamond-in-the-rogue/" target="_blank" rel="noopener">
+            <div class="card-top"></div><div class="preview"><img src="images/diamond-in-the-rogue.png" alt="Diamond in the Rogue website cover" loading="lazy"></div>
+            <div class="card-body"><span class="category">Tattoo and Wellness</span><h3>Diamond in the Rogue</h3><p>A warm, welcoming tattoo studio with artist story, galleries, consultation booking, and sound-bed services.</p><span class="view">View full demo <span>→</span></span></div>
+          </a>
+          <a class="card" style="--accent:#ce763f" href="https://sitescovered.com/flespys-bar-and-grill/" target="_blank" rel="noopener">
+            <div class="card-top"></div><div class="preview"><img src="images/flespys-bar-and-grill.png" alt="Flespy's Bar and Grill website cover" loading="lazy"></div>
+            <div class="card-body"><span class="category">Bar and Grill</span><h3>Flespy’s Bar &amp; Grill</h3><p>A lively neighborhood bar site with the full menu, weekly happenings, current events, hours, and directions.</p><span class="view">View full demo <span>→</span></span></div>
+          </a>
+          <a class="card" style="--accent:#4e8e7a" href="https://sitescovered.com/the-lonely-pine/" target="_blank" rel="noopener">
+            <div class="card-top"></div><div class="preview"><img src="images/the-lonely-pine.png" alt="The Lonely Pine website cover" loading="lazy"></div>
+            <div class="card-body"><span class="category">Coffee and Eatery</span><h3>The Lonely Pine</h3><p>A cozy, outdoorsy café experience built around craft drinks, food, community, and a sibling-owned story.</p><span class="view">View full demo <span>→</span></span></div>
+          </a>
+          <a class="card" style="--accent:#ef7a38" href="https://sitescovered.com/808-ohana-grindz/" target="_blank" rel="noopener">
+            <div class="card-top"></div><div class="preview"><img src="images/808-ohana-grindz.png" alt="808 Ohana Grindz website cover" loading="lazy"></div>
+            <div class="card-body"><span class="category">Hawaiian Food</span><h3>808 Ohana Grindz</h3><p>A flavor-packed island-style site with big visuals, a craveable menu, and an unmistakable family feel.</p><span class="view">View full demo <span>→</span></span></div>
+          </a>
+          <a class="card" style="--accent:#2f8da4" href="https://sitescovered.com/nada-bar" target="_blank" rel="noopener">
+            <div class="card-top"></div><div class="preview"><img src="images/nada-bar.png" alt="Nada Bar Noodle House website cover" loading="lazy"></div>
+            <div class="card-body"><span class="category">Noodle House</span><h3>Nada Bar Noodle House</h3><p>A colorful retro restaurant build with an interactive menu, real reviews, pricing, and plenty of personality.</p><span class="view">View full demo <span>→</span></span></div>
+          </a>
+          <a class="card" style="--accent:#e64fa0" href="https://sitescovered.com/heavenly-sweets" target="_blank" rel="noopener">
+            <div class="card-top"></div><div class="preview"><img src="images/heavenly-sweets.png" alt="Heavenly Sweets Bakery website cover" loading="lazy"></div>
+            <div class="card-body"><span class="category">Bakery</span><h3>Heavenly Sweets Bakery</h3><p>A playful bakery site with badge-style branding, a scrolling menu, sweet pastels, and real product details.</p><span class="view">View full demo <span>→</span></span></div>
+          </a>
+          <a class="card" style="--accent:#b87d52" href="https://sitescovered.com/protech-plumbing" target="_blank" rel="noopener">
+            <div class="card-top"></div><div class="preview"><img src="images/protech-plumbing.png" alt="Protech Plumbing website cover" loading="lazy"></div>
+            <div class="card-body"><span class="category">Home Services</span><h3>Protech Plumbing</h3><p>A clean, capable service-business site with clear trust signals, service areas, project details, and conversion paths.</p><span class="view">View full demo <span>→</span></span></div>
+          </a>
+          <a class="card" style="--accent:#d8b9ce" href="https://sitescovered.com/bark-bath-beyond" target="_blank" rel="noopener">
+            <div class="card-top"></div><div class="preview"><img src="images/bark-bath-beyond.png" alt="Bark, Bath and Beyond website cover" loading="lazy"></div>
+            <div class="card-body"><span class="category">Pet Grooming</span><h3>Bark, Bath &amp; Beyond</h3><p>A gentle, friendly grooming site with services, pricing, before-and-after moments, and a simple booking journey.</p><span class="view">View full demo <span>→</span></span></div>
+          </a>
+          <a class="card" style="--accent:#a7c591" href="https://sitescovered.com/jimothy/" target="_blank" rel="noopener">
+            <div class="card-top"></div><div class="preview"><img src="images/jimothy.png" alt="Jimothy website cover" loading="lazy"></div>
+            <div class="card-body"><span class="category">Personal Brand</span><h3>Jimothy</h3><p>A tiny but mighty personality site for a professional little guy, snack inspector, and undisputed local icon.</p><span class="view">View full demo <span>→</span></span></div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="wrap">
+        <span class="eyebrow">Seen enough to picture yours?</span>
+        <h2>Let’s build something that feels like you.</h2>
+        <p>Sites Covered handles the design, build, launch, SEO setup, hosting, and ongoing care. You get a website that fits your business without inheriting a second job.</p>
+        <a class="button" href="https://sitescovered.com/#book">Book a free strategy session</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">A private client preview from Sites Covered</div>
+  </footer>
+</body>
+</html>
