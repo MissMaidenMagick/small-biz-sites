@@ -84,7 +84,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .button:hover { transform: translateY(-2px); background: var(--cheese-light); }
 .buttonSmall { min-height: 44px; padding: 0 20px; font-size: 11px; }
 .buttonDark { color: var(--cream); background: var(--ink); border-color: var(--ink); }
-.buttonDark:hover { color: var(--ink); background: var(--cream); }
+.buttonDark:hover { color: var(--cream); background: var(--ink); }
 .cheeseButton::after {
   content: "";
   position: absolute;
@@ -96,6 +96,10 @@ button, a { -webkit-tap-highlight-color: transparent; }
   border-radius: 0 0 8px 8px;
   background: inherit;
   box-shadow: 38px 4px 0 -2px var(--cheese), 86px -1px 0 -3px var(--cheese);
+}
+.buttonDark.cheeseButton::after {
+  background: var(--ink);
+  box-shadow: 38px 4px 0 -2px var(--ink), 86px -1px 0 -3px var(--ink);
 }
 
 .hero {
