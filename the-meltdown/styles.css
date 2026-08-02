@@ -679,6 +679,15 @@ footer {
   .menuCard h3 { font-size: 36px; }
   .storySection { grid-template-columns: 1fr; }
   .storyImageWrap { min-height: 0; padding: 22px 0 18px; }
+  .storyStamp {
+    right: 16px;
+    bottom: 30px;
+    width: 92px;
+    font-size: 12px;
+    border-width: 1px;
+    outline-width: 1px;
+    transform: rotate(-6deg);
+  }
   .storyCopy { padding: 72px 24px; }
   .supportSection { padding: 80px 20px; }
   .supportHeader { grid-template-columns: 1fr; gap: 12px; }
