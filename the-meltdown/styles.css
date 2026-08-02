@@ -383,9 +383,9 @@ h2 span { color: var(--cheese); font-style: italic; }
 .storyStamp {
   position: absolute;
   right: 34px;
-  bottom: 34px;
+  top: 34px;
   z-index: 2;
-  width: 135px;
+  width: 155px;
   aspect-ratio: 1;
   display: grid;
   place-items: center;
@@ -396,7 +396,7 @@ h2 span { color: var(--cheese); font-style: italic; }
   outline: 2px solid var(--cheese);
   text-align: center;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 20px;
   line-height: .95;
   font-weight: 950;
   transform: rotate(-8deg);
@@ -680,10 +680,11 @@ footer {
   .storySection { grid-template-columns: 1fr; }
   .storyImageWrap { min-height: 0; padding: 22px 0 18px; }
   .storyStamp {
-    right: 16px;
-    bottom: 30px;
-    width: 92px;
-    font-size: 12px;
+    right: 14px;
+    top: 18px;
+    bottom: auto;
+    width: 110px;
+    font-size: 14px;
     border-width: 1px;
     outline-width: 1px;
     transform: rotate(-6deg);
