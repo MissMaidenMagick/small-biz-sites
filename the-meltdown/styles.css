@@ -97,11 +97,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
   background: inherit;
   box-shadow: 38px 4px 0 -2px var(--cheese), 86px -1px 0 -3px var(--cheese);
 }
-.buttonDark.cheeseButton::after {
-  background: var(--ink);
-  box-shadow: 38px 4px 0 -2px var(--ink), 86px -1px 0 -3px var(--ink);
-}
-
 .hero {
   position: relative;
   isolation: isolate;
