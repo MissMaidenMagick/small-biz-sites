@@ -613,7 +613,7 @@ nav a:focus-visible::after {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(360px, 500px);
   gap: clamp(36px, 6vw, 90px);
-  align-items: start;
+  align-items: center;
   max-width: 1380px;
   margin: 84px auto 0;
   padding: clamp(34px, 5vw, 72px);
@@ -647,7 +647,7 @@ nav a:focus-visible::after {
 .facebook-page-feed {
   width: 100%;
   max-width: 500px;
-  min-height: 900px;
+  min-height: 700px;
   justify-self: end;
   overflow: visible;
   padding: 10px;
@@ -659,7 +659,7 @@ nav a:focus-visible::after {
 .facebook-page-feed iframe {
   display: block;
   width: 100% !important;
-  height: 900px;
+  height: 700px;
   max-width: 500px !important;
   overflow: visible !important;
 }
