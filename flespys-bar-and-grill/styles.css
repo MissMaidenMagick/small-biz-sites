@@ -650,10 +650,10 @@ nav a:focus-visible::after {
   min-height: 700px;
   justify-self: end;
   overflow: visible;
-  padding: 10px;
-  background: var(--cream);
-  border: 1px solid rgba(73, 200, 255, 0.6);
-  box-shadow: 0 0 22px rgba(73, 200, 255, 0.12);
+  padding: 0;
+  background: transparent;
+  border: 2px solid var(--blue);
+  box-shadow: 0 0 22px rgba(73, 200, 255, 0.16);
 }
 
 .facebook-page-feed iframe {
@@ -661,6 +661,7 @@ nav a:focus-visible::after {
   width: 100% !important;
   height: 700px;
   max-width: 500px !important;
+  background: transparent;
   overflow: visible !important;
 }
 
