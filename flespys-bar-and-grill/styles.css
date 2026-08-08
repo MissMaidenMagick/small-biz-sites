@@ -1876,12 +1876,25 @@ nav a:focus-visible::after {
     --notice-height: 0px;
   }
 
+  html {
+    scroll-padding-top: 90px;
+  }
+
   body {
-    padding-bottom: 62px;
+    padding-bottom: 56px;
+  }
+
+  section[id],
+  #live-updates {
+    scroll-margin-top: 90px;
   }
 
   .site-header {
     padding-inline: 20px;
+  }
+
+  .brand {
+    justify-self: center;
   }
 
   .brand-name {
@@ -1900,12 +1913,12 @@ nav a:focus-visible::after {
   .hero {
     min-height: auto;
     align-items: initial;
-    gap: 30px;
-    padding: 120px 20px 82px;
+    gap: 24px;
+    padding: 104px 20px 68px;
   }
 
   .hero-media {
-    padding: 16px;
+    padding: 10px;
   }
 
   .hero-content {
@@ -1913,9 +1926,9 @@ nav a:focus-visible::after {
   }
 
   .hero-logo {
-    width: min(300px, 82vw);
-    max-height: 220px;
-    margin-bottom: 24px;
+    width: min(280px, 78vw);
+    max-height: 195px;
+    margin-bottom: 18px;
   }
 
   .hero-name {
@@ -1923,8 +1936,9 @@ nav a:focus-visible::after {
   }
 
   .hero h1 {
-    font-size: clamp(1.55rem, 7.2vw, 2rem);
+    font-size: clamp(1.45rem, 6.8vw, 1.9rem);
     letter-spacing: 0;
+    word-spacing: 0.1em;
   }
 
   .hero-actions {
@@ -1949,12 +1963,17 @@ nav a:focus-visible::after {
   .live-updates {
     grid-template-columns: 1fr;
     margin-top: 58px;
-    padding: 32px 20px 20px;
+    padding: 30px 12px 12px;
   }
 
   .facebook-page-feed {
+    min-height: 600px;
     justify-self: center;
     margin-inline: auto;
+  }
+
+  .facebook-page-feed iframe {
+    height: 600px;
   }
 
   .section-heading {
@@ -2024,6 +2043,11 @@ nav a:focus-visible::after {
 
   .menu-item > div {
     gap: 12px;
+  }
+
+  .menu-item[role="button"] {
+    margin-inline: -12px;
+    padding-inline: 12px;
   }
 
   .wings-layout {
@@ -2098,6 +2122,11 @@ nav a:focus-visible::after {
 
   .review-card {
     min-height: 0;
+    padding: 26px;
+  }
+
+  .review-card blockquote p {
+    font-size: clamp(1.4rem, 7vw, 1.75rem);
   }
 
   .faq-section {
@@ -2130,7 +2159,7 @@ nav a:focus-visible::after {
   }
 
   .site-footer {
-    padding: 55px 20px 75px;
+    padding: 55px 20px 118px;
     gap: 34px;
   }
 
@@ -2155,7 +2184,7 @@ nav a:focus-visible::after {
   .mobile-actions a {
     display: grid;
     place-items: center;
-    min-height: 62px;
+    min-height: 56px;
     font-size: .68rem;
     font-weight: 950;
     letter-spacing: .14em;
