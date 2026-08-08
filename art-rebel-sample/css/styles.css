@@ -1,6 +1,6 @@
 /* ===========================
    Art Rebel Tattoo
-   Design tokens — monochrome black & grey, chicano script + bold caps
+   Design tokens, monochrome black & grey, chicano script + bold caps
    =========================== */
 :root {
   --ink: #0a0a0a;
@@ -96,7 +96,7 @@ section { padding: 100px 0; }
 .divider-mark svg { width: 30px; height: 30px; stroke: var(--grey); }
 
 /* ===========================
-   Buttons — inverted monochrome
+   Buttons, inverted monochrome
    =========================== */
 .btn {
   display: inline-flex;
