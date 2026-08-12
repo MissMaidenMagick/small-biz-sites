@@ -1,0 +1,7 @@
+.brand{gap:0}
+.brand-logo{display:block;width:142px;height:72px;object-fit:contain;object-position:center}
+.address-logo{display:block;width:150px;height:92px;object-fit:contain;object-position:left center;margin:0 0 7px}
+.footer .brand{background:#fbf7f4;border-radius:12px;padding:2px 8px}
+.footer .brand-logo{width:132px;height:68px}
+.address-card .address-logo + p{margin-top:12px!important}
+@media(max-width:800px){.brand-logo{width:118px;height:62px}.footer .brand-logo{width:118px;height:62px}.address-logo{width:138px;height:84px}}
