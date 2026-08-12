@@ -1,8 +1,8 @@
-.brand{gap:0;width:142px;height:72px;background:url("images/logo.png") center/contain no-repeat}
+.brand{gap:0;width:170px;height:88px;background:url("images/logo-transparent.png") center/contain no-repeat}
 .brand>*{display:none!important}
 .brand-logo{display:none!important}
-.address-logo{display:block;width:150px;height:92px;object-fit:contain;object-position:left center;margin:0 0 7px}
+.address-logo{display:block;width:185px;height:112px;object-fit:contain;object-position:left center;margin:0 0 7px}
 .footer .brand{background:#fbf7f4;border-radius:12px;padding:2px 8px}
-.footer .brand{width:132px;height:68px}
+.footer .brand{width:158px;height:82px}
 .address-card .address-logo + p{margin-top:12px!important}
-@media(max-width:800px){.brand{width:118px;height:62px}.footer .brand{width:118px;height:62px}.address-logo{width:138px;height:84px}}
+@media(max-width:800px){.brand{width:140px;height:72px}.footer .brand{width:138px;height:72px}.address-logo{width:156px;height:96px}}
