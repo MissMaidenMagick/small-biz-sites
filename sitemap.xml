@@ -22,6 +22,11 @@
   </url>
 
   <url>
+    <loc>https://sitescovered.com/kasita-krecs/</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
     <loc>https://sitescovered.com/portfolio/</loc>
     <priority>0.8</priority>
   </url>
