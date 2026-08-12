@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260808-18">
+    <link rel="stylesheet" href="styles.css?v=20260812-1">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -86,7 +86,12 @@
           {
             "@type": "Question",
             "name": "Is the patio open year-round?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The covered patio is set up for every season, with heating, cooling, televisions, games, and plenty of seating." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The covered and sealed patio has two industrial heaters for winter, a swamp cooler for summer, televisions, an outdoor pool table, giant Connect Four, and plenty of seating." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Flespy’s have Oregon Lottery?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Flespy’s has a dedicated Oregon Lottery room with video lottery games for guests 21 and over." }
           },
           {
             "@type": "Question",
@@ -102,15 +107,19 @@
       <header class="site-header">
         <a class="brand" href="#top" aria-label="Flespy’s Bar and Grill home">
           <img class="brand-logo" src="images/flespys-logo.jpeg" alt="Flespy’s Bar &amp; Grill">
+          <span class="mobile-brand-name">Flespy’s</span>
+          <span class="mobile-brand-address">670 Fruitdale Dr · Grants Pass</span>
         </a>
         <nav aria-label="Main navigation">
           <a href="#happening">Events</a>
           <a href="#food">Full Menu</a>
           <a href="#patio">The Patio</a>
+          <a href="#lottery">Lottery</a>
           <a href="#faq">FAQs</a>
           <a href="#visit">Visit</a>
         </nav>
         <a class="header-cta" href="#food">View the menu</a>
+        <a class="mobile-header-phone" href="tel:+15412441678" aria-label="Call Flespy’s at 541-244-1678">(541) 244-1678</a>
       </header>
 
       <section class="hero" id="top">
@@ -382,16 +391,33 @@
           </div>
         </div>
         <div class="scene-copy">
-          <p class="eyebrow neon-blue">Covered · Heated · Cooled</p>
-          <h2>The patio has<br>its own regulars.</h2>
-          <p>String lights overhead, screens for the game, and weather protection built in. Inside, the pool table and full bar keep the night moving.</p>
+          <p class="eyebrow neon-blue">Covered · Sealed · Comfortable</p>
+          <h2>The patio does<br>all four seasons.</h2>
+          <p>The outdoor patio is covered and sealed, with two industrial heaters that keep it warm through winter and a swamp cooler for summer. Settle in for the game, play pool or giant Connect Four, and stay awhile.</p>
           <div class="scene-details">
-            <span>Covered patio</span>
-            <span>Pool table</span>
-            <span>Sports on TV</span>
-            <span>Full bar</span>
+            <span>Two heaters</span>
+            <span>Outdoor pool table</span>
+            <span>Giant Connect Four</span>
+            <span>Swamp cooled</span>
           </div>
         </div>
+      </section>
+
+      <section class="lottery-section" id="lottery" aria-labelledby="lottery-title">
+        <div class="lottery-copy">
+          <p class="eyebrow">Your lucky corner</p>
+          <h2 id="lottery-title">A lottery room<br>worth finding.</h2>
+          <p>Step into Flespy’s dedicated Oregon Lottery room, where colorful lights, comfortable seating, and a full lineup of video lottery games give the night its own glow.</p>
+          <div class="lottery-details" aria-label="Lottery room highlights">
+            <span>Dedicated room</span>
+            <span>Oregon Lottery</span>
+            <span>21 and over</span>
+          </div>
+        </div>
+        <figure class="lottery-photo">
+          <img src="images/lottery-room.jpg" alt="Flespy’s colorful dedicated Oregon Lottery room with video lottery machines" loading="lazy">
+          <figcaption>Play a few rounds between dinner, drinks, and the night’s events.</figcaption>
+        </figure>
       </section>
 
       <section class="reviews-section" aria-labelledby="reviews-title">
@@ -479,7 +505,11 @@
           </details>
           <details class="faq-item">
             <summary>Is the patio open year-round?</summary>
-            <div class="faq-answer"><p>Yes. The covered patio is set up for every season, with heating, cooling, televisions, games, and plenty of seating.</p></div>
+            <div class="faq-answer"><p>Yes. The covered and sealed patio has two industrial heaters for winter, a swamp cooler for summer, televisions, an outdoor pool table, giant Connect Four, and plenty of seating.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Does Flespy’s have Oregon Lottery?</summary>
+            <div class="faq-answer"><p>Yes. Flespy’s has a dedicated, colorful Oregon Lottery room with video lottery games for guests 21 and over.</p></div>
           </details>
           <details class="faq-item">
             <summary>Can I order food to go?</summary>
@@ -531,6 +561,7 @@
           <a href="#happening">Events</a>
           <a href="#food">Full Menu</a>
           <a href="#patio">The Patio</a>
+          <a href="#lottery">Lottery</a>
           <a href="#faq">FAQs</a>
           <a href="#visit">Visit</a>
         </div>
@@ -546,56 +577,60 @@
       const menuTabs = document.querySelectorAll("[data-menu-tab]");
       const menuPanels = document.querySelectorAll("[data-menu-panel]");
 
-      const gallerySources = {
+      const menuPhotoSources = {
         "menu-burgers": [["images/doordash/cowboy-burger.jpg", "Cowboy burger", "Cowboy burger"], ["images/doordash/angus-cheeseburger.jpg", "Angus steak cheeseburger", "Angus cheeseburger"], ["images/doordash/chili-burger.jpg", "Flespy’s chili burger", "Chili burger"], ["images/doordash/crispy-chicken-sandwich.jpg", "Crispy chicken sandwich", "Crispy chicken sandwich"], ["images/doordash/pulled-pork-sandwich.jpg", "Pulled pork sandwich", "Pulled pork sandwich"]],
-        "menu-baskets": [["images/doordash/fish-and-chips.jpg", "Fish and chips", "Fish + chips"], ["images/doordash/chicken-strip-basket.jpg", "Chicken strip basket", "Chicken strip basket"], ["images/doordash/nachos.jpg", "Nachos", "Nachos"], ["images/flespys-logo.jpeg", "Flespy’s Bar and Grill logo", "Frito pie bowl"], ["images/flespys-logo.jpeg", "Flespy’s Bar and Grill logo", "Flespy’s chili"]],
-        "menu-tacos": [["images/flespys-logo.jpeg", "Flespy’s Bar and Grill logo", "Taco Tuesday + Thursday"], ["images/doordash/fish-taco.jpg", "Fish taco", "Fish tacos"], ["images/doordash/taco-salad.jpg", "Taco salad", "Taco salad"], ["images/doordash/chicken-bacon-salad.jpg", "Crispy chicken bacon ranch salad", "Chicken bacon ranch salad"]],
+        "menu-baskets": [["images/doordash/fish-and-chips.jpg", "Fish and chips", "Fish + chips"], ["images/doordash/chicken-strip-basket.jpg", "Chicken strip basket", "Chicken strip basket"], ["images/doordash/nachos.jpg", "Nachos", "Nachos"], ["images/frito-pie-bowl.jpeg", "Flespy’s Frito pie bowl", "Frito pie bowl"], ["images/chili-cup.jpeg", "Flespy’s house-made chili with garlic Texas toast", "Flespy’s chili"]],
+        "menu-tacos": [["images/taco-tuesday-thursday.jpg", "Crunchy and soft tacos served for Taco Tuesday and Thursday", "Taco Tuesday + Thursday"], ["images/doordash/fish-taco.jpg", "Fish taco", "Fish tacos"], ["images/doordash/taco-salad.jpg", "Taco salad", "Taco salad"], ["images/doordash/chicken-bacon-salad.jpg", "Crispy chicken bacon ranch salad", "Chicken bacon ranch salad"]],
         "menu-apps": [["images/doordash/sampler-platter.jpg", "Sampler platter", "Sampler platter"], ["images/doordash/polish-dog.jpg", "Polish dog", "Polish dog"], ["images/doordash/jalapeno-poppers.jpg", "Jalapeño poppers", "Jalapeño poppers"], ["images/doordash/potstickers.jpg", "Potstickers", "Potstickers"], ["images/flespys-logo.jpeg", "Flespy’s Bar and Grill logo", "Soft pretzel"], ["images/doordash/onion-rings.jpg", "Onion rings", "Onion rings"], ["images/doordash/cajun-tots.jpg", "Cajun tots", "Cajun tots"], ["images/doordash/french-fries.jpg", "French fries", "French fries"]],
         "menu-wings": [["images/doordash/wings.jpg", "Six chicken wings", "Six wings"], ["images/doordash/wings.jpg", "Twelve chicken wings", "Twelve wings"]],
-        "menu-sweets": [["images/flespys-logo.jpeg", "Flespy’s Bar and Grill logo", "Chocolate almond coffee cake"]]
+        "menu-sweets": [["images/coffee-almond-cake.jpg", "Chocolate almond coffee cake with whipped cream and chocolate drizzle", "Chocolate almond coffee cake"]]
       };
 
       menuPanels.forEach((panel) => {
-        const photos = gallerySources[panel.id];
+        const photos = menuPhotoSources[panel.id];
         const menuItems = Array.from(panel.querySelectorAll(".menu-item"));
-        const gallery = document.createElement("aside");
-        gallery.className = "menu-gallery";
-        gallery.setAttribute("aria-label", `${panel.querySelector("h3").textContent} photo gallery`);
-        gallery.innerHTML = '<div class="gallery-topline"><span>Food gallery</span><span class="gallery-count"></span></div><div class="gallery-stage"></div><div class="gallery-controls"><button type="button" class="gallery-prev" aria-label="Previous photo">←</button><span class="gallery-caption"></span><button type="button" class="gallery-next" aria-label="Next photo">→</button></div>';
-        const stage = gallery.querySelector(".gallery-stage");
-        const caption = gallery.querySelector(".gallery-caption");
-        const count = gallery.querySelector(".gallery-count");
-        let active = 0;
-        const render = () => {
-          const [src, alt, label] = photos[active];
-          const imageClass = src.includes("flespys-logo") ? "gallery-logo" : "";
-          stage.innerHTML = `<img class="${imageClass}" src="${src}" alt="${alt}">`;
-          caption.textContent = label;
-          count.textContent = `${active + 1} / ${photos.length}`;
-          menuItems.forEach((item, index) => {
-            const selected = index === active;
-            item.classList.toggle("is-gallery-active", selected);
-            item.setAttribute("aria-pressed", String(selected));
-          });
-        };
         menuItems.forEach((item, index) => {
           const itemName = item.querySelector("h4")?.textContent || `menu item ${index + 1}`;
+          const [src, alt] = photos[index] || ["images/flespys-logo.jpeg", "Flespy’s Bar and Grill logo"];
+          const photoId = `${panel.id}-photo-${index + 1}`;
+          const photo = document.createElement("div");
+          const hint = document.createElement("span");
+          hint.className = "menu-photo-hint";
+          hint.textContent = "View photo +";
+          photo.className = "menu-item-photo";
+          photo.id = photoId;
+          photo.hidden = true;
+          photo.innerHTML = `<img class="${src.includes("flespys-logo") ? "menu-item-logo" : ""}" src="${src}" alt="${alt}" loading="lazy"><span>Tap the item again to close</span>`;
+          item.append(hint);
+          item.append(photo);
           item.tabIndex = 0;
           item.setAttribute("role", "button");
           item.setAttribute("aria-label", `Show photo for ${itemName}`);
-          item.addEventListener("click", () => { active = index; render(); });
+          item.setAttribute("aria-expanded", "false");
+          item.setAttribute("aria-controls", photoId);
+          const togglePhoto = () => {
+            const willOpen = photo.hidden;
+            menuItems.forEach((otherItem) => {
+              const otherPhoto = otherItem.querySelector(".menu-item-photo");
+              const otherHint = otherItem.querySelector(".menu-photo-hint");
+              if (otherPhoto) otherPhoto.hidden = true;
+              if (otherHint) otherHint.textContent = "View photo +";
+              otherItem.classList.remove("is-gallery-active");
+              otherItem.setAttribute("aria-expanded", "false");
+            });
+            photo.hidden = !willOpen;
+            item.classList.toggle("is-gallery-active", willOpen);
+            item.setAttribute("aria-expanded", String(willOpen));
+            hint.textContent = willOpen ? "Hide photo −" : "View photo +";
+          };
+          item.addEventListener("click", togglePhoto);
           item.addEventListener("keydown", (event) => {
             if (event.key === "Enter" || event.key === " ") {
               event.preventDefault();
-              active = index;
-              render();
+              togglePhoto();
             }
           });
         });
-        gallery.querySelector(".gallery-prev").addEventListener("click", () => { active = (active - 1 + photos.length) % photos.length; render(); });
-        gallery.querySelector(".gallery-next").addEventListener("click", () => { active = (active + 1) % photos.length; render(); });
-        render();
-        panel.append(gallery);
       });
 
       const activateMenu = (panelId) => {
