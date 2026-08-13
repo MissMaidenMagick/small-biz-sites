@@ -81,9 +81,31 @@ a {
 }
 
 .mobile-brand-name,
-.mobile-brand-address,
+.mobile-brand-address {
+  display: block;
+}
+
 .mobile-header-phone {
   display: none;
+}
+
+.mobile-brand-name {
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1;
+  text-transform: none;
+}
+
+.mobile-brand-address {
+  margin-top: 6px;
+  color: rgba(242, 234, 219, 0.62);
+  font-size: 0.49rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
 .brand-name {
@@ -1977,7 +1999,6 @@ nav a:focus-visible::after {
   }
 
   .mobile-brand-name,
-  .mobile-brand-address,
   .mobile-header-phone {
     display: block;
   }

@@ -256,6 +256,7 @@
 
 .dish-photo {
   overflow: hidden;
+  width: min(100%, 520px);
   aspect-ratio: 1;
   margin-bottom: 26px;
   background: #090909;
@@ -402,6 +403,6 @@
   .dish summary::after { grid-column: 2; grid-row: 1; }
   .dish-price { grid-column: 1; grid-row: 2; }
   .dish-description { margin-right: 0; }
-  .dish-photo { width: calc(100% + 40px); margin-left: -20px; margin-right: -20px; }
+  .dish-photo { width: calc(100% + 40px); max-width: none; margin-left: -20px; margin-right: -20px; }
   .map-card { min-height: 360px; }
 }
