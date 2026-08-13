@@ -370,7 +370,8 @@
   font-size: 1.2rem;
 }
 
-.map-card {
+.map-card,
+.visit-hero-map {
   position: relative;
   overflow: hidden;
   min-height: 540px;
@@ -378,7 +379,8 @@
   border: 1px solid rgba(73, 200, 255, .5);
 }
 
-.map-card iframe {
+.map-card iframe,
+.visit-hero-map iframe {
   width: 100%;
   height: 100%;
   min-height: 540px;
@@ -386,21 +388,93 @@
   filter: saturate(.82) contrast(1.04);
 }
 
-.food-marker {
+.custom-map-marker {
   position: absolute;
   top: 50%;
   left: 50%;
   display: flex;
   align-items: center;
+  gap: 5px;
   justify-content: center;
+  width: 82px;
+  height: 58px;
+  padding: 8px;
+  background: #080808;
+  border: 2px solid #fff;
+  border-radius: 30px 30px 30px 8px;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, .48), 0 0 20px rgba(73, 200, 255, .38);
   pointer-events: none;
   transform: translate(-50%, -65%);
 }
 
-.food-marker span {
-  margin: -2px;
-  font-size: 2.2rem;
-  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, .72));
+.marker-beer {
+  position: relative;
+  width: 25px;
+  height: 31px;
+  background: #ffc14a;
+  border: 2px solid #fff;
+  border-radius: 3px 3px 6px 6px;
+  box-shadow: inset 5px 0 rgba(255, 255, 255, .22);
+}
+
+.marker-beer::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: -3px;
+  width: 27px;
+  height: 10px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.marker-beer::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: -10px;
+  width: 10px;
+  height: 15px;
+  border: 3px solid #fff;
+  border-left: 0;
+  border-radius: 0 8px 8px 0;
+}
+
+.marker-burger {
+  position: relative;
+  width: 31px;
+  height: 25px;
+  margin-top: 7px;
+}
+
+.marker-burger::before,
+.marker-burger::after,
+.marker-burger i,
+.marker-burger b,
+.marker-burger em {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 31px;
+}
+
+.marker-burger::before { top: 0; height: 10px; background: #f0a849; border-radius: 16px 16px 3px 3px; }
+.marker-burger i { top: 9px; height: 4px; background: #58ef88; transform: skew(-14deg); }
+.marker-burger b { top: 13px; height: 6px; background: #7a3427; border-radius: 5px; }
+.marker-burger em { top: 18px; height: 3px; background: #ffc14a; }
+.marker-burger::after { top: 21px; height: 6px; background: #f0a849; border-radius: 3px 3px 9px 9px; }
+
+.visit-hero-map {
+  padding: 0;
+}
+
+.visit-hero-map iframe {
+  display: block;
+}
+
+.visit-info-only {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
 }
 
 .map-directions {
@@ -448,6 +522,6 @@
   .dish-photo { width: calc(100% + 40px); max-width: none; margin-left: -20px; margin-right: -20px; }
   .map-card,
   .map-card iframe { min-height: 420px; }
-  .food-marker span { font-size: 2rem; }
+  .custom-map-marker { width: 76px; height: 54px; }
   .map-directions { right: 12px; bottom: 12px; left: 12px; text-align: center; }
 }
