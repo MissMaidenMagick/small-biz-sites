@@ -66,6 +66,12 @@
     <priority>0.8</priority>
   </url>
 
+  <url><loc>https://sitescovered.com/flespys-bar-and-grill/menu.html</loc><priority>0.8</priority></url>
+  <url><loc>https://sitescovered.com/flespys-bar-and-grill/events.html</loc><priority>0.8</priority></url>
+  <url><loc>https://sitescovered.com/flespys-bar-and-grill/patio.html</loc><priority>0.7</priority></url>
+  <url><loc>https://sitescovered.com/flespys-bar-and-grill/lottery.html</loc><priority>0.7</priority></url>
+  <url><loc>https://sitescovered.com/flespys-bar-and-grill/visit.html</loc><priority>0.8</priority></url>
+
   <url>
     <loc>https://sitescovered.com/house-of-glory/</loc>
     <priority>0.8</priority>

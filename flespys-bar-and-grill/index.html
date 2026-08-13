@@ -8,6 +8,7 @@
     <meta name="theme-color" content="#080808">
     <link rel="canonical" href="https://sitescovered.com/flespys-bar-and-grill/">
     <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Flespy’s Bar &amp; Grill">
     <meta property="og:title" content="Flespy’s Bar &amp; Grill | Cozy. Classy. Fun.">
     <meta property="og:description" content="Full menu until midnight, taco nights, karaoke four nights a week, nine beers on draft, and a covered patio in Grants Pass.">
     <meta property="og:url" content="https://sitescovered.com/flespys-bar-and-grill/">
@@ -21,12 +22,16 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "BarOrPub",
+        "@type": ["Restaurant", "BarOrPub"],
+        "@id": "https://sitescovered.com/flespys-bar-and-grill/#business",
         "name": "Flespy’s Bar & Grill",
         "url": "https://sitescovered.com/flespys-bar-and-grill/",
         "image": "https://sitescovered.com/flespys-bar-and-grill/images/og.png",
         "telephone": "+1-541-244-1678",
-        "hasMenu": "https://sitescovered.com/flespys-bar-and-grill/#food",
+        "hasMenu": "https://sitescovered.com/flespys-bar-and-grill/menu.html",
+        "servesCuisine": ["American", "Bar Food", "Burgers", "Tacos", "Chicken Wings"],
+        "priceRange": "$",
+        "sameAs": ["https://www.facebook.com/flespysbarandgrill"],
         "openingHours": "Mo-Su 11:00-24:00",
         "address": {
           "@type": "PostalAddress",
@@ -37,6 +42,9 @@
           "addressCountry": "US"
         }
       }
+    </script>
+    <script type="application/ld+json">
+      {"@context":"https://schema.org","@type":"WebSite","name":"Flespy’s Bar & Grill","alternateName":"Flespy’s","url":"https://sitescovered.com/flespys-bar-and-grill/"}
     </script>
     <script type="application/ld+json">
       {
@@ -111,14 +119,14 @@
           <span class="mobile-brand-address">670 Fruitdale Dr · Grants Pass</span>
         </a>
         <nav aria-label="Main navigation">
-          <a href="#happening">Events</a>
-          <a href="#food">Full Menu</a>
-          <a href="#patio">The Patio</a>
-          <a href="#lottery">Lottery</a>
-          <a href="#faq">FAQs</a>
-          <a href="#visit">Visit</a>
+          <a href="events.html">Events</a>
+          <a href="menu.html">Full Menu</a>
+          <a href="patio.html">The Patio</a>
+          <a href="lottery.html">Lottery</a>
+          <a href="visit.html#faq">FAQs</a>
+          <a href="visit.html">Visit</a>
         </nav>
-        <a class="header-cta" href="#food">View the menu</a>
+        <a class="header-cta" href="menu.html">View the menu</a>
         <a class="mobile-header-phone" href="tel:+15412441678" aria-label="Call Flespy’s at 541-244-1678">(541) 244-1678</a>
       </header>
 
@@ -129,8 +137,8 @@
           <h1>Cozy, Classy, Fun!</h1>
           <p class="hero-copy">Full menu until midnight, cold drinks, and something happening all week long.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#happening">Plan your night</a>
-            <a class="button button-ghost" href="#food">Read the full menu</a>
+            <a class="button button-primary" href="events.html">Plan your night</a>
+            <a class="button button-ghost" href="menu.html">Read the full menu</a>
           </div>
         </div>
         <div class="hero-media">
@@ -170,7 +178,7 @@
             <p class="event-kicker">11 AM to midnight</p>
             <h3>Taco Days</h3>
             <p>Ground beef or pulled chicken, built one at a time. Crunchy corn tacos are $1.50. Soft flour tacos are $2.50. The hot sauce wall handles the rest.</p>
-            <a href="#food" data-menu-link="menu-tacos">See taco details <span aria-hidden="true">↓</span></a>
+            <a href="menu.html#taco-tuesday-thursday">See taco details <span aria-hidden="true">→</span></a>
           </article>
           <article class="event-card accent-blue">
             <span class="event-number">FOUR NIGHTS A WEEK</span>
@@ -191,7 +199,7 @@
             <p class="event-kicker">$1 off fish meals</p>
             <h3>Fish Friday</h3>
             <p>Start the weekend with $1 off fish meals, including Flespy’s battered Alaskan cod tacos and fish &amp; chips.</p>
-            <a href="#food" data-menu-link="menu-baskets">See the fish menu <span aria-hidden="true">↓</span></a>
+            <a href="menu.html#fish-and-chips">See the fish menu <span aria-hidden="true">→</span></a>
           </article>
         </div>
 
@@ -570,18 +578,18 @@
           <small>Bar &amp; Grill · Grants Pass, Oregon</small>
         </div>
         <div class="footer-links">
-          <a href="#happening">Events</a>
-          <a href="#food">Full Menu</a>
-          <a href="#patio">The Patio</a>
-          <a href="#lottery">Lottery</a>
-          <a href="#faq">FAQs</a>
-          <a href="#visit">Visit</a>
+          <a href="events.html">Events</a>
+          <a href="menu.html">Full Menu</a>
+          <a href="patio.html">The Patio</a>
+          <a href="lottery.html">Lottery</a>
+          <a href="visit.html#faq">FAQs</a>
+          <a href="visit.html">Visit</a>
         </div>
         <p>Fish Fridays. Open mic Sundays. One very good patio.</p>
       </footer>
 
       <div class="mobile-actions" aria-label="Quick actions">
-        <a href="#food">Full Menu</a>
+        <a href="menu.html">Full Menu</a>
         <a href="https://www.google.com/maps/dir/?api=1&amp;destination=670+Fruitdale+Dr,+Grants+Pass,+OR+97527" target="_blank" rel="noreferrer">Directions</a>
       </div>
     </main>
