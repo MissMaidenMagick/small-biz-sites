@@ -17,7 +17,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260812-1">
+    <link rel="stylesheet" href="styles.css?v=20260812-2">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -86,7 +86,7 @@
           {
             "@type": "Question",
             "name": "Is the patio open year-round?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The covered and sealed patio has two industrial heaters for winter, a swamp cooler for summer, televisions, an outdoor pool table, giant Connect Four, and plenty of seating." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The covered patio stays warm in winter and cool in summer, with televisions, an outdoor pool table, giant Connect Four, and plenty of seating." }
           },
           {
             "@type": "Question",
@@ -205,9 +205,9 @@
           <div class="facebook-page-feed" aria-label="Latest posts from Flespy’s on Facebook">
             <iframe
               title="Latest posts from Flespy’s Bar &amp; Grill"
-              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fflespysbarandgrill&amp;tabs=timeline&amp;width=500&amp;height=700&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false"
+              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fflespysbarandgrill&amp;tabs=timeline&amp;width=500&amp;height=760&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false"
               width="500"
-              height="700"
+              height="760"
               style="border:none;overflow:visible"
               scrolling="yes"
               frameborder="0"
@@ -239,6 +239,18 @@
           <button class="menu-tab" id="tab-wings" type="button" role="tab" aria-selected="false" aria-controls="menu-wings" data-menu-tab="menu-wings">Chicken Wings</button>
           <button class="menu-tab" id="tab-sweets" type="button" role="tab" aria-selected="false" aria-controls="menu-sweets" data-menu-tab="menu-sweets">Something Sweet</button>
         </div>
+
+        <label class="mobile-menu-picker">
+          <span>Choose a menu section</span>
+          <select data-menu-select aria-label="Choose a menu section">
+            <option value="menu-burgers">Burgers + Sandwiches</option>
+            <option value="menu-baskets">Baskets + Bowls</option>
+            <option value="menu-tacos">Tacos + Salads</option>
+            <option value="menu-apps">Appetizers</option>
+            <option value="menu-wings">Chicken Wings</option>
+            <option value="menu-sweets">Something Sweet</option>
+          </select>
+        </label>
 
         <div class="menu-grid">
           <section class="menu-category" id="menu-burgers" role="tabpanel" aria-labelledby="tab-burgers" data-menu-panel>
@@ -391,14 +403,14 @@
           </div>
         </div>
         <div class="scene-copy">
-          <p class="eyebrow neon-blue">Covered · Sealed · Comfortable</p>
+          <p class="eyebrow neon-blue">Covered · Warm · Cool</p>
           <h2>The patio does<br>all four seasons.</h2>
-          <p>The outdoor patio is covered and sealed, with two industrial heaters that keep it warm through winter and a swamp cooler for summer. Settle in for the game, play pool or giant Connect Four, and stay awhile.</p>
+          <p>The covered outdoor patio stays warm in winter and cool in summer. Settle in for the game, play pool or giant Connect Four, and stay awhile.</p>
           <div class="scene-details">
-            <span>Two heaters</span>
+            <span>Warm in winter</span>
             <span>Outdoor pool table</span>
             <span>Giant Connect Four</span>
-            <span>Swamp cooled</span>
+            <span>Cool in summer</span>
           </div>
         </div>
       </section>
@@ -505,7 +517,7 @@
           </details>
           <details class="faq-item">
             <summary>Is the patio open year-round?</summary>
-            <div class="faq-answer"><p>Yes. The covered and sealed patio has two industrial heaters for winter, a swamp cooler for summer, televisions, an outdoor pool table, giant Connect Four, and plenty of seating.</p></div>
+            <div class="faq-answer"><p>Yes. The covered patio stays warm in winter and cool in summer, with televisions, an outdoor pool table, giant Connect Four, and plenty of seating.</p></div>
           </details>
           <details class="faq-item">
             <summary>Does Flespy’s have Oregon Lottery?</summary>
@@ -576,6 +588,7 @@
     <script>
       const menuTabs = document.querySelectorAll("[data-menu-tab]");
       const menuPanels = document.querySelectorAll("[data-menu-panel]");
+      const menuSelect = document.querySelector("[data-menu-select]");
 
       const menuPhotoSources = {
         "menu-burgers": [["images/doordash/cowboy-burger.jpg", "Cowboy burger", "Cowboy burger"], ["images/doordash/angus-cheeseburger.jpg", "Angus steak cheeseburger", "Angus cheeseburger"], ["images/doordash/chili-burger.jpg", "Flespy’s chili burger", "Chili burger"], ["images/doordash/crispy-chicken-sandwich.jpg", "Crispy chicken sandwich", "Crispy chicken sandwich"], ["images/doordash/pulled-pork-sandwich.jpg", "Pulled pork sandwich", "Pulled pork sandwich"]],
@@ -643,6 +656,8 @@
         menuPanels.forEach((panel) => {
           panel.hidden = panel.id !== panelId;
         });
+
+        if (menuSelect) menuSelect.value = panelId;
       };
 
       menuTabs.forEach((tab) => {
@@ -650,6 +665,8 @@
           activateMenu(tab.dataset.menuTab);
         });
       });
+
+      menuSelect?.addEventListener("change", () => activateMenu(menuSelect.value));
 
       document.querySelectorAll("[data-menu-link]").forEach((link) => {
         link.addEventListener("click", () => activateMenu(link.dataset.menuLink));

@@ -647,9 +647,9 @@ nav a:focus-visible::after {
 .facebook-page-feed {
   width: 100%;
   max-width: 500px;
-  min-height: 700px;
+  min-height: 760px;
   justify-self: end;
-  overflow: visible;
+  overflow: hidden;
   padding: 0;
   background: transparent;
   border: 2px solid var(--blue);
@@ -659,10 +659,10 @@ nav a:focus-visible::after {
 .facebook-page-feed iframe {
   display: block;
   width: 100% !important;
-  height: 700px;
+  height: 760px;
   max-width: 500px !important;
   background: transparent;
-  overflow: visible !important;
+  overflow: hidden !important;
 }
 
 .food-section {
@@ -731,6 +731,10 @@ nav a:focus-visible::after {
   margin: 0 auto 22px;
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-left: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.mobile-menu-picker {
+  display: none;
 }
 
 .menu-tab {
@@ -988,9 +992,11 @@ nav a:focus-visible::after {
 }
 
 .menu-item-photo {
+  position: relative;
   overflow: hidden;
   margin-top: 18px;
-  padding: 14px;
+  padding: 0;
+  aspect-ratio: 1;
   background: #080808;
   border: 1px solid color-mix(in srgb, var(--menu-neon) 56%, transparent);
   box-shadow: 0 0 18px color-mix(in srgb, var(--menu-neon) 12%, transparent);
@@ -1002,24 +1008,32 @@ nav a:focus-visible::after {
 
 .menu-item-photo img {
   width: 100%;
-  max-height: 430px;
-  aspect-ratio: 4 / 3;
-  object-fit: contain;
+  height: 100%;
+  max-height: none;
+  aspect-ratio: 1;
+  object-fit: cover;
+  object-position: center;
   background: #080808;
 }
 
 .menu-item-photo img.menu-item-logo {
-  padding: clamp(20px, 5vw, 64px);
+  padding: clamp(28px, 6vw, 72px);
+  object-fit: contain;
 }
 
 .menu-item-photo span {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
   display: block;
-  margin-top: 10px;
-  color: color-mix(in srgb, var(--menu-neon) 82%, white);
+  padding: 7px 9px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.78);
+  border: 1px solid color-mix(in srgb, var(--menu-neon) 60%, transparent);
   font-size: 0.55rem;
   font-weight: 900;
   letter-spacing: 0.12em;
-  text-align: center;
+  text-align: right;
   text-transform: uppercase;
 }
 
@@ -2063,13 +2077,16 @@ nav a:focus-visible::after {
   }
 
   .facebook-page-feed {
-    min-height: 600px;
+    width: 100%;
+    max-width: 500px;
+    min-height: 760px;
     justify-self: center;
     margin-inline: auto;
   }
 
   .facebook-page-feed iframe {
-    height: 600px;
+    width: 100% !important;
+    height: 760px;
   }
 
   .section-heading {
@@ -2106,8 +2123,36 @@ nav a:focus-visible::after {
   }
 
   .menu-switcher {
-    grid-template-columns: 1fr 1fr;
+    display: none;
+  }
+
+  .mobile-menu-picker {
+    display: grid;
+    gap: 8px;
     margin-bottom: 14px;
+  }
+
+  .mobile-menu-picker span {
+    color: rgba(242, 234, 219, 0.62);
+    font-size: 0.58rem;
+    font-weight: 900;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  .mobile-menu-picker select {
+    width: 100%;
+    min-height: 58px;
+    padding: 0 48px 0 16px;
+    color: var(--cream);
+    background: #101010;
+    border: 1px solid var(--blue);
+    border-radius: 0;
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 
   .menu-tab {
@@ -2141,13 +2186,16 @@ nav a:focus-visible::after {
   }
 
   .menu-item-photo {
-    margin-inline: -2px;
-    padding: 9px;
+    width: calc(100% + 24px);
+    margin: 18px -12px 0;
   }
 
   .menu-item-photo img {
+    width: 100%;
+    height: 100%;
     max-height: none;
-    aspect-ratio: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
   }
 
   .wings-layout {
