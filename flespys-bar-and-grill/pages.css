@@ -371,9 +371,51 @@
 }
 
 .map-card {
+  position: relative;
+  overflow: hidden;
   min-height: 540px;
-  background: url("images/bar-wide.jpg") center / cover;
+  background: #111;
   border: 1px solid rgba(73, 200, 255, .5);
+}
+
+.map-card iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  border: 0;
+  filter: saturate(.82) contrast(1.04);
+}
+
+.food-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform: translate(-50%, -65%);
+}
+
+.food-marker span {
+  margin: -2px;
+  font-size: 2.2rem;
+  filter: drop-shadow(0 3px 3px rgba(0, 0, 0, .72));
+}
+
+.map-directions {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  padding: 14px 17px;
+  color: #fff;
+  background: #080808;
+  border: 1px solid var(--blue);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .3);
+  font-size: .63rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }
 
 @media (max-width: 980px) {
@@ -404,5 +446,8 @@
   .dish-price { grid-column: 1; grid-row: 2; }
   .dish-description { margin-right: 0; }
   .dish-photo { width: calc(100% + 40px); max-width: none; margin-left: -20px; margin-right: -20px; }
-  .map-card { min-height: 360px; }
+  .map-card,
+  .map-card iframe { min-height: 420px; }
+  .food-marker span { font-size: 2rem; }
+  .map-directions { right: 12px; bottom: 12px; left: 12px; text-align: center; }
 }
