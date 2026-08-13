@@ -105,6 +105,7 @@ a {
   font-size: 0.49rem;
   font-weight: 800;
   letter-spacing: 0.08em;
+  text-transform: uppercase;
   white-space: nowrap;
 }
 
