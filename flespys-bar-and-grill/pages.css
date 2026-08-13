@@ -388,86 +388,46 @@
   filter: saturate(.82) contrast(1.04);
 }
 
-.bottle-map-marker {
+.logo-map-marker {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 58px;
-  height: 92px;
-  filter: drop-shadow(0 7px 7px rgba(0, 0, 0, .52)) drop-shadow(0 0 8px rgba(73, 200, 255, .85));
+  width: 104px;
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, .5)) drop-shadow(0 0 9px rgba(73, 200, 255, .85));
   pointer-events: none;
-  transform: translate(-50%, -78%);
+  transform: translate(-50%, -70%);
 }
 
-.bottle-cap {
-  position: relative;
-  z-index: 3;
-  width: 25px;
-  height: 8px;
-  margin: 0 auto -1px;
-  background: #f8f8f4;
-  border: 2px solid #49c8ff;
-  border-radius: 5px 5px 2px 2px;
-}
-
-.bottle-neck {
+.logo-marker-face {
   position: relative;
   z-index: 2;
-  width: 19px;
-  height: 20px;
-  margin: 0 auto -2px;
+  overflow: hidden;
+  width: 104px;
+  height: 76px;
+  padding: 7px;
   background: #080808;
-  border-right: 2px solid #fff;
-  border-left: 2px solid #fff;
-}
-
-.bottle-body {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  width: 54px;
-  height: 54px;
-  margin: 0 auto;
-  place-items: center;
-  color: #080808;
-  background: #f8f8f4;
-  border: 3px solid #080808;
-  border-radius: 12px 12px 17px 17px;
+  border: 3px solid #fff;
+  border-radius: 15px;
   outline: 2px solid #49c8ff;
-  box-shadow: inset 0 0 0 3px #fff;
 }
 
-.bottle-body::before,
-.bottle-body::after {
-  content: "";
-  position: absolute;
-  top: -13px;
-  width: 18px;
-  height: 18px;
-  background: #080808;
+.logo-marker-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: screen;
 }
 
-.bottle-body::before { left: 4px; transform: rotate(35deg); }
-.bottle-body::after { right: 4px; transform: rotate(-35deg); }
-
-.bottle-body span {
-  position: relative;
-  z-index: 3;
-  font-family: "Bodoni 72", Didot, "Times New Roman", serif;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1;
-}
-
-.bottle-point {
+.logo-marker-point {
   position: relative;
   z-index: 1;
-  width: 20px;
-  height: 20px;
-  margin: -12px auto 0;
-  background: #f8f8f4;
-  border-right: 2px solid #49c8ff;
-  border-bottom: 2px solid #49c8ff;
+  width: 26px;
+  height: 26px;
+  margin: -15px auto 0;
+  background: #080808;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  box-shadow: 2px 2px 0 #49c8ff;
   transform: rotate(45deg);
 }
 
@@ -529,6 +489,6 @@
   .dish-photo { width: calc(100% + 40px); max-width: none; margin-left: -20px; margin-right: -20px; }
   .map-card,
   .map-card iframe { min-height: 420px; }
-  .bottle-map-marker { transform: translate(-50%, -74%) scale(.9); }
+  .logo-map-marker { transform: translate(-50%, -68%) scale(.88); }
   .map-directions { right: 12px; bottom: 12px; left: 12px; text-align: center; }
 }
