@@ -1721,7 +1721,8 @@ nav a:focus-visible::after {
 
 .visit-section {
   display: grid;
-  grid-template-columns: 1.08fr .92fr;
+  grid-template-columns: .92fr 1.08fr;
+  min-height: 760px;
   background: var(--paper);
   color: var(--ink);
 }
@@ -1742,8 +1743,101 @@ nav a:focus-visible::after {
   justify-content: center;
 }
 
+.location-map {
+  position: relative;
+  overflow: hidden;
+  min-height: 760px;
+  background: #111;
+  border-left: 1px solid rgba(73, 200, 255, .55);
+}
+
+.location-map iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 760px;
+  border: 0;
+  filter: saturate(.82) contrast(1.04);
+}
+
+.logo-map-marker {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 104px;
+  filter: drop-shadow(0 8px 8px rgba(0, 0, 0, .5)) drop-shadow(0 0 9px rgba(73, 200, 255, .85));
+  pointer-events: none;
+  transform: translate(-50%, -70%);
+}
+
+.logo-marker-face {
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  width: 104px;
+  height: 76px;
+  padding: 7px;
+  background: #080808;
+  border: 3px solid #fff;
+  border-radius: 15px;
+  outline: 2px solid #49c8ff;
+}
+
+.logo-marker-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: screen;
+}
+
+.logo-marker-point {
+  position: relative;
+  z-index: 1;
+  width: 26px;
+  height: 26px;
+  margin: -15px auto 0;
+  background: #080808;
+  border-right: 3px solid #fff;
+  border-bottom: 3px solid #fff;
+  box-shadow: 2px 2px 0 #49c8ff;
+  transform: rotate(45deg);
+}
+
+.map-directions {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  padding: 14px 17px;
+  color: #fff;
+  background: #080808;
+  border: 1px solid var(--blue);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .3);
+  font-size: .63rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
 .visit-panel h2 {
   font-size: clamp(4rem, 7.5vw, 8rem);
+}
+
+.visit-page-section .visit-panel h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(4rem, 7.5vw, 8rem);
+  font-weight: 500;
+  letter-spacing: -.065em;
+  line-height: .86;
+}
+
+.visit-page-section .breadcrumbs {
+  margin-bottom: 26px;
+  color: rgba(17, 16, 15, .48);
+}
+
+.visit-page-section .breadcrumbs a {
+  color: var(--blue-deep);
 }
 
 .visit-info {
@@ -1932,6 +2026,11 @@ nav a:focus-visible::after {
 
   .visit-photo {
     min-height: 520px;
+  }
+
+  .location-map,
+  .location-map iframe {
+    min-height: 560px;
   }
 
   .review-grid {
@@ -2332,6 +2431,26 @@ nav a:focus-visible::after {
 
   .visit-panel {
     padding: 72px 20px;
+  }
+
+  .visit-page-section .visit-panel h1 {
+    font-size: clamp(2.75rem, 14vw, 4rem);
+  }
+
+  .location-map,
+  .location-map iframe {
+    min-height: 440px;
+  }
+
+  .location-map .logo-map-marker {
+    transform: translate(-50%, -68%) scale(.88);
+  }
+
+  .location-map .map-directions {
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    text-align: center;
   }
 
   .visit-info > div {
