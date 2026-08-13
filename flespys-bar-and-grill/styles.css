@@ -96,7 +96,7 @@ a {
   font-weight: 400;
   letter-spacing: 0.035em;
   line-height: 0.92;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .mobile-brand-address {
