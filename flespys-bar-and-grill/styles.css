@@ -91,12 +91,12 @@ a {
 
 .mobile-brand-name {
   color: #fff;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.45rem;
-  font-weight: 700;
-  letter-spacing: -0.025em;
-  line-height: 1;
-  text-transform: none;
+  font-family: "Bodoni 72", Didot, "Bodoni MT", "Times New Roman", serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  letter-spacing: 0.035em;
+  line-height: 0.92;
+  text-transform: uppercase;
 }
 
 .mobile-brand-address {
@@ -2006,12 +2006,13 @@ nav a:focus-visible::after {
   .mobile-brand-name {
     overflow: hidden;
     color: #fff;
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 1.28rem;
-    font-weight: 700;
-    letter-spacing: -0.025em;
-    line-height: 1;
+    font-family: "Bodoni 72", Didot, "Bodoni MT", "Times New Roman", serif;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.035em;
+    line-height: 0.92;
     text-overflow: ellipsis;
+    text-transform: uppercase;
     white-space: nowrap;
   }
 
