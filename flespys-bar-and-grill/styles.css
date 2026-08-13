@@ -68,7 +68,7 @@ a {
   justify-self: start;
   display: inline-flex;
   flex-direction: column;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .brand-logo {
@@ -2012,7 +2012,7 @@ nav a:focus-visible::after {
     letter-spacing: 0.035em;
     line-height: 0.92;
     text-overflow: ellipsis;
-    text-transform: uppercase;
+    text-transform: none;
     white-space: nowrap;
   }
 
