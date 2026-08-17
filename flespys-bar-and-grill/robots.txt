@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sitescovered.com/flespys-bar-and-grill/sitemap.xml
+Sitemap: https://www.flespys.com/sitemap.xml
