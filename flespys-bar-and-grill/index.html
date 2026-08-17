@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Flespy’s Bar &amp; Grill | Grants Pass, Oregon</title>
     <meta name="description" content="See the full Flespy’s Bar & Grill menu, weekly karaoke and taco schedule, current events, hours, and directions in Grants Pass, Oregon.">
     <meta name="theme-color" content="#080808">
@@ -18,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260817-2">
+    <link rel="stylesheet" href="styles.css?v=20260817-3">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -150,7 +153,7 @@
             </div>
           </div>
         </div>
-        <a class="scroll-cue" href="#happening">Tonight starts here <span aria-hidden="true">↓</span></a>
+        <a class="scroll-cue" href="#food">Tonight starts here <span aria-hidden="true">↓</span></a>
       </section>
 
       <div class="marquee" aria-label="Flespy’s highlights">
@@ -167,30 +170,6 @@
           </div>
         </div>
       </div>
-
-      <section class="happenings section-dark" id="happening">
-        <div class="live-updates" id="live-updates">
-          <div class="live-updates-copy">
-            <p class="eyebrow neon-blue">Straight from Flespy’s</p>
-            <h3>The latest lineup.</h3>
-            <p>Follow the live Facebook timeline for Flespy’s newest event flyers, kitchen specials, schedule changes, and last-minute announcements.</p>
-            <a class="button button-ghost" href="https://www.facebook.com/flespysbarandgrill" target="_blank" rel="noreferrer">View all updates on Facebook</a>
-          </div>
-          <div class="facebook-page-feed" aria-label="Latest posts from Flespy’s on Facebook">
-            <iframe
-              title="Latest posts from Flespy’s Bar &amp; Grill"
-              src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fflespysbarandgrill&amp;tabs=timeline&amp;width=500&amp;height=760&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false"
-              width="500"
-              height="760"
-              style="border:none;overflow:visible"
-              scrolling="yes"
-              frameborder="0"
-              allowfullscreen="true"
-              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-              loading="lazy"></iframe>
-          </div>
-        </div>
-      </section>
 
       <section class="food-section" id="food">
         <div class="checker-band" aria-hidden="true"></div>
@@ -376,11 +355,11 @@
 
       <section class="scene-section" id="patio">
         <div class="scene-photo scene-photo-large patio-gallery" aria-label="Flespy’s patio photo gallery">
-          <img src="images/patio-seating.jpg" alt="Covered patio seating, string lights, and television at Flespy’s" data-patio-image>
+          <img src="images/patio-seating.jpg?v=20260817-4" alt="Covered patio seating, string lights, and television at Flespy’s" data-patio-image>
           <div class="patio-gallery-bar">
             <button type="button" aria-label="Previous patio photo" data-patio-prev>←</button>
             <span data-patio-caption aria-live="polite">Covered patio seating</span>
-            <span class="patio-gallery-count" data-patio-count>1 / 2</span>
+            <span class="patio-gallery-count" data-patio-count>1 / 6</span>
             <button type="button" aria-label="Next patio photo" data-patio-next>→</button>
           </div>
         </div>
@@ -480,7 +459,7 @@
           </details>
           <details class="faq-item">
             <summary>What nights have karaoke?</summary>
-            <div class="faq-answer"><p>Karaoke is typically offered four nights a week. Days and times may change, so check the live updates or <a href="https://www.facebook.com/flespysbarandgrill" target="_blank" rel="noreferrer">Flespy’s Facebook page</a> before heading over.</p></div>
+            <div class="faq-answer"><p>Karaoke is typically offered four nights a week. Days and times may change, so check <a href="https://www.facebook.com/flespysbarandgrill" target="_blank" rel="noreferrer">Flespy’s Facebook page</a> before heading over.</p></div>
           </details>
           <details class="faq-item">
             <summary>Does Flespy’s have an open mic?</summary>
@@ -512,7 +491,7 @@
           </details>
           <details class="faq-item">
             <summary>Where can I find special events and schedule updates?</summary>
-            <div class="faq-answer"><p>Check the live updates above or visit <a href="https://www.facebook.com/flespysbarandgrill" target="_blank" rel="noreferrer">Flespy’s Facebook page</a> for DJs, live music, parties, and last-minute changes.</p></div>
+            <div class="faq-answer"><p>Visit <a href="https://www.facebook.com/flespysbarandgrill" target="_blank" rel="noreferrer">Flespy’s Facebook page</a> for DJs, live music, parties, and last-minute changes.</p></div>
           </details>
         </div>
       </section>
@@ -658,8 +637,12 @@
       });
 
       const patioSlides = [
-        ["images/patio-seating.jpg", "Covered patio seating, string lights, and television at Flespy’s", "Covered patio seating"],
-        ["images/patio-games.jpg", "Covered patio seating, outdoor pool table, and games at Flespy’s", "Outdoor pool + patio games"]
+        ["images/patio-seating.jpg?v=20260817-4", "Covered patio seating, string lights, and television at Flespy’s", "Covered patio seating"],
+        ["images/patio/patio-gallery-03.jpg?v=20260817-4", "Outdoor pool table and two giant Connect Four games on Flespy’s patio", "Pool + Connect Four"],
+        ["images/patio/patio-gallery-04.jpg?v=20260817-4", "Covered outdoor pool table and seating on Flespy’s patio", "Covered pool table"],
+        ["images/patio/patio-gallery-05.jpg?v=20260817-4", "Wide view of Flespy’s covered patio with seating and pool table", "Covered patio hangout"],
+        ["images/patio/patio-gallery-06.jpg?v=20260817-4", "Patio seating overlooking the mountains from Flespy’s", "Patio mountain view"],
+        ["images/patio-games.jpg?v=20260817-4", "Flespy’s patio with pool table and giant Connect Four games", "Outdoor pool + patio games"]
       ];
       const patioImage = document.querySelector("[data-patio-image]");
       const patioCaption = document.querySelector("[data-patio-caption]");
