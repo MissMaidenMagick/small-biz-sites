@@ -1,0 +1,3 @@
+.hero{overflow:visible}
+.hero-photo{width:min(100%,560px);height:auto;max-height:none;object-fit:contain;margin:0 auto;padding:34px 24px 38px}
+@media(max-width:780px){.hero-photo{width:min(100%,460px);padding:24px 16px 30px}}

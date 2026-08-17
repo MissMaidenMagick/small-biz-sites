@@ -1,0 +1,4 @@
+.brand-mark{display:inline-block;width:42px;height:42px;flex:0 0 42px;font-size:0;background:transparent url('images/flamingo-logo.png') center/contain no-repeat;overflow:hidden;border:0;border-radius:0;box-shadow:none;transform:none}
+.hero-art-inner{background-image:none;padding-right:24px}
+.footer .wrap:after{content:'';display:block;width:54px;height:64px;background:url('images/flamingo-logo.png') center/contain no-repeat;transform:rotate(8deg);margin-left:auto}
+@media(max-width:780px){.brand-mark{width:38px;height:38px;flex-basis:38px}.footer .wrap:after{margin:18px 0 0}}

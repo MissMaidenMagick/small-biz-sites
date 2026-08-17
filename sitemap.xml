@@ -92,4 +92,11 @@
     <priority>0.8</priority>
   </url>
 
+  <url><loc>https://sitescovered.com/tattoos-by-brittany/</loc><priority>0.8</priority></url>
+  <url><loc>https://sitescovered.com/tattoos-by-brittany/about/</loc><priority>0.7</priority></url>
+  <url><loc>https://sitescovered.com/tattoos-by-brittany/services/</loc><priority>0.7</priority></url>
+  <url><loc>https://sitescovered.com/tattoos-by-brittany/booking/</loc><priority>0.8</priority></url>
+  <url><loc>https://sitescovered.com/tattoos-by-brittany/gallery/</loc><priority>0.7</priority></url>
+  <url><loc>https://sitescovered.com/tattoos-by-brittany/contact/</loc><priority>0.7</priority></url>
+
 </urlset>
