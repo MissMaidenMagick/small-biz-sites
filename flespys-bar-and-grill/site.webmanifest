@@ -1,0 +1,18 @@
+{
+  "name": "Flespy’s Bar & Grill",
+  "short_name": "Flespy’s",
+  "description": "Full menu, events, patio, Oregon Lottery, hours and directions for Flespy’s Bar & Grill in Grants Pass, Oregon.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#080808",
+  "theme_color": "#080808",
+  "icons": [
+    {
+      "src": "images/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
