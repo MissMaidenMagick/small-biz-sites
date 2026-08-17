@@ -2013,6 +2013,38 @@ nav a:focus-visible::after {
   text-transform: uppercase;
 }
 
+.footer-facebook {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 12px;
+  padding: 24px 0 0;
+  border-top: 1px solid rgba(73, 200, 255, 0.42);
+}
+
+.footer-facebook span {
+  color: rgba(242, 234, 219, 0.68);
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.footer-facebook strong {
+  flex: 0 0 auto;
+  color: var(--blue);
+  font-size: 0.68rem;
+  font-weight: 950;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  text-shadow: 0 0 12px rgba(73, 200, 255, 0.4);
+}
+
+.footer-facebook:hover strong,
+.footer-facebook:focus-visible strong {
+  color: var(--cream);
+}
+
 .mobile-actions {
   display: none;
 }
@@ -2154,6 +2186,10 @@ nav a:focus-visible::after {
 
   .site-footer > p {
     justify-self: start;
+  }
+
+  .footer-facebook {
+    width: 100%;
   }
 }
 
@@ -2591,6 +2627,13 @@ nav a:focus-visible::after {
   .footer-links {
     display: grid;
     grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-facebook {
+    display: grid;
+    justify-items: center;
+    gap: 12px;
+    text-align: center;
   }
 
   .mobile-actions {
