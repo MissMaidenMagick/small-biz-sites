@@ -181,6 +181,16 @@
 
 .event-gallery-thumb.is-active { transform: translateY(-1px); }
 
+.page-hero-gallery {
+  align-self: center;
+  min-width: 0;
+  min-height: 0;
+}
+
+.page-hero-gallery .event-gallery-thumbs {
+  justify-content: center;
+}
+
 .lottery-showcase {
   display: grid;
   grid-template-columns: minmax(0, .9fr) minmax(460px, 1.1fr);
@@ -641,6 +651,9 @@
   .event-gallery-thumb {
     flex-basis: 68px;
     height: 52px;
+  }
+  .page-hero-gallery .event-gallery-thumbs {
+    justify-content: flex-start;
   }
   .lottery-gallery {
     margin: 0;
