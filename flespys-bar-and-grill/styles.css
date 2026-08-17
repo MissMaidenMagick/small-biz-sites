@@ -838,6 +838,58 @@ nav a:focus-visible::after {
   display: none !important;
 }
 
+.menu-order-cta {
+  display: flex;
+  max-width: 1380px;
+  margin: 34px auto 0;
+  scroll-margin-top: 120px;
+  padding: clamp(24px, 3vw, 38px);
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  color: var(--cream);
+  background:
+    linear-gradient(110deg, rgba(73, 200, 255, 0.11), transparent 42%),
+    #0e0e0e;
+  border: 1px solid var(--blue);
+  box-shadow: 8px 8px 0 #000, 0 0 24px rgba(73, 200, 255, 0.16);
+}
+
+.menu-order-cta span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--blue);
+  font-size: 0.62rem;
+  font-weight: 950;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.menu-order-cta h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 3.5vw, 3.4rem);
+  font-weight: 500;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+
+.menu-order-button {
+  flex: 0 0 auto;
+  color: #050505;
+  background: var(--blue);
+  border-color: var(--blue);
+  box-shadow: 0 0 22px rgba(73, 200, 255, 0.34);
+}
+
+.menu-order-button:hover,
+.menu-order-button:focus-visible {
+  color: #050505;
+  background: var(--cream);
+  border-color: var(--cream);
+  box-shadow: 0 0 28px rgba(73, 200, 255, 0.46);
+}
+
 .menu-category {
   --menu-neon: var(--blue);
   display: grid;
@@ -2298,6 +2350,20 @@ nav a:focus-visible::after {
     box-shadow:
       6px 6px 0 #000,
       0 0 18px color-mix(in srgb, var(--menu-neon) 14%, transparent);
+  }
+
+  .menu-order-cta {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-content: stretch;
+    margin-top: 24px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+
+  .menu-order-button {
+    width: 100%;
+    min-width: 0;
   }
 
   .menu-switcher {
