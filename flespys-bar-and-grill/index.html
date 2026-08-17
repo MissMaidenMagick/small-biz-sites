@@ -18,7 +18,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20260813-2">
+    <link rel="stylesheet" href="styles.css?v=20260816-1">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -115,7 +115,7 @@
       <header class="site-header">
         <a class="brand" href="#top" aria-label="Flespy’s Bar and Grill home">
           <span class="mobile-brand-name">Flespy’s</span>
-          <span class="mobile-brand-address">670 Fruitdale Dr · Grants Pass · (541) 244-1678</span>
+          <span class="mobile-brand-address">670 Fruitdale Dr · Grants Pass</span>
         </a>
         <nav aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a>
           <a href="events.html">Events</a>
@@ -155,10 +155,12 @@
 
       <div class="marquee" aria-label="Flespy’s highlights">
         <div class="marquee-track">
-          <span>FOOD</span><i>◆</i><span>DRINKS</span><i>◆</i><span>KARAOKE</span><i>◆</i>
-          <span>LIVE MUSIC</span><i>◆</i><span>PATIO</span><i>◆</i><span>HOT SAUCE WALL</span><i>◆</i><span>ADULT VENDING MACHINE</span><i>◆</i>
-          <span>FOOD</span><i>◆</i><span>DRINKS</span><i>◆</i><span>KARAOKE</span><i>◆</i>
-          <span>LIVE MUSIC</span><i>◆</i><span>PATIO</span><i>◆</i><span>HOT SAUCE WALL</span><i>◆</i><span>ADULT VENDING MACHINE</span>
+          <div class="marquee-group">
+            <span>FOOD</span><i>◆</i><span>DRINKS</span><i>◆</i><span>KARAOKE</span><i>◆</i><span>LIVE MUSIC</span><i>◆</i><span>PATIO</span><i>◆</i><span>HOT SAUCE WALL</span><i>◆</i><span>ADULT VENDING MACHINE</span><i>◆</i>
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+            <span>FOOD</span><i>◆</i><span>DRINKS</span><i>◆</i><span>KARAOKE</span><i>◆</i><span>LIVE MUSIC</span><i>◆</i><span>PATIO</span><i>◆</i><span>HOT SAUCE WALL</span><i>◆</i><span>ADULT VENDING MACHINE</span><i>◆</i>
+          </div>
         </div>
       </div>
 
@@ -302,7 +304,7 @@
             </article>
             <article class="menu-item">
               <div><h4>Nachos</h4><strong>$15 / $9</strong></div>
-              <p>Full or half order with cheddar, tomato, onion, jalapeño, sour cream, and salsa. Add beef, chicken, smoky BBQ, or sweet &amp; spicy pork $3. Load them with chili for $4.</p>
+              <p>Full or half order with cheddar, nacho cheese, or both, plus tomato, onion, jalapeño, sour cream, and salsa. Add beef, chicken, or BBQ pulled pork for $3. Load them with chili for $4.</p>
             </article>
             <article class="menu-item">
               <div><h4>Frito Pie Bowl</h4><strong>$12</strong></div>
@@ -321,7 +323,7 @@
             </div>
             <article class="menu-item menu-feature">
               <div><h4>Taco Tuesday + Thursday</h4><strong>$1.50 / $2.50</strong></div>
-              <p>Ground beef or pulled chicken with lettuce, shredded cheddar, red onion, and salsa. Crunchy corn $1.50. Soft flour $2.50. Add sour cream, tomato, or jalapeño for 25¢ each, or 50¢ for a side. To-go boxes are 75¢.</p>
+              <p>Ground beef or pulled chicken with lettuce, shredded cheddar, red onion, and salsa. Crunchy corn $1.50. Soft flour $2.50. Add sour cream, tomato, or jalapeño for 25¢ each per taco, or 50¢ each on the side. To-go boxes are 75¢.</p>
             </article>
             <article class="menu-item">
               <div><h4>Fish Tacos</h4><strong>$8 each</strong></div>
@@ -366,22 +368,22 @@
             <div class="wings-layout">
               <article class="menu-item menu-feature">
                 <div><h4>Six Wings</h4><strong>$13</strong></div>
-                <p>Served with carrots and celery, plus choice of ranch or blue cheese.</p>
+                <p>Served with carrots and celery, plus ranch or blue cheese. Choose from nine wing sauces listed below.</p>
               </article>
               <article class="menu-item menu-feature">
                 <div><h4>Twelve Wings</h4><strong>$19</strong></div>
-                <p>Served with carrots and celery, plus choice of ranch or blue cheese.</p>
+                <p>Served with carrots and celery, plus ranch or blue cheese. Choose from the same nine wing sauces listed below.</p>
               </article>
               <div class="sauce-list" aria-label="Wing sauces">
-                <span>Joey’s / Garlic Parm / Buffalo Blend</span>
+                <span>Joey’s / Garlic Parmesan / Buffalo Blend</span>
                 <span>Frank’s Original Buffalo</span>
-                <span>Sweet + Spicy BBQ</span>
                 <span>Gochujang Korean</span>
                 <span>Garlic Parmesan</span>
                 <span>Honey Sriracha</span>
+                <span>Mango Habanero</span>
+                <span>Sweet &amp; Spicy BBQ</span>
+                <span>Smoky BBQ</span>
                 <span>Sweet Chili</span>
-                <span>Mango Habenero</span>
-                <span>Smokey BBQ</span>
               </div>
             </div>
           </section>
@@ -431,7 +433,7 @@
           <div class="lottery-details" aria-label="Lottery room highlights">
             <span>Dedicated room</span>
             <span>Oregon Lottery</span>
-            <span>21 and over</span>
+            <span>21 and Over</span>
           </div>
         </div>
         <figure class="lottery-photo">
@@ -605,7 +607,7 @@
         "menu-baskets": [["images/doordash/fish-and-chips.jpg", "Fish and chips", "Fish + chips"], ["images/doordash/chicken-strip-basket.jpg", "Chicken strip basket", "Chicken strip basket"], ["images/doordash/nachos.jpg", "Nachos", "Nachos"], ["images/frito-pie-bowl.jpeg", "Flespy’s Frito pie bowl", "Frito pie bowl"], ["images/chili-cup.jpeg", "Flespy’s house-made chili with garlic Texas toast", "Flespy’s chili"]],
         "menu-tacos": [["images/taco-tuesday-thursday.jpg", "Crunchy and soft tacos served for Taco Tuesday and Thursday", "Taco Tuesday + Thursday"], ["images/doordash/fish-taco.jpg", "Fish taco", "Fish tacos"], ["images/doordash/taco-salad.jpg", "Taco salad", "Taco salad"], ["images/doordash/chicken-bacon-salad.jpg", "Crispy chicken bacon ranch salad", "Chicken bacon ranch salad"]],
         "menu-apps": [["images/doordash/sampler-platter.jpg", "Sampler platter", "Sampler platter"], ["images/doordash/polish-dog.jpg", "Polish dog", "Polish dog"], ["images/doordash/jalapeno-poppers.jpg", "Jalapeño poppers", "Jalapeño poppers"], ["images/doordash/potstickers.jpg", "Potstickers", "Potstickers"], ["images/soft-pretzel.jpg", "Cheese-filled soft pretzel with dipping sauce", "Soft pretzel"], ["images/doordash/onion-rings.jpg", "Onion rings", "Onion rings"], ["images/doordash/cajun-tots.jpg", "Cajun tots", "Cajun tots"], ["images/doordash/french-fries.jpg", "French fries", "French fries"]],
-        "menu-wings": [["images/six-wings.jpg?v=20260813-2", "Six sauced chicken wings with carrots, celery, and dipping sauce", "Six wings"], ["images/doordash/wings.jpg", "Twelve chicken wings", "Twelve wings"]],
+        "menu-wings": [["images/six-wings.jpg?v=20260816-1", "Six sauced chicken wings with carrots, celery, and dipping sauce", "Six wings"], ["images/doordash/wings.jpg", "Twelve chicken wings", "Twelve wings"]],
         "menu-sweets": [["images/coffee-almond-cake.jpg", "Chocolate almond coffee cake with whipped cream and chocolate drizzle", "Chocolate almond coffee cake"]]
       };
 
