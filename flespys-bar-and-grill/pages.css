@@ -308,9 +308,8 @@
   z-index: 2;
   pointer-events: none;
   border: 2px solid var(--pink);
-  border-radius: 50%;
   background: transparent;
-  box-shadow: 0 0 6px var(--pink), 0 0 13px var(--blue), inset 0 0 7px rgba(255, 79, 163, .65);
+  box-shadow: 0 0 5px var(--pink), 0 0 11px rgba(73, 200, 255, .75);
 }
 
 .page-hero-gallery {
