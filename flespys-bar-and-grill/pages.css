@@ -193,8 +193,9 @@
 
 .events-calendar-inner {
   display: grid;
-  grid-template-columns: minmax(260px, .55fr) minmax(420px, 1fr);
-  gap: 28px;
+  grid-template-columns: minmax(260px, .38fr) minmax(560px, 1fr);
+  gap: clamp(32px, 5vw, 72px);
+  align-items: start;
   max-width: 1380px;
   margin: 0 auto;
 }
@@ -224,22 +225,23 @@
 
 .events-calendar-lede strong { color: var(--cream); }
 
-.events-tonight-panel,
 .events-month-panel {
+  position: relative;
   min-width: 0;
   padding: 18px;
-  border: 1px solid rgba(73, 200, 255, .58);
+  overflow: hidden;
+  border: 1px solid rgba(73, 200, 255, .72);
   background: #0b0b0b;
-  box-shadow: 9px 9px 0 #000, 0 0 32px rgba(73, 200, 255, .12);
+  box-shadow: 12px 12px 0 #000, 0 0 28px rgba(73, 200, 255, .16), 0 0 44px rgba(255, 79, 163, .1);
 }
 
-.events-tonight-panel { grid-column: 2; }
-
-.events-month-panel {
-  grid-column: 1 / -1;
-  margin-top: 12px;
-  border-color: rgba(255, 79, 163, .48);
-  box-shadow: 9px 9px 0 #000, 0 0 32px rgba(255, 79, 163, .1);
+.events-month-panel::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 5px;
+  background: linear-gradient(90deg, var(--blue), var(--pink), var(--yellow), var(--green), var(--blue));
+  box-shadow: 0 0 18px rgba(73, 200, 255, .7);
 }
 
 .events-calendar-heading {
@@ -291,10 +293,10 @@
   width: 100%;
   border: 0;
   background: #fff;
+  filter: invert(.9) hue-rotate(180deg) saturate(1.45) contrast(.96);
 }
 
-.teamup-calendar-today { height: 420px; }
-.teamup-calendar-month { height: 760px; }
+.teamup-calendar-month { height: 820px; }
 
 .page-hero-gallery {
   align-self: center;
@@ -734,7 +736,6 @@
   }
   .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .events-calendar-inner { grid-template-columns: 1fr; }
-  .events-tonight-panel { grid-column: 1; }
 }
 
 @media (max-width: 640px) {
@@ -779,12 +780,10 @@
     margin-bottom: 34px;
   }
   .events-calendar-intro h2 { font-size: clamp(3.4rem, 15vw, 5rem); }
-  .events-tonight-panel,
   .events-month-panel {
     padding: 10px;
     box-shadow: 6px 6px 0 #000;
   }
-  .events-month-panel { margin-top: 28px; }
   .events-calendar-heading {
     align-items: flex-end;
     min-height: 0;
@@ -797,8 +796,7 @@
     font-size: .58rem;
     line-height: 1.4;
   }
-  .teamup-calendar-today { height: 440px; }
-  .teamup-calendar-month { height: 650px; }
+  .teamup-calendar-month { height: 690px; }
   .lottery-gallery {
     margin: 0;
     padding: 9px;
