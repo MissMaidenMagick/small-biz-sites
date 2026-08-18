@@ -19,6 +19,7 @@
       toggle.setAttribute("aria-expanded", "true");
       toggle.setAttribute("aria-label", "Close navigation menu");
       document.documentElement.classList.add("nav-is-open");
+      window.requestAnimationFrame(() => navigation.querySelector("a")?.focus());
     };
 
     toggle.addEventListener("click", () => {
