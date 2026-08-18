@@ -8,7 +8,7 @@
     <meta name="twitter:image" content="https://www.flespys.com/images/og.jpg">
     <meta name="twitter:image:alt" content="Flespy’s Bar &amp; Grill in Grants Pass, Oregon">
 <link rel="manifest" href="site.webmanifest">
-    <link rel="icon" href="images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20260818-1"><link rel="stylesheet" href="pages.css?v=20260818-4">
+    <link rel="icon" href="images/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css?v=20260818-1"><link rel="stylesheet" href="pages.css?v=20260818-5">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Flespy’s Bar & Grill","item":"https://www.flespys.com/"},{"@type":"ListItem","position":2,"name":"Events","item":"https://www.flespys.com/events.html"}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://www.flespys.com/events.html#webpage","url":"https://www.flespys.com/events.html","name":"Karaoke, Open Mic and Events at Flespy’s","description":"Recurring karaoke, Sunday open mic, Taco Tuesday and Thursday, Fish Friday and special events in Grants Pass.","isPartOf":{"@id":"https://www.flespys.com/#website"},"about":{"@id":"https://www.flespys.com/#business"}}</script><script src="navigation.js?v=20260818-1" defer></script></head><body class="inner-page"><a class="skip-link" href="#main-content">Skip to main content</a><header class="site-header page-header"><a class="brand" href="index.html"><span class="mobile-brand-name">Flespy’s</span><span class="mobile-brand-address">670 Fruitdale Dr · Grants Pass</span></a><nav id="site-navigation" aria-label="Main navigation"><a href="index.html">Home</a><a href="events.html" aria-current="page">Events</a><a href="menu.html">Full Menu</a><a href="patio.html">The Patio</a><a href="lottery.html">Lottery</a><a href="visit.html#faq">FAQs</a><a href="visit.html">Visit</a></nav><a class="header-cta" href="menu.html">View menu</a><a class="mobile-header-phone" href="tel:+15412441678">(541) 244-1678</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open navigation menu"><span class="nav-toggle-lines" aria-hidden="true"></span></button></header><main id="main-content">
 <section class="page-hero"><div class="page-hero-copy"><div class="breadcrumbs"><a href="index.html">Home</a><span>/</span><span>Events</span></div><p class="eyebrow neon-blue">Something happening all week</p><h1>Bring your<br>going-out voice.</h1><p>Karaoke, Sunday open mic, food specials and special events keep Flespy’s busy after dark. Visit Flespy’s Facebook page for the latest schedule.</p><div class="hero-actions"><a class="button button-primary" href="https://www.facebook.com/flespysbarandgrill" target="_blank" rel="noopener noreferrer">See current updates</a><a class="button button-ghost" href="visit.html">Plan your visit</a></div></div><div class="page-hero-media event-gallery" aria-label="Flespy’s event photo gallery" tabindex="0"><div class="event-gallery-stage"><img id="event-gallery-image" src="images/events/event-gallery-01.webp?v=20260818-2" alt="Three guests dressed for a costume night at Flespy’s" width="1050" height="1400" fetchpriority="high" decoding="async"><button class="event-gallery-arrow event-gallery-prev" type="button" aria-label="Previous event photo">&#8592;</button><button class="event-gallery-arrow event-gallery-next" type="button" aria-label="Next event photo">&#8594;</button><span class="event-gallery-count" aria-live="polite"><span id="event-gallery-current">1</span> / 10</span></div><div class="event-gallery-thumbs" role="list" aria-label="Choose an event photo">
@@ -41,7 +41,7 @@
       </div>
       <div class="teamup-calendar-wrap">
         <iframe class="teamup-calendar teamup-calendar-month" title="Flespy’s full monthly event calendar" src="https://teamup.com/ksu9dqps5a3apztqpv?view=m&amp;showHeader=0&amp;showProfileAndInfo=0&amp;showSidepanel=0&amp;showViewSelector=0&amp;showMenu=0&amp;showDateControls=0" loading="eager" referrerpolicy="strict-origin-when-cross-origin"></iframe>
-        <span class="calendar-today-glow" aria-hidden="true"><b>Today</b></span>
+        <span class="calendar-today-glow" aria-hidden="true"></span>
       </div>
     </div>
   </div>
@@ -86,13 +86,14 @@
       const wrapWidth = calendarWrap.clientWidth;
       const wrapHeight = calendarWrap.clientHeight;
       const weekNumberWidth = wrapWidth < 520 ? 40 : 46;
-      const calendarHeaderHeight = wrapWidth < 520 ? 78 : 82;
+      const calendarHeaderHeight = wrapWidth < 520 ? 58 : 60;
       const cellWidth = (wrapWidth - weekNumberWidth) / 7;
       const cellHeight = (wrapHeight - calendarHeaderHeight) / 6;
-      todayGlow.style.left = `${weekNumberWidth + (calendarColumn * cellWidth)}px`;
-      todayGlow.style.top = `${calendarHeaderHeight + (calendarRow * cellHeight)}px`;
-      todayGlow.style.width = `${cellWidth}px`;
-      todayGlow.style.height = `${cellHeight}px`;
+      const ringSize = wrapWidth < 520 ? 30 : 34;
+      todayGlow.style.left = `${weekNumberWidth + ((calendarColumn + 1) * cellWidth) - ringSize - 4}px`;
+      todayGlow.style.top = `${calendarHeaderHeight + (calendarRow * cellHeight) + 4}px`;
+      todayGlow.style.width = `${ringSize}px`;
+      todayGlow.style.height = `${ringSize}px`;
     };
     positionTodayGlow();
     window.addEventListener('resize', positionTodayGlow, { passive: true });
