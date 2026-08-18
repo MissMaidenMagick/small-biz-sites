@@ -894,6 +894,27 @@ nav a:focus-visible::after {
   box-shadow: 0 0 28px rgba(73, 200, 255, 0.46);
 }
 
+.menu-order-actions {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 12px;
+}
+
+.menu-call-button {
+  color: var(--blue);
+  background: transparent;
+  border-color: var(--blue);
+}
+
+.menu-call-button:hover,
+.menu-call-button:focus-visible {
+  color: #050505;
+  background: var(--cream);
+  border-color: var(--cream);
+  box-shadow: 0 0 28px rgba(73, 200, 255, 0.32);
+}
+
 .menu-category {
   --menu-neon: var(--blue);
   display: grid;
@@ -2519,6 +2540,17 @@ nav a:focus-visible::after {
   }
 
   .menu-order-button {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .menu-order-actions {
+    display: grid;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .menu-call-button {
     width: 100%;
     min-width: 0;
   }
