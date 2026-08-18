@@ -181,6 +181,121 @@
 
 .event-gallery-thumb.is-active { transform: translateY(-1px); }
 
+.events-calendar-section {
+  padding: clamp(72px, 8vw, 120px) 6vw;
+  overflow: hidden;
+  border-top: 1px solid rgba(73, 200, 255, .35);
+  background:
+    radial-gradient(circle at 18% 18%, rgba(73, 200, 255, .12), transparent 28%),
+    radial-gradient(circle at 82% 72%, rgba(255, 79, 163, .1), transparent 32%),
+    #050505;
+}
+
+.events-calendar-inner {
+  display: grid;
+  grid-template-columns: minmax(260px, .55fr) minmax(420px, 1fr);
+  gap: 28px;
+  max-width: 1380px;
+  margin: 0 auto;
+}
+
+.events-calendar-intro {
+  align-self: start;
+  padding: 18px clamp(0px, 2vw, 24px) 0 0;
+}
+
+.events-calendar-intro h2 {
+  max-width: 560px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(3.2rem, 6vw, 6.4rem);
+  font-weight: 500;
+  letter-spacing: -.065em;
+  line-height: .88;
+}
+
+.events-calendar-lede {
+  max-width: 520px;
+  margin: 28px 0 30px;
+  color: rgba(242, 234, 219, .72);
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.events-calendar-lede strong { color: var(--cream); }
+
+.events-tonight-panel,
+.events-month-panel {
+  min-width: 0;
+  padding: 18px;
+  border: 1px solid rgba(73, 200, 255, .58);
+  background: #0b0b0b;
+  box-shadow: 9px 9px 0 #000, 0 0 32px rgba(73, 200, 255, .12);
+}
+
+.events-tonight-panel { grid-column: 2; }
+
+.events-month-panel {
+  grid-column: 1 / -1;
+  margin-top: 12px;
+  border-color: rgba(255, 79, 163, .48);
+  box-shadow: 9px 9px 0 #000, 0 0 32px rgba(255, 79, 163, .1);
+}
+
+.events-calendar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-height: 76px;
+  padding: 2px 6px 16px;
+}
+
+.events-calendar-heading h3 {
+  margin: 5px 0 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.8rem, 3vw, 2.65rem);
+  font-weight: 500;
+  letter-spacing: -.035em;
+}
+
+.events-calendar-live,
+.events-calendar-date,
+.events-calendar-help {
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.events-calendar-live { color: var(--blue); }
+
+.events-calendar-live i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 12px var(--green);
+}
+
+.events-calendar-date,
+.events-calendar-help {
+  color: rgba(242, 234, 219, .64);
+  text-align: right;
+}
+
+.teamup-calendar {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: #fff;
+}
+
+.teamup-calendar-today { height: 420px; }
+.teamup-calendar-month { height: 760px; }
+
 .page-hero-gallery {
   align-self: center;
   min-width: 0;
@@ -618,6 +733,8 @@
     margin: 0 auto;
   }
   .feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .events-calendar-inner { grid-template-columns: 1fr; }
+  .events-tonight-panel { grid-column: 1; }
 }
 
 @media (max-width: 640px) {
@@ -655,6 +772,33 @@
   .page-hero-gallery .event-gallery-thumbs {
     justify-content: flex-start;
   }
+  .events-calendar-section { padding: 64px 18px 72px; }
+  .events-calendar-inner { display: block; }
+  .events-calendar-intro {
+    padding: 0;
+    margin-bottom: 34px;
+  }
+  .events-calendar-intro h2 { font-size: clamp(3.4rem, 15vw, 5rem); }
+  .events-tonight-panel,
+  .events-month-panel {
+    padding: 10px;
+    box-shadow: 6px 6px 0 #000;
+  }
+  .events-month-panel { margin-top: 28px; }
+  .events-calendar-heading {
+    align-items: flex-end;
+    min-height: 0;
+    padding: 8px 4px 14px;
+  }
+  .events-calendar-heading h3 { font-size: 1.65rem; }
+  .events-calendar-date,
+  .events-calendar-help {
+    max-width: 120px;
+    font-size: .58rem;
+    line-height: 1.4;
+  }
+  .teamup-calendar-today { height: 440px; }
+  .teamup-calendar-month { height: 650px; }
   .lottery-gallery {
     margin: 0;
     padding: 9px;
