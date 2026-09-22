@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://sitescovered.com/jimmys-classic-drive-in/sitemap.xml
+
