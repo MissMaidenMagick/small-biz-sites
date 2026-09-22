@@ -1,0 +1,14 @@
+# Blaze-N-Monkey's
+
+> Mobile food truck and catering business based in Grants Pass, Oregon.
+
+## Main pages
+
+- [Home](https://sitescovered.com/blaze-n-monkeys/): Business overview and primary contact.
+- [Our Story](https://sitescovered.com/blaze-n-monkeys/about/): Owners, history, and Grants Pass roots.
+- [Menu](https://sitescovered.com/blaze-n-monkeys/menu/): Rotating-menu guidance and current-menu contact.
+- [Catering](https://sitescovered.com/blaze-n-monkeys/catering/): Food truck event inquiry information.
+- [Community](https://sitescovered.com/blaze-n-monkeys/community/): Food drives, partnerships, and local events.
+- [Contact](https://sitescovered.com/blaze-n-monkeys/contact/): Phone and current-location guidance.
+
+Current menus, prices, locations, and serving times should be confirmed directly with the business at (541) 441-5104.
