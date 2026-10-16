@@ -359,8 +359,11 @@ nav a:focus-visible::after {
   position: absolute;
   z-index: -2;
   inset: -26px;
-  background: url("images/flespys-food-spread.jpg") center / cover no-repeat;
-  filter: blur(22px) saturate(0.9) brightness(0.52);
+  background:
+    radial-gradient(circle at 68% 26%, rgba(201, 67, 30, 0.42), transparent 44%),
+    radial-gradient(circle at 22% 72%, rgba(217, 149, 52, 0.28), transparent 48%),
+    #090909;
+  filter: blur(22px) brightness(0.52);
   transform: scale(1.07);
 }
 
