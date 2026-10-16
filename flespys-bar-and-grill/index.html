@@ -3,9 +3,6 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
     <title>Flespy’s Bar &amp; Grill | Grants Pass, Oregon</title>
     <meta name="description" content="See the full Flespy’s Bar & Grill menu, weekly karaoke and taco schedule, current events, hours, and directions in Grants Pass, Oregon.">
     <meta name="theme-color" content="#080808">
@@ -25,10 +22,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://www.flespys.com/images/og.jpg">
     <meta name="twitter:image:alt" content="Flespy’s Bar &amp; Grill in Grants Pass, Oregon">
-    <link rel="preload" as="image" href="images/flespys-food-spread.webp" type="image/webp" fetchpriority="high">
+    <link rel="preload" as="image" href="images/flespys-food-spread-960.webp" imagesrcset="images/flespys-food-spread-640.webp 640w, images/flespys-food-spread-960.webp 960w, images/flespys-food-spread.webp 1273w" imagesizes="(max-width: 980px) 88vw, 58vw" type="image/webp" fetchpriority="high">
     <link rel="manifest" href="site.webmanifest">
     <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="styles.css?v=20260818-1">
+    <link rel="stylesheet" href="styles.css?v=20261016-1">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -39,7 +36,7 @@
         "url": "https://www.flespys.com/",
         "image": "https://www.flespys.com/images/og.jpg",
         "telephone": "+1-541-244-1678",
-        "hasMenu": "https://www.flespys.com/menu.html",
+        "hasMenu": "https://www.flespys.com/menu",
         "servesCuisine": ["American", "Bar Food", "Burgers", "Tacos", "Chicken Wings"],
         "priceRange": "$",
         "hasMap": "https://www.google.com/maps/search/?api=1&query=Flespy%27s%20Bar%20%26%20Grill%2C%20670%20Fruitdale%20Dr%2C%20Grants%20Pass%2C%20OR%2097527",
@@ -85,7 +82,7 @@
       <section class="hero" id="top">
         <div class="hero-grid" aria-hidden="true"></div>
         <div class="hero-content">
-          <img class="hero-logo" src="images/flespys-logo-transparent.webp" width="1526" height="1031" decoding="async" alt="Flespy’s Bar &amp; Grill, established 2019">
+          <img class="hero-logo" src="images/flespys-logo-800.webp" srcset="images/flespys-logo-480.webp 480w, images/flespys-logo-800.webp 800w" sizes="(max-width: 640px) 88vw, 400px" width="800" height="541" decoding="async" alt="Flespy’s Bar &amp; Grill, established 2019">
           <h1>Cozy, Classy, Fun!</h1>
           <p class="hero-copy">Full menu until midnight, cold drinks, and something happening all week long.</p>
           <div class="hero-actions">
@@ -94,7 +91,7 @@
           </div>
         </div>
         <div class="hero-media">
-          <img class="hero-image" src="images/flespys-food-spread.webp" width="1273" height="696" fetchpriority="high" decoding="async" alt="Wings, a burger, fries, and fish tacos served at Flespy’s">
+          <img class="hero-image" src="images/flespys-food-spread-960.webp" srcset="images/flespys-food-spread-640.webp 640w, images/flespys-food-spread-960.webp 960w, images/flespys-food-spread.webp 1273w" sizes="(max-width: 980px) 88vw, 58vw" width="960" height="525" fetchpriority="high" decoding="async" alt="Wings, a burger, fries, and fish tacos served at Flespy’s">
           <div class="hero-status">
             <span class="status-dot"></span>
             <div>
@@ -526,42 +523,37 @@
           const [src, alt] = photos[index] || ["images/flespys-logo.jpeg", "Flespy’s Bar and Grill logo"];
           const photoId = `${panel.id}-photo-${index + 1}`;
           const photo = document.createElement("div");
-          const hint = document.createElement("span");
-          hint.className = "menu-photo-hint";
-          hint.textContent = "View photo +";
+          const toggle = document.createElement("button");
+          toggle.className = "menu-photo-hint";
+          toggle.type = "button";
+          toggle.textContent = "View photo +";
           photo.className = "menu-item-photo";
           photo.id = photoId;
           photo.hidden = true;
           photo.innerHTML = `<img class="${src.includes("flespys-logo") ? "menu-item-logo" : ""}" src="${src}" alt="${alt}" width="900" height="900" loading="lazy" decoding="async"><span>Tap the item again to close</span>`;
-          item.append(hint);
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("aria-controls", photoId);
+          toggle.setAttribute("aria-label", `Show photo for ${itemName}`);
+          item.append(toggle);
           item.append(photo);
-          item.tabIndex = 0;
-          item.setAttribute("role", "button");
-          item.setAttribute("aria-label", `Show photo for ${itemName}`);
-          item.setAttribute("aria-expanded", "false");
-          item.setAttribute("aria-controls", photoId);
           const togglePhoto = () => {
             const willOpen = photo.hidden;
             menuItems.forEach((otherItem) => {
               const otherPhoto = otherItem.querySelector(".menu-item-photo");
-              const otherHint = otherItem.querySelector(".menu-photo-hint");
+              const otherToggle = otherItem.querySelector(".menu-photo-hint");
               if (otherPhoto) otherPhoto.hidden = true;
-              if (otherHint) otherHint.textContent = "View photo +";
+              if (otherToggle) {
+                otherToggle.textContent = "View photo +";
+                otherToggle.setAttribute("aria-expanded", "false");
+              }
               otherItem.classList.remove("is-gallery-active");
-              otherItem.setAttribute("aria-expanded", "false");
             });
             photo.hidden = !willOpen;
             item.classList.toggle("is-gallery-active", willOpen);
-            item.setAttribute("aria-expanded", String(willOpen));
-            hint.textContent = willOpen ? "Hide photo −" : "View photo +";
+            toggle.setAttribute("aria-expanded", String(willOpen));
+            toggle.textContent = willOpen ? "Hide photo −" : "View photo +";
           };
-          item.addEventListener("click", togglePhoto);
-          item.addEventListener("keydown", (event) => {
-            if (event.key === "Enter" || event.key === " ") {
-              event.preventDefault();
-              togglePhoto();
-            }
-          });
+          toggle.addEventListener("click", togglePhoto);
         });
       });
 

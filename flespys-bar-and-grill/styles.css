@@ -1008,21 +1008,9 @@ nav a:focus-visible::after {
   border-bottom: 1px dashed rgba(242, 234, 219, 0.24);
 }
 
-.menu-item[role="button"] {
-  cursor: pointer;
-  transition: background 160ms ease, box-shadow 160ms ease;
-}
-
-.menu-item[role="button"]:hover,
-.menu-item[role="button"]:focus-visible,
 .menu-item.is-gallery-active {
   background: color-mix(in srgb, var(--menu-neon) 8%, transparent);
   box-shadow: inset 4px 0 0 var(--menu-neon);
-}
-
-.menu-item[role="button"]:focus-visible {
-  outline: 2px solid var(--menu-neon);
-  outline-offset: 3px;
 }
 
 .menu-item:last-child {
@@ -1064,12 +1052,24 @@ nav a:focus-visible::after {
 .menu-photo-hint {
   display: inline-block;
   margin-top: 13px;
+  padding: 0;
   color: var(--menu-neon);
+  background: transparent;
+  border: 0;
   font-size: 0.56rem;
   font-weight: 950;
+  font-family: inherit;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-shadow: 0 0 9px color-mix(in srgb, var(--menu-neon) 56%, transparent);
+  cursor: pointer;
+}
+
+.menu-photo-hint:hover,
+.menu-photo-hint:focus-visible {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 .menu-feature {
@@ -2649,7 +2649,7 @@ nav a:focus-visible::after {
     overflow-wrap: anywhere;
   }
 
-  .menu-item[role="button"] {
+  .menu-item.is-gallery-active {
     margin-inline: -12px;
     padding-inline: 12px;
   }
