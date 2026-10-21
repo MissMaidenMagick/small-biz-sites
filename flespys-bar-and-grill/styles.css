@@ -1503,6 +1503,11 @@ nav a:focus-visible::after {
   justify-self: center;
   margin: 0;
   text-align: center;
+  transition: transform 260ms cubic-bezier(.2, .75, .2, 1);
+}
+
+.hot-sauce-art:hover {
+  transform: translateY(-9px) scale(1.035);
 }
 
 .hot-sauce-art::before {
@@ -1521,27 +1526,20 @@ nav a:focus-visible::after {
 .hot-sauce-art-frame {
   overflow: visible;
   transform-origin: 50% 86%;
-  animation: hot-sauce-wiggle 6.5s ease-in-out infinite;
+  animation: hot-sauce-tilt 4.8s cubic-bezier(.45, .05, .55, .95) infinite alternate;
 }
 
 .hot-sauce-art-frame img {
   height: auto;
   filter:
-    drop-shadow(0 0 15px rgba(238, 75, 66, 0.38))
-    drop-shadow(0 0 28px rgba(73, 200, 255, 0.13));
+    drop-shadow(11px 15px 0 rgba(0, 0, 0, 0.78))
+    drop-shadow(0 0 17px rgba(238, 75, 66, 0.48))
+    drop-shadow(0 0 34px rgba(73, 200, 255, 0.19));
 }
 
-.hot-sauce-art:hover .hot-sauce-art-frame {
-  animation-duration: 1.35s;
-}
-
-@keyframes hot-sauce-wiggle {
-  0%, 24%, 100% { transform: rotate(-1.4deg); }
-  4% { transform: rotate(1.8deg); }
-  8% { transform: rotate(-1.9deg); }
-  12% { transform: rotate(1.35deg); }
-  16% { transform: rotate(-0.8deg); }
-  20% { transform: rotate(0.45deg); }
+@keyframes hot-sauce-tilt {
+  from { transform: rotate(-2.2deg) translateY(2px); }
+  to { transform: rotate(2.2deg) translateY(-2px); }
 }
 
 .scene-section {
