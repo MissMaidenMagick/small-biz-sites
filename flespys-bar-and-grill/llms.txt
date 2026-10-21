@@ -4,7 +4,7 @@
 
 ## Primary pages
 
-- [Home](https://www.flespys.com/): Business overview, featured menu items, weekly happenings, patio, lottery room, reviews, hours, and directions.
+- [Home](https://www.flespys.com/): Business overview, featured menu items, the upcoming Paisana IV Nicole's Blend hot sauce, patio, lottery room, reviews, hours, and directions.
 - [Full Menu](https://www.flespys.com/menu): Current food menu, prices, dietary notice, and ordering options.
 - [Events](https://www.flespys.com/events): Weekly karaoke, open mic, food specials, live calendar, and current-event links.
 - [Covered Patio](https://www.flespys.com/patio): Year-round patio amenities, games, seating, television, and photo gallery.
