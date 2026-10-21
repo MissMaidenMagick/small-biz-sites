@@ -1535,21 +1535,6 @@ nav a:focus-visible::after {
   animation-duration: 1.35s;
 }
 
-.hot-sauce-art figcaption {
-  display: inline-block;
-  margin-top: 28px;
-  padding: 10px 15px;
-  color: #160600;
-  background: var(--amber);
-  border: 2px solid #160600;
-  box-shadow: 4px 4px 0 var(--red);
-  font-size: 0.68rem;
-  font-weight: 950;
-  letter-spacing: 0.13em;
-  text-transform: uppercase;
-  transform: rotate(2deg);
-}
-
 @keyframes hot-sauce-wiggle {
   0%, 24%, 100% { transform: rotate(-1.4deg); }
   4% { transform: rotate(1.8deg); }
