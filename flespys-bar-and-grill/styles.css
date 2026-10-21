@@ -76,29 +76,44 @@ body.has-hot-sauce-banner {
   justify-content: center;
   gap: 13px;
   padding: 0 18px;
-  color: #170600;
+  overflow: hidden;
+  color: #fff;
   background:
-    linear-gradient(90deg, #ff4fa3 0%, #ff7638 27%, #ffd84a 53%, #ff7638 78%, #ff4fa3 100%);
-  border-bottom: 2px solid #070707;
-  box-shadow: 0 3px 18px rgba(255, 84, 38, 0.42);
+    radial-gradient(circle at 25% 150%, rgba(255, 216, 74, 0.34), transparent 25%),
+    radial-gradient(circle at 75% 150%, rgba(255, 79, 54, 0.34), transparent 25%),
+    linear-gradient(90deg, #050505 0%, #240300 48%, #050505 100%);
+  border-bottom: 2px solid #ff4f36;
+  box-shadow: 0 3px 18px rgba(255, 79, 54, 0.38);
   font-size: 0.72rem;
   letter-spacing: 0.09em;
   line-height: 1;
   text-transform: uppercase;
 }
 
+.hot-sauce-banner::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff4f36, #ffd84a, #ff4f36, #ffd84a, #ff4f36);
+}
+
 .hot-sauce-banner strong {
+  color: #fff;
   font-weight: 950;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.34);
 }
 
 .hot-sauce-banner-detail {
   padding-left: 13px;
-  border-left: 1px solid rgba(23, 6, 0, 0.38);
+  color: #ffd84a;
+  border-left: 1px solid rgba(255, 216, 74, 0.48);
   font-weight: 800;
 }
 
 .hot-sauce-banner-flame,
 .hot-sauce-banner-arrow {
+  color: #ff4f36;
   font-size: 1rem;
   transition: transform 180ms ease;
 }
@@ -1348,13 +1363,20 @@ nav a:focus-visible::after {
   max-width: 1600px;
   margin: 0 auto;
   padding: 110px 7vw;
-  color: #fff8eb;
+  color: var(--cream);
   background:
-    radial-gradient(circle at 82% 26%, rgba(255, 216, 74, 0.32), transparent 22%),
-    radial-gradient(circle at 13% 84%, rgba(255, 79, 163, 0.22), transparent 28%),
-    linear-gradient(125deg, #260300 0%, #661006 46%, #b52a0d 100%);
-  border-top: 4px solid #ffd84a;
-  border-bottom: 4px solid #070707;
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    radial-gradient(circle at 82% 26%, rgba(238, 75, 66, 0.2), transparent 25%),
+    radial-gradient(circle at 13% 84%, rgba(255, 79, 163, 0.15), transparent 27%),
+    radial-gradient(circle at 54% 12%, rgba(73, 200, 255, 0.09), transparent 24%),
+    #050505;
+  background-size: 54px 54px, 54px 54px, auto, auto, auto, auto;
+  border-top: 2px solid var(--red);
+  border-bottom: 1px solid rgba(73, 200, 255, 0.46);
+  box-shadow:
+    inset 0 18px 44px rgba(238, 75, 66, 0.06),
+    inset 0 -18px 44px rgba(73, 200, 255, 0.05);
 }
 
 .hot-sauce-section::before,
@@ -1364,7 +1386,7 @@ nav a:focus-visible::after {
   z-index: -1;
   width: 360px;
   height: 360px;
-  background: repeating-conic-gradient(from 5deg, rgba(255, 216, 74, 0.16) 0 7deg, transparent 7deg 16deg);
+  background: repeating-conic-gradient(from 5deg, rgba(238, 75, 66, 0.11) 0 7deg, transparent 7deg 16deg);
   border-radius: 50%;
 }
 
@@ -1383,8 +1405,8 @@ nav a:focus-visible::after {
 }
 
 .hot-sauce-copy .eyebrow {
-  color: #ffd84a;
-  text-shadow: 0 0 16px rgba(255, 216, 74, 0.42);
+  color: var(--red);
+  text-shadow: 0 0 16px rgba(238, 75, 66, 0.52);
 }
 
 .hot-sauce-copy h2 {
@@ -1401,7 +1423,7 @@ nav a:focus-visible::after {
 .hot-sauce-lede,
 .hot-sauce-release {
   max-width: 690px;
-  color: rgba(255, 248, 235, 0.84);
+  color: rgba(242, 234, 219, 0.78);
   font-size: clamp(1rem, 1.35vw, 1.18rem);
   line-height: 1.72;
 }
@@ -1418,7 +1440,7 @@ nav a:focus-visible::after {
 
 .hot-sauce-lede a {
   text-decoration: underline;
-  text-decoration-color: #ffd84a;
+  text-decoration-color: var(--blue);
   text-decoration-thickness: 2px;
   text-underline-offset: 4px;
 }
@@ -1448,12 +1470,12 @@ nav a:focus-visible::after {
 
 .hot-sauce-facts span:nth-child(2) {
   color: #1d0800;
-  background: #ff4f36;
+  background: var(--red);
   transform: rotate(1deg);
 }
 
 .hot-sauce-facts span:nth-child(3) {
-  background: #ff7ab9;
+  background: var(--blue);
   transform: rotate(-0.5deg);
 }
 
@@ -1465,13 +1487,13 @@ nav a:focus-visible::after {
   color: #160600;
   background: #fff8eb;
   border: 2px solid #160600;
-  box-shadow: 6px 6px 0 #ffd84a;
+  box-shadow: 6px 6px 0 var(--blue);
 }
 
 .hot-sauce-button:hover,
 .hot-sauce-button:focus-visible {
   color: #160600;
-  background: #ffd84a;
+  background: var(--blue);
   transform: translate(-2px, -2px);
 }
 
@@ -1488,7 +1510,7 @@ nav a:focus-visible::after {
   position: absolute;
   z-index: -1;
   inset: 14% -20% auto;
-  color: rgba(255, 216, 74, 0.17);
+  color: rgba(238, 75, 66, 0.14);
   font-size: clamp(3.2rem, 6vw, 6.8rem);
   font-weight: 950;
   letter-spacing: 0.06em;
@@ -1500,10 +1522,11 @@ nav a:focus-visible::after {
   overflow: hidden;
   padding: 10px;
   background: #050505;
-  border: 3px solid #ffd84a;
+  border: 2px solid var(--red);
   box-shadow:
     13px 13px 0 #160600,
-    0 0 34px rgba(255, 216, 74, 0.3);
+    0 0 18px rgba(238, 75, 66, 0.35),
+    0 0 34px rgba(73, 200, 255, 0.13);
   transform-origin: 50% 86%;
   animation: hot-sauce-wiggle 6.5s ease-in-out infinite;
 }
@@ -1522,9 +1545,9 @@ nav a:focus-visible::after {
   margin-top: 28px;
   padding: 10px 15px;
   color: #160600;
-  background: #ffd84a;
+  background: var(--amber);
   border: 2px solid #160600;
-  box-shadow: 4px 4px 0 #160600;
+  box-shadow: 4px 4px 0 var(--red);
   font-size: 0.68rem;
   font-weight: 950;
   letter-spacing: 0.13em;
