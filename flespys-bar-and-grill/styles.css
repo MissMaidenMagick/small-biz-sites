@@ -1519,21 +1519,16 @@ nav a:focus-visible::after {
 }
 
 .hot-sauce-art-frame {
-  overflow: hidden;
-  padding: 10px;
-  background: #050505;
-  border: 2px solid var(--red);
-  box-shadow:
-    13px 13px 0 #160600,
-    0 0 18px rgba(238, 75, 66, 0.35),
-    0 0 34px rgba(73, 200, 255, 0.13);
+  overflow: visible;
   transform-origin: 50% 86%;
   animation: hot-sauce-wiggle 6.5s ease-in-out infinite;
 }
 
 .hot-sauce-art-frame img {
   height: auto;
-  background: #050505;
+  filter:
+    drop-shadow(0 0 15px rgba(238, 75, 66, 0.38))
+    drop-shadow(0 0 28px rgba(73, 200, 255, 0.13));
 }
 
 .hot-sauce-art:hover .hot-sauce-art-frame {
