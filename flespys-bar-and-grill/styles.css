@@ -111,6 +111,19 @@ body.has-hot-sauce-banner {
   font-weight: 800;
 }
 
+.hot-sauce-banner-cta {
+  padding: 6px 9px 5px;
+  color: #1d0800;
+  background: #ffd84a;
+  border: 1px solid rgba(255, 255, 255, 0.42);
+  border-radius: 999px;
+  box-shadow: 0 0 12px rgba(255, 216, 74, 0.24);
+  font-size: 0.62rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
 .hot-sauce-banner-flame,
 .hot-sauce-banner-arrow {
   color: #ff4f36;
@@ -126,6 +139,12 @@ body.has-hot-sauce-banner {
 .hot-sauce-banner:hover .hot-sauce-banner-arrow,
 .hot-sauce-banner:focus-visible .hot-sauce-banner-arrow {
   transform: translateY(3px);
+}
+
+.hot-sauce-banner:hover .hot-sauce-banner-cta,
+.hot-sauce-banner:focus-visible .hot-sauce-banner-cta {
+  background: #fff2bd;
+  transform: translateY(-1px);
 }
 
 body.has-hot-sauce-banner .hero {
@@ -2656,6 +2675,12 @@ nav a:focus-visible::after {
 
   .hot-sauce-banner-detail {
     display: none;
+  }
+
+  .hot-sauce-banner-cta {
+    padding: 5px 7px 4px;
+    font-size: 0.55rem;
+    letter-spacing: 0.055em;
   }
 
   .hot-sauce-banner-flame,
