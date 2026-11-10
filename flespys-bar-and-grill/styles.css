@@ -435,6 +435,8 @@ nav a:focus-visible::after {
   isolation: isolate;
   overflow: hidden;
   display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: 12px;
   height: clamp(520px, calc(100svh - 220px), 700px);
   width: calc(100% + 1vw);
   place-items: center;
@@ -468,6 +470,19 @@ nav a:focus-visible::after {
   background:
     linear-gradient(90deg, rgba(0, 0, 0, 0.2), transparent 35%, transparent 65%, rgba(0, 0, 0, 0.2)),
     linear-gradient(0deg, rgba(0, 0, 0, 0.28), transparent 28%, transparent 72%, rgba(0, 0, 0, 0.28));
+}
+
+.hero-gift-card {
+  margin: 0;
+  padding: 8px 14px;
+  border: 1px solid var(--amber);
+  border-radius: 999px;
+  background: #191008;
+  color: var(--amber);
+  box-shadow: 0 0 16px rgba(255, 193, 74, 0.25);
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
 }
 
 .hero-image {
@@ -2538,8 +2553,12 @@ nav a:focus-visible::after {
     height: auto;
     width: 100%;
     max-width: 900px;
-    aspect-ratio: 1273 / 696;
+    grid-template-rows: auto auto;
     justify-self: center;
+  }
+
+  .hero-image {
+    height: auto;
   }
 
   .section-heading,
