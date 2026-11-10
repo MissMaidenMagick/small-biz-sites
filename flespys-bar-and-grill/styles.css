@@ -488,7 +488,7 @@ nav a:focus-visible::after {
 }
 
 .hero-gift-cards {
-  margin: 16px 0 0;
+  margin: 28px 0 0;
   font-size: clamp(1.5rem, 3vw, 2.2rem);
   font-weight: 800;
   line-height: 1.15;
