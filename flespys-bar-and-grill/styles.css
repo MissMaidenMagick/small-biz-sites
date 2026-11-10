@@ -77,12 +77,15 @@ body.has-hot-sauce-banner {
   gap: 13px;
   padding: 0 18px;
   overflow: hidden;
-  color: #250900;
-  background: repeating-linear-gradient(125deg, #ffba35 0 16px, #ffd85b 16px 32px);
-  border-bottom: 2px solid #ff5a27;
-  box-shadow: 0 3px 20px rgba(255, 84, 31, 0.55);
-  font-size: 0.83rem;
-  letter-spacing: 0.06em;
+  color: #fff;
+  background:
+    radial-gradient(circle at 25% 150%, rgba(255, 216, 74, 0.34), transparent 25%),
+    radial-gradient(circle at 75% 150%, rgba(255, 79, 54, 0.34), transparent 25%),
+    linear-gradient(90deg, #050505 0%, #240300 48%, #050505 100%);
+  border-bottom: 2px solid #ff4f36;
+  box-shadow: 0 3px 18px rgba(255, 79, 54, 0.38);
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -96,19 +99,23 @@ body.has-hot-sauce-banner {
 }
 
 .hot-sauce-banner strong {
+  color: #fff;
+  font-size: 0.83rem;
   font-weight: 950;
+  text-shadow: 0 0 12px rgba(255, 255, 255, 0.34);
 }
 
 .hot-sauce-banner-detail {
   padding-left: 13px;
-  border-left: 1px solid #7b3816;
+  color: #ffd84a;
+  border-left: 1px solid rgba(255, 216, 74, 0.48);
   font-weight: 800;
 }
 
 .hot-sauce-banner-cta {
   padding: 6px 9px 5px;
-  color: #fff4ce;
-  background: #441006;
+  color: #1d0800;
+  background: #ffd84a;
   border: 1px solid rgba(255, 255, 255, 0.42);
   border-radius: 999px;
   box-shadow: 0 0 12px rgba(255, 216, 74, 0.24);
@@ -137,7 +144,7 @@ body.has-hot-sauce-banner {
 
 .hot-sauce-banner:hover .hot-sauce-banner-cta,
 .hot-sauce-banner:focus-visible .hot-sauce-banner-cta {
-  background: #6a2010;
+  background: #fff2bd;
   transform: translateY(-1px);
 }
 
@@ -2679,8 +2686,12 @@ nav a:focus-visible::after {
   .hot-sauce-banner {
     gap: 8px;
     padding-inline: 12px;
-    font-size: 0.72rem;
+    font-size: 0.61rem;
     letter-spacing: 0.055em;
+  }
+
+  .hot-sauce-banner strong {
+    font-size: 0.72rem;
   }
 
   .hot-sauce-banner-detail {
