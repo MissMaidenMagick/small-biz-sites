@@ -494,12 +494,6 @@ nav a:focus-visible::after {
   line-height: 1.4;
 }
 
-.hero-gift-cards span {
-  margin-right: 5px;
-  color: var(--amber);
-  font-size: 0.75em;
-}
-
 .button {
   display: inline-flex;
   min-height: 52px;
