@@ -464,33 +464,6 @@ nav a:focus-visible::after {
     linear-gradient(0deg, rgba(0, 0, 0, 0.28), transparent 28%, transparent 72%, rgba(0, 0, 0, 0.28));
 }
 
-.hero-gift-card {
-  position: absolute;
-  z-index: 3;
-  top: clamp(14px, 2vw, 30px);
-  right: clamp(14px, 2vw, 30px);
-  display: grid;
-  gap: 2px;
-  margin: 0;
-  padding: 7px 11px;
-  transform: rotate(6deg);
-  border: 2px solid #160a18;
-  border-radius: 9px;
-  background: #ff65b5;
-  color: #160a18;
-  box-shadow: 4px 4px 0 #49c8ff, 6px 6px 0 #160a18;
-  font-size: 0.77rem;
-  font-weight: 800;
-  line-height: 1.1;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.hero-gift-card strong {
-  font-size: 1rem;
-  font-weight: 950;
-}
-
 .hero-image {
   position: relative;
   z-index: 1;
@@ -613,6 +586,48 @@ nav a:focus-visible::after {
   margin-left: 8px;
   color: var(--blue);
   font-size: 1.1rem;
+}
+
+.gift-card-ticket {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  width: min(90%, 32rem);
+  margin: clamp(22px, 4vw, 44px) auto;
+  border: 2px solid #ab352e;
+  border-radius: 8px;
+  background: var(--cream);
+  color: #291511;
+  box-shadow: 4px 4px 0 #ab352e;
+}
+
+.gift-card-ticket-stub {
+  display: grid;
+  place-items: center;
+  padding-inline: clamp(12px, 4vw, 30px);
+  border-right: 2px dashed #ab352e;
+  color: #952c27;
+  font-size: clamp(1.4rem, 4vw, 2.1rem);
+}
+
+.gift-card-ticket p {
+  display: grid;
+  gap: 6px;
+  margin: 0;
+  padding: 13px clamp(12px, 3vw, 24px);
+  line-height: 1.25;
+  text-align: center;
+}
+
+.gift-card-ticket strong {
+  font: 700 clamp(1.2rem, 3vw, 1.85rem)/1.15 Georgia, "Times New Roman", serif;
+}
+
+.gift-card-ticket p span {
+  color: #952c27;
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .marquee {
