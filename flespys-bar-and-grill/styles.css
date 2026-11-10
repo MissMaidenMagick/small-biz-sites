@@ -77,15 +77,12 @@ body.has-hot-sauce-banner {
   gap: 13px;
   padding: 0 18px;
   overflow: hidden;
-  color: #fff;
-  background:
-    radial-gradient(circle at 25% 150%, rgba(255, 216, 74, 0.34), transparent 25%),
-    radial-gradient(circle at 75% 150%, rgba(255, 79, 54, 0.34), transparent 25%),
-    linear-gradient(90deg, #050505 0%, #240300 48%, #050505 100%);
-  border-bottom: 2px solid #ff4f36;
-  box-shadow: 0 3px 18px rgba(255, 79, 54, 0.38);
-  font-size: 0.72rem;
-  letter-spacing: 0.09em;
+  color: #250900;
+  background: repeating-linear-gradient(125deg, #ffba35 0 16px, #ffd85b 16px 32px);
+  border-bottom: 2px solid #ff5a27;
+  box-shadow: 0 3px 20px rgba(255, 84, 31, 0.55);
+  font-size: 0.83rem;
+  letter-spacing: 0.06em;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -99,22 +96,19 @@ body.has-hot-sauce-banner {
 }
 
 .hot-sauce-banner strong {
-  color: #fff;
   font-weight: 950;
-  text-shadow: 0 0 12px rgba(255, 255, 255, 0.34);
 }
 
 .hot-sauce-banner-detail {
   padding-left: 13px;
-  color: #ffd84a;
-  border-left: 1px solid rgba(255, 216, 74, 0.48);
+  border-left: 1px solid #7b3816;
   font-weight: 800;
 }
 
 .hot-sauce-banner-cta {
   padding: 6px 9px 5px;
-  color: #1d0800;
-  background: #ffd84a;
+  color: #fff4ce;
+  background: #441006;
   border: 1px solid rgba(255, 255, 255, 0.42);
   border-radius: 999px;
   box-shadow: 0 0 12px rgba(255, 216, 74, 0.24);
@@ -143,7 +137,7 @@ body.has-hot-sauce-banner {
 
 .hot-sauce-banner:hover .hot-sauce-banner-cta,
 .hot-sauce-banner:focus-visible .hot-sauce-banner-cta {
-  background: #fff2bd;
+  background: #6a2010;
   transform: translateY(-1px);
 }
 
@@ -435,8 +429,6 @@ nav a:focus-visible::after {
   isolation: isolate;
   overflow: hidden;
   display: grid;
-  grid-template-rows: auto minmax(0, 1fr);
-  gap: 12px;
   height: clamp(520px, calc(100svh - 220px), 700px);
   width: calc(100% + 1vw);
   place-items: center;
@@ -473,16 +465,30 @@ nav a:focus-visible::after {
 }
 
 .hero-gift-card {
+  position: absolute;
+  z-index: 3;
+  top: clamp(14px, 2vw, 30px);
+  right: clamp(14px, 2vw, 30px);
+  display: grid;
+  gap: 2px;
   margin: 0;
-  padding: 8px 14px;
-  border: 1px solid var(--amber);
-  border-radius: 999px;
-  background: #191008;
-  color: var(--amber);
-  box-shadow: 0 0 16px rgba(255, 193, 74, 0.25);
+  padding: 7px 11px;
+  transform: rotate(6deg);
+  border: 2px solid #160a18;
+  border-radius: 9px;
+  background: #ff65b5;
+  color: #160a18;
+  box-shadow: 4px 4px 0 #49c8ff, 6px 6px 0 #160a18;
+  font-size: 0.77rem;
   font-weight: 800;
-  line-height: 1.25;
+  line-height: 1.1;
   text-align: center;
+  text-transform: uppercase;
+}
+
+.hero-gift-card strong {
+  font-size: 1rem;
+  font-weight: 950;
 }
 
 .hero-image {
@@ -1454,6 +1460,11 @@ nav a:focus-visible::after {
   text-wrap: balance;
 }
 
+.hot-sauce-copy h2 span {
+  color: var(--amber);
+  text-shadow: 3px 3px 0 #962818, 0 0 26px rgba(255, 91, 38, 0.44);
+}
+
 .hot-sauce-lede,
 .hot-sauce-release {
   max-width: 690px;
@@ -1463,7 +1474,7 @@ nav a:focus-visible::after {
 }
 
 .hot-sauce-lede {
-  margin: 36px 0 26px;
+  margin: 22px 0 26px;
 }
 
 .hot-sauce-lede a,
@@ -1491,8 +1502,8 @@ nav a:focus-visible::after {
   min-height: 42px;
   align-items: center;
   padding: 10px 14px;
-  color: #1d0800;
-  background: #ffd84a;
+  color: #fff4ce;
+  background: #441006;
   border: 2px solid #1d0800;
   box-shadow: 4px 4px 0 #1d0800;
   font-size: 0.65rem;
@@ -1514,10 +1525,13 @@ nav a:focus-visible::after {
 }
 
 .hot-sauce-release {
-  margin: 0 0 32px;
+  margin: 26px 0 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--amber);
 }
 
 .hot-sauce-button {
+  margin-top: 24px;
   color: #160600;
   background: #fff8eb;
   border: 2px solid #160600;
@@ -2553,12 +2567,8 @@ nav a:focus-visible::after {
     height: auto;
     width: 100%;
     max-width: 900px;
-    grid-template-rows: auto auto;
+    aspect-ratio: 1273 / 696;
     justify-self: center;
-  }
-
-  .hero-image {
-    height: auto;
   }
 
   .section-heading,
@@ -2688,7 +2698,7 @@ nav a:focus-visible::after {
   .hot-sauce-banner {
     gap: 8px;
     padding-inline: 12px;
-    font-size: 0.61rem;
+    font-size: 0.72rem;
     letter-spacing: 0.055em;
   }
 
