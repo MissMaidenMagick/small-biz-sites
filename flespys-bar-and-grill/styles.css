@@ -487,6 +487,19 @@ nav a:focus-visible::after {
   justify-content: center;
 }
 
+.hero-gift-cards {
+  margin: 16px 0 0;
+  color: var(--cream);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.hero-gift-cards span {
+  margin-right: 5px;
+  color: var(--amber);
+  font-size: 0.75em;
+}
+
 .button {
   display: inline-flex;
   min-height: 52px;
@@ -586,48 +599,6 @@ nav a:focus-visible::after {
   margin-left: 8px;
   color: var(--blue);
   font-size: 1.1rem;
-}
-
-.gift-card-ticket {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  width: min(90%, 32rem);
-  margin: clamp(22px, 4vw, 44px) auto;
-  border: 2px solid #ab352e;
-  border-radius: 8px;
-  background: var(--cream);
-  color: #291511;
-  box-shadow: 4px 4px 0 #ab352e;
-}
-
-.gift-card-ticket-stub {
-  display: grid;
-  place-items: center;
-  padding-inline: clamp(12px, 4vw, 30px);
-  border-right: 2px dashed #ab352e;
-  color: #952c27;
-  font-size: clamp(1.4rem, 4vw, 2.1rem);
-}
-
-.gift-card-ticket p {
-  display: grid;
-  gap: 6px;
-  margin: 0;
-  padding: 13px clamp(12px, 3vw, 24px);
-  line-height: 1.25;
-  text-align: center;
-}
-
-.gift-card-ticket strong {
-  font: 700 clamp(1.2rem, 3vw, 1.85rem)/1.15 Georgia, "Times New Roman", serif;
-}
-
-.gift-card-ticket p span {
-  color: #952c27;
-  font-size: 0.875rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
 }
 
 .marquee {
